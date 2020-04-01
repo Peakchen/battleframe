@@ -11,7 +11,7 @@ cc.Class({
 
     //获取地址端口
     getHost: function() {
-        return "127.0.0.1:13001";
+        return Global.Addr;
     },
 
     //获取随机数

@@ -6,6 +6,8 @@ cc._RF.push(module, '4644f0m2WtABYRy+pn6dOaG', 'Star');
 
 var Battle = require("battle");
 
+var wsNet = require("wsNet");
+
 cc.Class({
   "extends": cc.Component,
   properties: {
@@ -15,6 +17,9 @@ cc.Class({
   getBattleObj: function getBattleObj() {
     return new Battle();
   },
+  getwsNetObj: function getwsNetObj() {
+    return new wsNet();
+  },
   getPlayerDistance: function getPlayerDistance() {
     // 根据 player 节点位置判断距离
     var playerPos = this.game.player.getPosition(); // 根据两点位置计算两点之间距离
@@ -23,7 +28,17 @@ cc.Class({
     return dist;
   },
   onPicked: function onPicked(frame, dist) {
-    // 发送撞击星星事件
+    //碰撞后发送一个消息
+    var buff = new ArrayBuffer(10);
+    var data = new Uint16Array(buff);
+    data[0] = 4;
+
+    for (var i = 1; i <= data.length - 1; i++) {
+      data[i] = i + 1;
+    }
+
+    this.getwsNetObj().sendwsmessage(data); // 发送撞击星星事件
+
     this.getBattleObj().postAttackMsg(frame, dist); // 当星星被收集时，调用 Game 脚本中的接口，生成一个新的星星
 
     this.game.spawnNewStar(); // 调用 Game 脚本的得分方法

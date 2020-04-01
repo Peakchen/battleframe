@@ -1,4 +1,6 @@
 let Battle = require("battle")
+let wsNet = require("wsNet")
+
 cc.Class({
     extends: cc.Component,
     
@@ -11,6 +13,10 @@ cc.Class({
         return new Battle();
     },
 
+    getwsNetObj: function() {
+        return new wsNet();
+    },
+
     getPlayerDistance: function () {
         // 根据 player 节点位置判断距离
         var playerPos = this.game.player.getPosition();
@@ -20,6 +26,15 @@ cc.Class({
     },
 
     onPicked: function(frame, dist) {
+        //碰撞后发送一个消息
+        var buff = new ArrayBuffer(10)
+        var data = new Uint16Array(buff)
+        data[0] = 4
+        for (var i = 1; i <= data.length-1; i++) {
+            data[i] = i + 1
+        }
+        this.getwsNetObj().sendwsmessage(data)
+
         // 发送撞击星星事件
         this.getBattleObj().postAttackMsg(frame, dist);
         // 当星星被收集时，调用 Game 脚本中的接口，生成一个新的星星

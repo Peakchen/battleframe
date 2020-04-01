@@ -1,0 +1,7 @@
+{
+  "engine_version": "2.3.1",
+  "has_native": true,
+  "project_type": "js",
+  "projectName": "client_project",
+  "packageName": "com.fireball.client_project"
+}

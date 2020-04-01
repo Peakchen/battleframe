@@ -5,8 +5,8 @@
       "main": true,
       "url": "app://editor/index.html",
       "windowType": "dockable",
-      "x": 0,
-      "y": 0,
+      "x": -19,
+      "y": 2,
       "width": 1920,
       "height": 998,
       "layout": {
@@ -103,11 +103,22 @@
         "inspector",
         "cocos-services"
       ]
+    },
+    "window-1585733208433": {},
+    "worker": {}
+  },
+  "panels": {
+    "builder": {
+      "x": 710,
+      "y": 177,
+      "width": 670,
+      "height": 738
     }
   },
-  "panels": {},
   "panelLabelWidth": {
-    "inspector": null
+    "inspector": null,
+    "builder": null
   },
-  "panelLabelWidth.inspector": null
+  "panelLabelWidth.inspector": null,
+  "panelLabelWidth.builder": null
 }

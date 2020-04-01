@@ -9,6 +9,7 @@ import (
 	"time"
 	"strconv"
 	//"github.com/gomodule/redigo/redis"
+	"common"
 )
 
 func init(){
@@ -30,7 +31,7 @@ func BeginBattleHandler(rsp http.ResponseWriter, req *http.Request){
 	//SetCache(cstRandNumber, _RandN)
 	sranN := strconv.Itoa(_RandN)
 	//sranN := strconv.FormatInt(_RandN, 10)
-	fmt.Println("rand number: ", sranN)
+	//fmt.Println("rand number: ", sranN)
 	_, err := rsp.Write([]byte(sranN))
 	if err != nil {
 		fmt.Println("write post fail.")
@@ -69,7 +70,7 @@ func AttackHandler(rsp http.ResponseWriter, req *http.Request){
 	// 	return
 	// }
 
-	fmt.Println("receive data: ", params, ", svr check randN: ",RandInt(int(params[1]), _RandN), RandOne(_RandN))
+	//fmt.Println("receive data: ", params, ", svr check randN: ",common.RandInt(int(params[1]), _RandN), common.RandOne(_RandN))
 	_, err = rsp.Write([]byte("reacive ok."))
 	if err != nil {
 		fmt.Println("write post fail.")
@@ -102,18 +103,18 @@ func UpdateStarPosHandler(rsp http.ResponseWriter, req *http.Request){
 		return
 	}
 
-	starHelfWidth := params[0]
-	fmt.Println("starHelfWidth: ", starHelfWidth)
+	//starHelfWidth := params[0]
+	//fmt.Println("starHelfWidth: ", starHelfWidth)
 	_StarRandint64 := time.Now().Unix()
 	_StarRandN = int(_StarRandint64)
-	ranN := RandOne(_StarRandN)
+	ranN := common.RandOne(_StarRandN)
 	// sranN := strconv.FormatFloat(RandOne(_StarRandN), 'g', 1, 64)
 	// starRanN := strconv.FormatInt(_StarRandint64, 10)
 	var (
 		sendmsg = make([]byte, 8)
 	)
 
-	fmt.Println("rand data: ", _StarRandN, ranN)
+	//fmt.Println("rand data: ", _StarRandN, ranN)
 	pos = 0
 	binary.LittleEndian.PutUint32(sendmsg[pos:], uint32(_StarRandint64))
 	pos += 4
@@ -121,7 +122,7 @@ func UpdateStarPosHandler(rsp http.ResponseWriter, req *http.Request){
 	binary.LittleEndian.PutUint32(sendmsg[pos:], uint32(ranN*10000))
 	pos += 4
 
-	fmt.Println("starHelfWidth: ", sendmsg)
+	//fmt.Println("starHelfWidth: ", sendmsg)
 	rsp.Header().Set("Content-Type", "application/octet-stream")
 	_, err = rsp.Write(sendmsg)
 	if err != nil {

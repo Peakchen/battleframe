@@ -8,6 +8,8 @@ var Battle = require("battle");
 
 var Global = require("common");
 
+var wsNet = require("wsNet");
+
 cc.Class({
   "extends": cc.Component,
   properties: {
@@ -43,8 +45,14 @@ cc.Class({
   getBattleObj: function getBattleObj() {
     return new Battle();
   },
+  getwsNetObj: function getwsNetObj() {
+    return new wsNet();
+  },
   onLoad: function onLoad() {
+    //初始化websocket
+    this.getwsNetObj().swConnect(); //this.getwsNetObj().sendwsmessage("hello")
     //发起战斗开始请求
+
     this.getBattleObj().postBattleStartMsg(); // 获取地平面的 y 轴坐标
 
     this.groundY = this.ground.y + this.ground.height / 2; // 初始化计时器
@@ -76,17 +84,16 @@ cc.Class({
     // 根据屏幕宽度，随机得到一个星星 x 坐标
 
     var maxX = this.node.width / 2;
-    this.getBattleObj().postUpdateStarPosMsg(maxX); //randX = (Math.random() - 0.5) * 2 * maxX;
+    this.getBattleObj().postUpdateStarPosMsg(maxX);
+    randX = (Math.random() - 0.5) * 2 * maxX; //服务器给的坐标，客户端随便检验看看是否一致
+    // var randN = this.getBattleObj().getRandOne(Global.starPosRandseed)
+    // if (parseInt(randN*10000) != Global.starPosRandN) {
+    //     cc.log("invalid rand number: ", randN, Global.starPosRandN)
+    //     return cc.v2(randX, randY); 
+    // }
 
-    var randN = this.getBattleObj().getRandOne(Global.starPosRandseed);
-
-    if (parseInt(randN * 10000) != Global.starPosRandN) {
-      cc.log("invalid rand number: ", randN, Global.starPosRandN);
-      return cc.v2(randX, randY);
-    }
-
-    randX = (randN - 0.5) * 2 * maxX;
-    cc.log("star randX: ", randN, randX); //randX = (this.getBattleObj().getRandNumber(4)*Math.random() - 2.0) * maxX;
+    randX = (Math.random() - 0.5) * 2 * maxX; //cc.log("star randX: ", randX)
+    //randX = (this.getBattleObj().getRandNumber(4)*Math.random() - 2.0) * maxX;
     // 返回星星坐标
 
     return cc.v2(randX, randY);

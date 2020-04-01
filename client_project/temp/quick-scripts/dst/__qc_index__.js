@@ -17,6 +17,8 @@ require('./assets/scripts/Star');
 require('./assets/scripts/api');
 require('./assets/scripts/battle');
 require('./assets/scripts/common');
+require('./assets/scripts/ioNet');
+require('./assets/scripts/wsNet');
 
                     }
                     if (nodeEnv) {

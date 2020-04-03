@@ -28,6 +28,10 @@ func (this *wsClientSession) RemoveSession(addr string) {
 	this.sessMap.Delete(addr)
 }
 
+func (this *wsClientSession) GetSessions()sync.Map{
+	return this.sessMap
+}
+
 func init(){
 	GwebSessionMgr = &wsClientSession{}
 }

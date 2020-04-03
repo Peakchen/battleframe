@@ -1,0 +1,1037 @@
+﻿  AudioEngine.cpp
+  AudioCache.cpp
+  AudioDecoder.cpp
+  AudioDecoderManager.cpp
+  AudioDecoderMp3.cpp
+  AudioDecoderOgg.cpp
+  AudioEngine-win32.cpp
+  AudioPlayer.cpp
+  base64.cpp
+  CCAutoreleasePool.cpp
+  ccCArray.cpp
+  CCConfiguration.cpp
+  CCData.cpp
+  CCGLUtils.cpp
+  CCLog.cpp
+  ccRandom.cpp
+  CCRef.cpp
+  CCRenderTexture.cpp
+  CCScheduler.cpp
+  CCThreadPool.cpp
+  ccTypes.cpp
+  ccUTF8.cpp
+  ccUtils.cpp
+  CCValue.cpp
+  csscolorparser.cpp
+  etc1.cpp
+  etc2.cpp
+  pvr.cpp
+  TGAlib.cpp
+  ZipUtils.cpp
+  cocos2d.cpp
+  ArmatureCache.cpp
+  ArmatureCacheMgr.cpp
+  AttachUtil.cpp
+  CCArmatureCacheDisplay.cpp
+  CCArmatureDisplay.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+  CCFactory.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccfactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+  CCSlot.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+  CCTextureAtlasData.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\cctextureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\factory\basefactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\factory\basefactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\factory\basefactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\factory\basefactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\factory\basefactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\factory\basefactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\factory\basefactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCTextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\factory\basefactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\cctextureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCacheMgr.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\AttachUtil.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\attachutil.cpp(225): warning C4018: “>=”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\cctextureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCFactory.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccarmaturedisplay.cpp(153): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccfactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\ArmatureCache.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\armaturecache.cpp(155): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccfactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCArmatureCacheDisplay.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccarmaturecachedisplay.cpp(234): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccarmaturecachedisplay.cpp(248): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccarmaturecachedisplay.cpp(269): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\editor-support\dragonbones-creator-support\CCSlot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.cpp(62): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.cpp(78): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.cpp(306): warning C4018: “>”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.cpp(380): warning C4018: “>”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.cpp(471): warning C4018: “<”: 有符号/无符号不匹配
+  Animation.cpp
+  AnimationState.cpp
+  BaseTimelineState.cpp
+  TimelineState.cpp
+  WorldClock.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\WorldClock.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\WorldClock.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\WorldClock.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\Animation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\BaseTimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\AnimationState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\animation\TimelineState.cpp)
+  Armature.cpp
+  Bone.cpp
+  Constraint.cpp
+  DeformVertices.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+  Slot.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+  TransformObject.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\TransformObject.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\TransformObject.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\TransformObject.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\TransformObject.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\TransformObject.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\TransformObject.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\TransformObject.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Bone.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Constraint.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\DeformVertices.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Armature.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\armature\Slot.cpp)
+  BaseObject.cpp
+  DragonBones.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\BaseObject.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\BaseObject.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\core\DragonBones.cpp)
+  EventObject.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  BaseFactory.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\factory\basefactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失
+  Point.cpp
+  Transform.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\geom\Transform.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\geom\Point.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\geom\Transform.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\geom\Point.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\geom\Transform.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\geom\Transform.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\geom\Transform.cpp)
+  AnimationConfig.cpp
+  AnimationData.cpp
+  ArmatureData.cpp
+  BoundingBoxData.cpp
+  CanvasData.cpp
+  ConstraintData.cpp
+  DisplayData.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ArmatureData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ArmatureData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ArmatureData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\BoundingBoxData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\BoundingBoxData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\BoundingBoxData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\CanvasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\CanvasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ConstraintData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ConstraintData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DisplayData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DisplayData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\CanvasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DisplayData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DisplayData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DisplayData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DisplayData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DisplayData.cpp)
+  DragonBonesData.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ArmatureData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ArmatureData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ArmatureData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ArmatureData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DisplayData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\BoundingBoxData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\BoundingBoxData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\BoundingBoxData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\BoundingBoxData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DragonBonesData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DragonBonesData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DragonBonesData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ArmatureData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ArmatureData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ArmatureData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ArmatureData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\ArmatureData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\AnimationConfig.cpp)
+  SkinData.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\SkinData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\SkinData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\SkinData.cpp)
+  TextureAtlasData.cpp
+  UserData.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\TextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\TextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\TextureAtlasData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\UserData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\UserData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\UserData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DragonBonesData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DragonBonesData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DragonBonesData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DragonBonesData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DragonBonesData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\DragonBonesData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\SkinData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\SkinData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\SkinData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\SkinData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\SkinData.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\model\TextureAtlasData.cpp)
+  BinaryDataParser.cpp
+  DataParser.cpp
+  JSONDataParser.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\BinaryDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\DataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\JSONDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\DataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\DataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\BinaryDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\BinaryDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\JSONDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\JSONDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\DataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\DataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\DataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\DataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\DataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\DataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\BinaryDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\BinaryDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\BinaryDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\BinaryDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\JSONDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\BinaryDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\JSONDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\JSONDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\JSONDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\JSONDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\BinaryDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\JSONDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\DataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\JSONDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\BinaryDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\DataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\DataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\JSONDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\BinaryDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\BinaryDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\JSONDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\DataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\JSONDataParser.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\editor-support\dragonbones\parser\BinaryDataParser.cpp)
+  MeshBuffer.cpp
+  middleware-adapter.cpp
+  MiddlewareManager.cpp
+  IOBuffer.cpp
+  IOTypedArray.cpp
+  TypedArrayPool.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\meshbuffer.cpp(73): warning C4018: “<”: 有符号/无符号不匹配
+  ParticleSimulator.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配
+  AttachmentVertices.cpp
+  AttachUtil.cpp
+  SkeletonAnimation.cpp
+  SkeletonCache.cpp
+  SkeletonCacheAnimation.cpp
+  SkeletonCacheMgr.cpp
+  SkeletonDataMgr.cpp
+  SkeletonRenderer.cpp
+  spine-cocos2dx.cpp
+  VertexEffectDelegate.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\spine-creator-support\attachutil.cpp(67): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\spine-creator-support\attachutil.cpp(173): warning C4018: “>=”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\editor-support\spine-creator-support\SkeletonCacheAnimation.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\editor-support\spine-creator-support\SkeletonRenderer.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\spine-creator-support\skeletoncache.cpp(143): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\spine-creator-support\skeletoncacheanimation.cpp(262): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\spine-creator-support\skeletonrenderer.cpp(890): warning C4018: “<”: 有符号/无符号不匹配
+  Animation.cpp
+  AnimationState.cpp
+  AnimationStateData.cpp
+  Atlas.cpp
+  AtlasAttachmentLoader.cpp
+  Attachment.cpp
+  AttachmentLoader.cpp
+  AttachmentTimeline.cpp
+  Bone.cpp
+  BoneData.cpp
+  BoundingBoxAttachment.cpp
+  ClippingAttachment.cpp
+  ColorTimeline.cpp
+  Constraint.cpp
+  ConstraintData.cpp
+  CurveTimeline.cpp
+  DeformTimeline.cpp
+  DrawOrderTimeline.cpp
+  Event.cpp
+  EventData.cpp
+  EventTimeline.cpp
+  Extension.cpp
+  IkConstraint.cpp
+  IkConstraintData.cpp
+  IkConstraintTimeline.cpp
+  Json.cpp
+  LinkedMesh.cpp
+  MathUtil.cpp
+  MeshAttachment.cpp
+  PathAttachment.cpp
+  PathConstraint.cpp
+  PathConstraintData.cpp
+  PathConstraintMixTimeline.cpp
+  PathConstraintPositionTimeline.cpp
+  PathConstraintSpacingTimeline.cpp
+  PointAttachment.cpp
+  RegionAttachment.cpp
+  RotateTimeline.cpp
+  RTTI.cpp
+  ScaleTimeline.cpp
+  ShearTimeline.cpp
+  Skeleton.cpp
+  SkeletonBinary.cpp
+  SkeletonBounds.cpp
+  SkeletonClipping.cpp
+  SkeletonData.cpp
+  SkeletonJson.cpp
+  Skin.cpp
+  Slot.cpp
+  SlotData.cpp
+  SpineObject.cpp
+  TextureLoader.cpp
+  Timeline.cpp
+  TransformConstraint.cpp
+  TransformConstraintData.cpp
+  TransformConstraintTimeline.cpp
+  TranslateTimeline.cpp
+  Triangulator.cpp
+  TwoColorTimeline.cpp
+  Updatable.cpp
+  VertexAttachment.cpp
+  VertexEffect.cpp
+  CCGeometry.cpp
+  CCVertex.cpp
+  Mat4.cpp
+  MathUtil.cpp
+  Quaternion.cpp
+  Vec2.cpp
+  Vec3.cpp
+  Vec4.cpp
+  CCDownloader-curl.cpp
+  CCDownloader.cpp
+  HttpClient.cpp
+  HttpCookie.cpp
+  SocketIO.cpp
+  Uri.cpp
+  WebSocket-libwebsockets.cpp
+  WebSocketServer.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\network\httprequest.h(50): warning C4138: 在注释外找到“*/” (编译源文件 ..\cocos\network\HttpClient.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\network\httprequest.h(50): warning C4138: 在注释外找到“*/” (编译源文件 ..\cocos\network\SocketIO.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\network\websocket-libwebsockets.cpp(757): warning C4018: “<”: 有符号/无符号不匹配
+  CCFileUtils.cpp
+  CCImage.cpp
+  CCSAXParser.cpp
+  CCGLView-desktop.cpp
+c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: “APIENTRY”: 宏重定义
+  d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\external\win32\include\glfw3\glfw3.h(92): note: 参见“APIENTRY”的前一个定义
+  CCApplication-win32.cpp
+  CCCanvasRenderingContext2D-win32.cpp
+  CCDevice-win32.cpp
+  CCFileUtils-win32.cpp
+  CCUtils-win32.cpp
+  DeviceGraphics.cpp
+  FrameBuffer.cpp
+  GFX.cpp
+  GFXUtils.cpp
+  GraphicsHandle.cpp
+  IndexBuffer.cpp
+  Program.cpp
+  RenderBuffer.cpp
+  RenderTarget.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\gfx\framebuffer.cpp(80): warning C4018: “>=”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\gfx\program.cpp(232): warning C4018: “<”: 有符号/无符号不匹配
+  State.cpp
+  Texture.cpp
+  Texture2D.cpp
+  VertexBuffer.cpp
+  VertexFormat.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\gfx\devicegraphics.cpp(353): warning C4018: “>=”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\gfx\devicegraphics.cpp(1040): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\gfx\state.cpp(102): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\gfx\state.cpp(109): warning C4018: “<”: 有符号/无符号不匹配
+  BaseRenderer.cpp
+  Camera.cpp
+  Config.cpp
+  EffectVariant.cpp
+  Effect.cpp
+  EffectBase.cpp
+  ForwardRenderer.cpp
+  InputAssembler.cpp
+  Light.cpp
+  Model.cpp
+  Pass.cpp
+  ProgramLib.cpp
+  RendererUtils.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\memop\recyclepool.hpp(86): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\renderer\BaseRenderer.cpp)
+  d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\memop\recyclepool.hpp(84): note: 编译 类 模板 成员函数 "T *cocos2d::renderer::RecyclePool<T>::add(void)" 时
+          with
+          [
+              T=cocos2d::renderer::View
+          ] (编译源文件 ..\cocos\renderer\renderer\BaseRenderer.cpp)
+  d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\renderer\baserenderer.cpp(393): note: 参见对正在编译的函数 模板 实例化“T *cocos2d::renderer::RecyclePool<T>::add(void)”的引用
+          with
+          [
+              T=cocos2d::renderer::View
+          ]
+  d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\renderer\baserenderer.cpp(74): note: 参见对正在编译的 类 模板 实例化 "cocos2d::renderer::RecyclePool<cocos2d::renderer::View>" 的引用
+  Scene.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\memop\recyclepool.hpp(96): warning C4018: “>”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\renderer\BaseRenderer.cpp)
+  d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\memop\recyclepool.hpp(95): note: 编译 类 模板 成员函数 "void cocos2d::renderer::RecyclePool<cocos2d::renderer::View>::resize(int)" 时 (编译源文件 ..\cocos\renderer\renderer\BaseRenderer.cpp)
+  d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\memop\recyclepool.hpp(88): note: 参见对正在编译的函数 模板 实例化“void cocos2d::renderer::RecyclePool<cocos2d::renderer::View>::resize(int)”的引用 (编译源文件 ..\cocos\renderer\renderer\BaseRenderer.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\renderer\forwardrenderer.cpp(216): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\renderer\forwardrenderer.cpp(243): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\renderer\forwardrenderer.cpp(272): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\renderer\forwardrenderer.cpp(303): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\renderer\forwardrenderer.cpp(336): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\renderer\forwardrenderer.cpp(384): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\memop\recyclepool.hpp(86): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\renderer\ForwardRenderer.cpp)
+  d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\memop\recyclepool.hpp(84): note: 编译 类 模板 成员函数 "T *cocos2d::renderer::RecyclePool<T>::add(void)" 时
+          with
+          [
+              T=float
+          ] (编译源文件 ..\cocos\renderer\renderer\ForwardRenderer.cpp)
+  d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\renderer\forwardrenderer.cpp(212): note: 参见对正在编译的函数 模板 实例化“T *cocos2d::renderer::RecyclePool<T>::add(void)”的引用
+          with
+          [
+              T=float
+          ]
+  d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\renderer\forwardrenderer.cpp(53): note: 参见对正在编译的 类 模板 实例化 "cocos2d::renderer::RecyclePool<float>" 的引用
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\memop\recyclepool.hpp(96): warning C4018: “>”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\renderer\ForwardRenderer.cpp)
+  d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\memop\recyclepool.hpp(95): note: 编译 类 模板 成员函数 "void cocos2d::renderer::RecyclePool<float>::resize(int)" 时 (编译源文件 ..\cocos\renderer\renderer\ForwardRenderer.cpp)
+  d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\memop\recyclepool.hpp(88): note: 参见对正在编译的函数 模板 实例化“void cocos2d::renderer::RecyclePool<float>::resize(int)”的引用 (编译源文件 ..\cocos\renderer\renderer\ForwardRenderer.cpp)
+  Technique.cpp
+  View.cpp
+  Assembler.cpp
+  AssemblerBase.cpp
+  AssemblerSprite.cpp
+  CustomAssembler.cpp
+  MaskAssembler.cpp
+  RenderData.cpp
+  RenderDataList.cpp
+  SimpleSprite2D.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\scene\assembler\MaskAssembler.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\scene\assembler\CustomAssembler.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\scene\assembler\Assembler.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\scene\assembler\AssemblerSprite.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\scene\assembler\SimpleSprite2D.cpp)
+  SlicedSprite2D.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\stencilmanager.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\renderer\scene\assembler\MaskAssembler.cpp)
+  SimpleSprite3D.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.cpp(125): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\assemblersprite.cpp(110): warning C4018: “<”: 有符号/无符号不匹配
+  SlicedSprite3D.cpp
+  TiledMapAssembler.cpp
+  MeshAssembler.cpp
+  Particle3DAssembler.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\assembler.cpp(204): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\scene\assembler\SlicedSprite2D.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\scene\assembler\TiledMapAssembler.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\scene\assembler\MeshAssembler.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\scene\assembler\Particle3DAssembler.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\particle3dassembler.cpp(74): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\particle3dassembler.cpp(100): warning C4018: “<”: 有符号/无符号不匹配
+  MemPool.cpp
+  MeshBuffer.cpp
+  ModelBatcher.cpp
+  NodeMemPool.cpp
+  NodeProxy.cpp
+  ParallelTask.cpp
+  RenderFlow.cpp
+  StencilManager.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\stencilmanager.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\renderer\scene\StencilManager.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\paralleltask.cpp(57): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\stencilmanager.cpp(117): warning C4018: “>”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\stencilmanager.cpp(167): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\stencilmanager.cpp(177): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\scene\ModelBatcher.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\scene\NodeProxy.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\scene\MeshBuffer.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\stencilmanager.hpp : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\renderer\scene\ModelBatcher.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\modelbatcher.cpp(58): warning C4018: “<”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\modelbatcher.cpp(239): warning C4018: “>=”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\modelbatcher.cpp(290): warning C4018: “>=”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\renderer\scene\RenderFlow.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\meshbuffer.cpp(127): warning C4018: “>=”: 有符号/无符号不匹配
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\renderflow.cpp(166): warning C4018: “<”: 有符号/无符号不匹配
+  Types.cpp
+  jsb_cocos2dx_audioengine_auto.cpp
+  jsb_cocos2dx_auto.cpp
+  jsb_cocos2dx_dragonbones_auto.cpp
+  jsb_cocos2dx_editor_support_auto.cpp
+  jsb_cocos2dx_extension_auto.cpp
+  jsb_cocos2dx_network_auto.cpp
+  jsb_cocos2dx_particle_auto.cpp
+  jsb_cocos2dx_spine_auto.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\scripting\js-bindings\auto\jsb_cocos2dx_editor_support_auto.cpp(220): warning C4083: 应输入“(”；找到标识符“NO”
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\cctextureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\factory\basefactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccfactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_cocos2dx_dragonbones_auto.cpp)
+  jsb_gfx_auto.cpp
+  jsb_renderer_auto.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\scripting\js-bindings\auto\jsb_renderer_auto.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\scripting\js-bindings\auto\jsb_gfx_auto.cpp(739): warning C4083: 应输入“(”；找到标识符“NO”
+  EventDispatcher.cpp
+  config.cpp
+  HandleObject.cpp
+  MappingUtils.cpp
+  RefCounter.cpp
+  State.cpp
+  Value.cpp
+  Class.cpp
+  Object.cpp
+  ObjectWrap.cpp
+  ScriptEngine.cpp
+  Utils.cpp
+  env.cc
+  inspector_agent.cc
+  inspector_io.cc
+  inspector_socket.cc
+  inspector_socket_server.cc
+  node.cc
+  node_debug_options.cc
+  SHA1.cpp
+  util.cc
+  http_parser.c
+  jsb_classtype.cpp
+  jsb_cocos2dx_manual.cpp
+  jsb_cocos2dx_network_manual.cpp
+  jsb_conversions.cpp
+  jsb_dragonbones_manual.cpp
+  jsb_gfx_manual.cpp
+  jsb_global.cpp
+  jsb_helper.cpp
+  jsb_opengl_manual.cpp
+  jsb_opengl_utils.cpp
+  jsb_platfrom_win32.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\cctextureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\dragonbones.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\core\baseobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\matrix.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\point.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\rectangle.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\geom\transform.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\textureatlasdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\network\httprequest.h(50): warning C4138: 在注释外找到“*/” (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_global.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\userdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\dragonbonesdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\armaturedata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\skindata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\boundingboxdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationdata.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\model\animationconfig.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\iarmatureproxy.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\ieventdispatcher.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\armature.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\ianimatable.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\transformobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\bone.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animationstate.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\armature\slot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\worldclock.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\animation\animation.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\event\eventobject.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones\factory\basefactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccslot.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\renderer\scene\assembler\customassembler.hpp(110): warning C4018: “>=”: 有符号/无符号不匹配 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\editor-support\dragonbones-creator-support\ccfactory.h : warning C4819: 该文件包含不能在当前代码页(936)中表示的字符。请将该文件保存为 Unicode 格式以防止数据丢失 (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_dragonbones_manual.cpp)
+  jsb_renderer_manual.cpp
+  jsb_socketio.cpp
+  jsb_spine_manual.cpp
+  jsb_websocket.cpp
+  jsb_websocket_server.cpp
+  jsb_xmlhttprequest.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\cocos\network\httprequest.h(50): warning C4138: 在注释外找到“*/” (编译源文件 ..\cocos\scripting\js-bindings\manual\jsb_xmlhttprequest.cpp)
+  LocalStorage.cpp
+  EditBox-win32.cpp
+c:\program files (x86)\windows kits\8.1\include\shared\minwindef.h(130): warning C4005: “APIENTRY”: 宏重定义
+  d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\external\win32\include\glfw3\glfw3.h(92): note: 参见“APIENTRY”的前一个定义
+  AssetsManagerEx.cpp
+  CCAsyncTaskPool.cpp
+  CCEventAssetsManagerEx.cpp
+  Manifest.cpp
+d:\checkframe\client_project\build\jsb-default\frameworks\cocos2d-x\extensions\assets-manager\assetsmanagerex.cpp(1363): warning C4305: “+=”: 从“double”到“float”截断
+  ConvertUTF.c
+  ConvertUTFWrapper.cpp
+  tinyxml2.cpp
+  ioapi.cpp
+  ioapi_mem.cpp
+  unzip.cpp
+  xxtea.cpp
+  复制了 50 个文件
+  复制了 4 个文件
+  libcocos2d.vcxproj -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\libcocos2d.lib

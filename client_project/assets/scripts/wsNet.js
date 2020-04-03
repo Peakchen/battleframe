@@ -3,9 +3,10 @@
  */
 
 let Global = require("common")
+//let Player = require("Player")
 
 cc.Class({
-    extends: cc.Component,
+    //extends: cc.Component,
 
     /*
     readyState:
@@ -14,8 +15,18 @@ cc.Class({
         CLOSING    2
         CLOSED     3
     */
+   
+    CanSendMsg: function(){
+        if (Global.ws == null){
+            return false
+        }
+
+        return (Global.ws.readyState == WebSocket.CONNECTING || Global.ws.readyState == WebSocket.OPEN)
+    },  
+
     swConnect: function(){
         if (Global.ws != null) {
+            return
             cc.log("readyState: ", Global.ws.readyState)
             if (Global.ws.readyState == WebSocket.CONNECTING || Global.ws.readyState == WebSocket.OPEN) { //已经连上就不必再连
                 return
@@ -23,21 +34,54 @@ cc.Class({
         }
 
         cc.log("addr: ", Global.wsAddr, Global.ws == null)
-        ws = new WebSocket(Global.wsAddr);
+        var ws = new WebSocket(Global.wsAddr);
         ws.onopen = function(e) {
             cc.log("ws open: ", ws.readyState)
         }
 
         ws.onmessage = function(e) {
-            cc.log("ws message: ", e.data)
+            /**
+             * 消息解析 
+             * 0: 消息id
+             * 1：消息长度
+             * 2：sessionid
+             * 3：nodex x坐标正负标记
+             * 4：nodex x坐标值
+             * 5：nodey y坐标正负标记
+             * 6：nodey y坐标值 
+             */
+            var data = new Uint32Array(e.data)
+            var msgid = data[0] 
+            switch (msgid) {
+                case Global.MID_login:
+                    cc.log("ws message MID_login: ", data[1], data[2], data[3], data[4], data[5], data[6])
+                    var key = data[2].toString()
+                    Global.PlayerMap.set(key, data[2])
+                    break;
+                case Global.MID_logout:
+                    var key = data[2].toString()
+                    cc.log("ws message MID_logout, sessionid: ", key)
+                    Global.PlayerMap.delete(key)
+                    break;
+                case Global.MID_move:
+                    cc.log("ws message MID_move: ", data[1], data[2], data[3], data[4], data[5], data[6])
+                    var key = data[2].toString()
+                    Global.PlayerMap.set(key, data[2])
+                    break;
+                default:
+                    cc.log("未知 消息id: ", msgid)
+            }
         }
 
         ws.onerror = function (e) {
             cc.log("ws error: ", ws.readyState)
+            Global.ws = null
         }
 
         ws.onclose = function (e) {
             cc.log("ws close: ", ws.readyState)
+            //Player.sendPlayerPos()
+            Global.ws = null
         }
 
         cc.log("global ws init, state: ", ws.readyState)
@@ -60,7 +104,7 @@ cc.Class({
             }
         }
 
-        cc.log("ws sendwsmessage.")
+        cc.log("ws sendwsmessage: ", Global.ws.readyState)
         Global.ws.send(data)
     }
 })

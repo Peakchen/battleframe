@@ -1,9 +1,5 @@
-﻿  jsb_module_register.cpp
-  main.cpp
-  AppDelegate.cpp
-d:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xlocale(319): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc (编译源文件 ..\Classes\jsb_module_register.cpp)
-d:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xlocale(319): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc (编译源文件 ..\Classes\AppDelegate.cpp)
-d:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xlocale(319): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc (编译源文件 main.cpp)
+﻿  AppDelegate.cpp
+d:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.16.27023\include\xlocale(319): warning C4530: 使用了 C++ 异常处理程序，但未启用展开语义。请指定 /EHsc
 libtiff-2015.lib(tif_win32.obj) : warning LNK4075: 忽略“/EDITANDCONTINUE”(由于“/INCREMENTAL:NO”规范)
     正在创建库 D:\checkframe\client_project\build\jsb-link\frameworks\runtime-src\proj.win32\Release.win32\client_project.lib 和对象 D:\checkframe\client_project\build\jsb-link\frameworks\runtime-src\proj.win32\Release.win32\client_project.exp
 LINK : warning LNK4098: 默认库“LIBCMT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library

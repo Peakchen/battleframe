@@ -39,5 +39,6 @@
     "scheme": "https",
     "skipRecord": false
   },
-  "appBundle": false
+  "appBundle": false,
+  "includeAnySDK": false
 }

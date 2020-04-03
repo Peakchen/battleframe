@@ -44,12 +44,9 @@ cc.Class({
     },
 
     onLoad: function () {
-    
-        //初始化websocket
-        this.getwsNetObj().swConnect()
 
         //this.getwsNetObj().sendwsmessage("hello")
-
+        Global.PlayerMap = new Map();
         //发起战斗开始请求
         this.getBattleObj().postBattleStartMsg();
 
@@ -109,7 +106,7 @@ cc.Class({
         // 就会调用游戏失败逻辑
         
         if (this.timer > this.starDuration) {
-            cc.log("game over: ", this.timer, this.starDuration)
+            //cc.log("game over: ", this.timer, this.starDuration)
             this.gameOver();
             this.enabled = false;   // disable gameOver logic to avoid load scene repeatedly
             return;
@@ -128,7 +125,7 @@ cc.Class({
     },
 
     gameOver: function () {
-        this.player.stopAllActions(); //停止 player 节点的跳跃动作
-        cc.director.loadScene('game');
+        //this.player.stopAllActions(); //停止 player 节点的跳跃动作
+        //cc.director.loadScene('game');
     }
 });

@@ -183,7 +183,7 @@
       "array": [
         0,
         0,
-        221.7025033688163,
+        379.31912685758414,
         0,
         0,
         0,
@@ -542,6 +542,7 @@
     "jumpAudio": {
       "__uuid__": "eb514f5f-4725-41b8-9568-2643e4af2871"
     },
+    "accDirection": 0,
     "_id": "e0z0/ol9dLcJ9sCIZh1B0T"
   },
   {
@@ -682,7 +683,6 @@
     "scoreAudio": {
       "__uuid__": "5e9fa9a1-c6a0-4fcb-9cab-8bf22d49c771"
     },
-    "battleStart": 0,
     "_id": "21NZGVJ1JEhq5oglIwsYby"
   },
   {

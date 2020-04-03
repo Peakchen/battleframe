@@ -35,7 +35,7 @@ cc.Class({
   },
   //发送更新star位置更新信息
   postUpdateStarPosMsg: function postUpdateStarPosMsg(maxX) {
-    cc.log("begin send battle start message.");
+    //cc.log("begin send battle start message.")
     var request = cc.loader.getXMLHttpRequest();
     var url = this.getHost() + "/UpdateStarPos";
     request.open("POST", url, true);
@@ -59,9 +59,9 @@ cc.Class({
   postBattleStartMsg: function postBattleStartMsg() {
     if (Global.randseed > 0) {
       return;
-    }
+    } //cc.log("begin send battle start message.")
 
-    cc.log("begin send battle start message.");
+
     var request = cc.loader.getXMLHttpRequest();
     var url = this.getHost() + "/BattleStart";
     request.open("POST", url, true);
@@ -78,7 +78,7 @@ cc.Class({
   },
   //发送攻击请求
   postAttackMsg: function postAttackMsg(frame, dist) {
-    cc.log("begin send Attack message.", Global.randseed);
+    //cc.log("begin send Attack message.", Global.randseed)
     var request = cc.loader.getXMLHttpRequest();
     var url = this.getHost() + "/Attack";
     request.open("POST", url, true);

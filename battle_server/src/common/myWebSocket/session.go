@@ -38,12 +38,12 @@ func (this *WebSession) Handle(){
 func (this *WebSession) exit(){
 	this.offch <-this
 
-	if _, noclosed := <-this.writeCh; noclosed {
+	if _, noclosed := <-this.writeCh; !noclosed {
 		time.Sleep(1*time.Second)
 		close(this.writeCh)
 	} 
 	
-	if _, noclosed := <-this.readCh; noclosed {
+	if _, noclosed := <-this.readCh; !noclosed {
 		time.Sleep(1*time.Second)
 		close(this.readCh)
 	}
@@ -56,7 +56,7 @@ func (this *WebSession) readloop(){
 	}()
 
 	this.wsconn.SetReadLimit(maxMessageSize)
-	this.wsconn.SetReadDeadline(time.Now().Add(pongWait))
+	//this.wsconn.SetReadDeadline(time.Now().Add(pongWait))
 	
 	for {
         msgType, data, err := this.wsconn.ReadMessage()
@@ -73,7 +73,6 @@ func (this *WebSession) readloop(){
 		}
 		
 		this.read(msg)
-		//this.wsconn.SetReadDeadline(time.Now().Add(pongWait))
 	}
 }
 
@@ -83,20 +82,26 @@ func (this *WebSession) read(msg *wsMessage){
 		case websocket.TextMessage:
 			{
 				fmt.Println("read TextMessage data: ", string(msg.data))
-				this.write(websocket.TextMessage, []byte("TextMessage hello,too!"))
+				this.Write(websocket.TextMessage, []byte("TextMessage hello,too!"))
 			}
 		case websocket.BinaryMessage:
 			{
 				var pos int
-				datalen := binary.LittleEndian.Uint16(msg.data[pos:])
-				pos+=2
+				msgid := binary.LittleEndian.Uint32(msg.data[pos:])	//消息id
+				pos+=4
+
+				datalen := binary.LittleEndian.Uint32(msg.data[pos:]) //消息长度
+				pos+=4
+
+				// sendType := binary.LittleEndian.Uint32(msg.data[pos:]) //消息发送类型
+				// pos+=2
 
 				var (
-					params = []uint16{}	
+					params = []uint32{}	
 				)
-				for i := uint16(0); i < datalen; i++ {
-					param := binary.LittleEndian.Uint16(msg.data[pos:])
-					pos+=2
+				for i := uint32(0); i < datalen; i++ {
+					param := binary.LittleEndian.Uint32(msg.data[pos:])
+					pos+=4
 
 					params = append(params, param)
 				}
@@ -105,9 +110,16 @@ func (this *WebSession) read(msg *wsMessage){
 					fmt.Println("invalid params: ", params)
 					return
 				}
+				
+				if proc := GetProcMsg(int(msgid)); proc != nil {
+					err, _ := proc(this, params)
+					if err != nil {
+						fmt.Println("proc msg err: ", err)
+					}
+				}else{
+					fmt.Println("invalid msg id: ", msgid)
+				}
 
-				fmt.Println("read BinaryMessage data: ", params)
-				this.write(websocket.BinaryMessage, []byte("BinaryMessage hello, too!"))
 			}
 		case websocket.CloseMessage:
 			{
@@ -127,9 +139,9 @@ func (this *WebSession) read(msg *wsMessage){
 }
 
 func (this *WebSession) writeloop(){
-	ticker := time.NewTicker(pingPeriod)
+	//ticker := time.NewTicker(pingPeriod)
     defer func() {
-		ticker.Stop()
+		//ticker.Stop()
 		this.exit()
 	}()
 	
@@ -141,20 +153,33 @@ func (this *WebSession) writeloop(){
 					this.wsconn.Close()
 					return
 				}
-			case <-ticker.C:
-				this.wsconn.SetWriteDeadline(time.Now().Add(writeWait))
-				if err := this.wsconn.WriteMessage(websocket.PingMessage, nil); err != nil {
-					fmt.Println("send msg over time, err: ", err.Error())
-					return
-				}
+			// case <-ticker.C:
+			// 	this.wsconn.SetWriteDeadline(time.Now().Add(writeWait))
+			// 	if err := this.wsconn.WriteMessage(websocket.PingMessage, nil); err != nil {
+			// 		fmt.Println("send msg over time, err: ", err.Error())
+			// 		this.wsconn.Close()
+			// 		return
+			// 	}
 			}
 	}
 }
 
-func (this *WebSession) write(msgtype int, data []byte) {
+func (this *WebSession) Write(msgtype int, data []byte) {
 	this.writeCh <- &wsMessage{
 		messageType: msgtype,
 		data: data,
 	}
+}
+
+func (this *WebSession) broadcast(msgtype int, data []byte) {
+	sesses := GwebSessionMgr.GetSessions()
+	sesses.Range(func (k, v interface{}) bool{
+		if v != nil {
+			sess := v.(*WebSession)
+			sess.Write(msgtype, data)
+		}
+		
+		return true
+	})
 }
 

@@ -24,6 +24,18 @@ cc.Class({
         return (Global.ws.readyState == WebSocket.CONNECTING || Global.ws.readyState == WebSocket.OPEN)
     },  
 
+    newPlayer: function(arrData){
+        Global.newplayerCreated = 1
+        Global.newplayerPosx = arrData[4]
+        if (arrData[3] == 2) {
+            Global.newplayerPosx = 0 - Global.newplayerPosx
+        }
+        Global.newplayerPosy = arrData[6]
+        if (arrData[5] == 2) {
+            Global.newplayerPosy = 0 - Global.newplayerPosy
+        }
+    },
+
     swConnect: function(){
         if (Global.ws != null) {
             return
@@ -56,17 +68,53 @@ cc.Class({
                 case Global.MID_login:
                     cc.log("ws message MID_login: ", data[1], data[2], data[3], data[4], data[5], data[6])
                     var key = data[2].toString()
-                    Global.PlayerMap.set(key, data[2])
+                    var nodex = data[4]
+                    var nodey = data[6]
+                    if (data[3] == 2){
+                        nodex = 0 - nodex
+                    }
+                    if (data[5] == 2){
+                        nodey = 0 - nodey
+                    }
+                    var playerProp = {
+                        sessionId: data[2],
+                        nodex: nodex,
+                        nodey: nodey
+                    }
+                    if (Global.PlayerSessionMap.has(key) == false) {
+                        Global.PlayerSessionMap.set(key, playerProp)
+                    }
+                    Global.NewplayerMap.set(key, playerProp)
+                    Global.newPlayerIds.push(key)
                     break;
                 case Global.MID_logout:
                     var key = data[2].toString()
                     cc.log("ws message MID_logout, sessionid: ", key)
-                    Global.PlayerMap.delete(key)
+                    Global.DelPlayerIds.push(key)
+                    Global.PlayerSessionMap.delete(key)
                     break;
                 case Global.MID_move:
                     cc.log("ws message MID_move: ", data[1], data[2], data[3], data[4], data[5], data[6])
                     var key = data[2].toString()
-                    Global.PlayerMap.set(key, data[2])
+                    var nodex = data[4]
+                    var nodey = data[6]
+                    if (data[3] == 2){
+                        nodex = 0 - nodex
+                    }
+                    if (data[5] == 2){
+                        nodey = 0 - nodey
+                    }
+                    var playerProp = {
+                        sessionId: data[2],
+                        nodex: nodex,
+                        nodey: nodey
+                    }
+                    if (Global.PlayerSessionMap.has(key) == false) {
+                        Global.PlayerSessionMap.set(key, playerProp)
+                    }
+                    Global.NewplayerMap.set(key, playerProp)
+                    Global.newPlayerIds.push(key)
+                    cc.log("MID_move purple monsters: ", Global.newPlayerIds.length)
                     break;
                 default:
                     cc.log("未知 消息id: ", msgid)

@@ -107,32 +107,27 @@ cc.Class({
     },
 
     sendPlayerPos: function(msgid) {
-        cc.log("send player pos: ", msgid)
+        cc.log("send player pos: ", msgid, this.node.x, this.node.y)
 
         var buff = new ArrayBuffer(24)
         var data = new Uint32Array(buff)
 
         data[0] = msgid //消息ID
         data[1] = 4 //消息长度
-        //data[2] = 2 //广播消息
+
         var nodexflag = 1
         var nodex = this.node.x
-        if (this.node.x < 0.0) {
+        if (nodex < 0.0) {
             nodexflag = 2
-        }
-        if (nodex < 0.0 ){
             nodex = 0.0 - nodex
         }
 
         data[2] = nodexflag     //x坐标正负
         data[3] = parseInt(nodex) //x坐标
         var nodeyflag = 1
-        if (this.node.y < 0.0) {
+        var nodey = -88 //this.node.y
+        if (nodey < 0.0) {
             nodeyflag = 2
-        }
-
-        var nodey = this.node.y
-        if (nodey < 0.0 ){
             nodey = 0.0 - nodey
         }
 

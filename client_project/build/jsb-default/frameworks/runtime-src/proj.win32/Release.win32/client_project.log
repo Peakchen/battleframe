@@ -44,7 +44,7 @@ libtiff-2015.lib(tif_win32.obj) : warning LNK4099: 未找到 PDB“vc140.pdb”(
   D:\checkframe\client_project\build\jsb-default\src\project.jsc -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\src\project.jsc
   D:\checkframe\client_project\build\jsb-default\src\settings.jsc -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\src\settings.jsc
   复制了 3 个文件
-  D:\checkframe\client_project\build\jsb-default\res\import\03\0364ee34a.json -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\import\03\0364ee34a.json
+  D:\checkframe\client_project\build\jsb-default\res\import\01\010627020.json -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\import\01\010627020.json
   D:\checkframe\client_project\build\jsb-default\res\import\09\09582c7b2.json -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\import\09\09582c7b2.json
   D:\checkframe\client_project\build\jsb-default\res\import\0c\0cd4bb050.json -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\import\0c\0cd4bb050.json
   D:\checkframe\client_project\build\jsb-default\res\import\0d\0d797e0af.json -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\import\0d\0d797e0af.json
@@ -59,6 +59,7 @@ libtiff-2015.lib(tif_win32.obj) : warning LNK4099: 未找到 PDB“vc140.pdb”(
   D:\checkframe\client_project\build\jsb-default\res\import\6d\6d91e591-4ce0-465c-809f-610ec95019c6.json -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\import\6d\6d91e591-4ce0-465c-809f-610ec95019c6.json
   D:\checkframe\client_project\build\jsb-default\res\import\6f\6f801092-0c37-4f30-89ef-c8d960825b36.json -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\import\6f\6f801092-0c37-4f30-89ef-c8d960825b36.json
   D:\checkframe\client_project\build\jsb-default\res\import\7a\7afd064b-113f-480e-b793-8817d19f63c3.json -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\import\7a\7afd064b-113f-480e-b793-8817d19f63c3.json
+  D:\checkframe\client_project\build\jsb-default\res\import\b6\b624b5be-1849-4006-881d-2bf8e322cecd.json -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\import\b6\b624b5be-1849-4006-881d-2bf8e322cecd.json
   D:\checkframe\client_project\build\jsb-default\res\import\c0\c0040c95-c57f-49cd-9cbc-12316b73d0d4.json -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\import\c0\c0040c95-c57f-49cd-9cbc-12316b73d0d4.json
   D:\checkframe\client_project\build\jsb-default\res\import\cf\cf7e0bb8-a81c-44a9-ad79-d28d43991032.json -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\import\cf\cf7e0bb8-a81c-44a9-ad79-d28d43991032.json
   D:\checkframe\client_project\build\jsb-default\res\import\eb\eb514f5f-4725-41b8-9568-2643e4af2871.json -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\import\eb\eb514f5f-4725-41b8-9568-2643e4af2871.json
@@ -69,9 +70,10 @@ libtiff-2015.lib(tif_win32.obj) : warning LNK4099: 未找到 PDB“vc140.pdb”(
   D:\checkframe\client_project\build\jsb-default\res\raw-assets\5e\5e9fa9a1-c6a0-4fcb-9cab-8bf22d49c771.mp3 -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\raw-assets\5e\5e9fa9a1-c6a0-4fcb-9cab-8bf22d49c771.mp3
   D:\checkframe\client_project\build\jsb-default\res\raw-assets\92\928494be-49d2-4a61-b99a-fa4280fc5c3e.png -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\raw-assets\92\928494be-49d2-4a61-b99a-fa4280fc5c3e.png
   D:\checkframe\client_project\build\jsb-default\res\raw-assets\a1\a19f2dcf-0f50-4268-b3a0-bbdc1492fb16.png -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\raw-assets\a1\a19f2dcf-0f50-4268-b3a0-bbdc1492fb16.png
+  D:\checkframe\client_project\build\jsb-default\res\raw-assets\af\afc339bf-efa1-47fc-af38-4069e00071eb.png -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\raw-assets\af\afc339bf-efa1-47fc-af38-4069e00071eb.png
   D:\checkframe\client_project\build\jsb-default\res\raw-assets\c7\c7e7f505-0e8f-4e9e-bd0f-e728f8fad8e8.png -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\raw-assets\c7\c7e7f505-0e8f-4e9e-bd0f-e728f8fad8e8.png
   D:\checkframe\client_project\build\jsb-default\res\raw-assets\eb\eb514f5f-4725-41b8-9568-2643e4af2871.mp3 -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\res\raw-assets\eb\eb514f5f-4725-41b8-9568-2643e4af2871.mp3
-  复制了 27 个文件
+  复制了 29 个文件
   D:\checkframe\client_project\build\jsb-default\jsb-adapter\jsb-builtin.js -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\jsb-adapter\jsb-builtin.js
   D:\checkframe\client_project\build\jsb-default\jsb-adapter\jsb-engine.js -> D:\checkframe\client_project\build\jsb-default\frameworks\runtime-src\proj.win32\Release.win32\jsb-adapter\jsb-engine.js
   复制了 2 个文件

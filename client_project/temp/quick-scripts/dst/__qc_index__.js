@@ -18,6 +18,7 @@ require('./assets/scripts/api');
 require('./assets/scripts/battle');
 require('./assets/scripts/common');
 require('./assets/scripts/ioNet');
+require('./assets/scripts/playerdata');
 require('./assets/scripts/wsNet');
 
                     }

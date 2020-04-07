@@ -58,3 +58,7 @@ func BroadCastMsg(selfsess *WebSession, msgid int, msgparams []uint32) {
 		return true
 	})
 }
+
+func PackMsg(data []byte){
+
+}

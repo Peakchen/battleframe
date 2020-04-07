@@ -1,6 +1,8 @@
 let Battle = require("battle")
 let Global = require("common")
 let wsNet = require("wsNet")
+let PlayerData = require("playerdata")
+
 cc.Class({
     extends: cc.Component,
 
@@ -46,7 +48,11 @@ cc.Class({
     onLoad: function () {
 
         //this.getwsNetObj().sendwsmessage("hello")
-        Global.PlayerMap = new Map();
+        Global.PlayerSessionMap = new Map();
+        Global.NewplayerMap = new Map();
+        Global.newPlayerIds = new Array();
+        Global.DelPlayerIds = new Array();
+
         //发起战斗开始请求
         this.getBattleObj().postBattleStartMsg();
 
@@ -100,17 +106,96 @@ cc.Class({
         return cc.v2(randX, randY);
     },
 
+    //检查创建新小球
+    checkNewPlayer: function(){
+        var playeridsLen = Global.newPlayerIds.length
+        if (playeridsLen == 0 ) {
+            return
+        }
+
+        cc.log("create purple monsters.")
+        var self = this;
+        var url = "PurpleMonster"
+        for (;playeridsLen > 0;){
+            var playerid = Global.newPlayerIds.pop() //弹出数据
+            var data = Global.NewplayerMap.get(playerid) //节点数据坐标
+            var child = self.node.getChildByName(playerid.toString())
+            if (child != null){
+                self.node.removeChild(child)
+            }
+
+            //创建精灵
+            cc.log("new player pos: ", playerid, Global.NewplayerMap.has(playerid), data.nodex, data.nodey)
+            cc.loader.loadRes(url, cc.SpriteFrame, function(err, spriteFrame){
+                cc.loader.setAutoRelease(url, true);
+                var node = new cc.Node(playerid.toString())
+                node.position = cc.v2(data.nodex, data.nodey);
+                const sprite = node.addComponent(cc.Sprite)
+                sprite.spriteFrame = spriteFrame
+                self.node.addChild(node, 0, playerid.toString()) //https://blog.csdn.net/zhang431705/article/details/21650727
+            })
+
+            //剩余长度检查
+            Global.NewplayerMap.delete(playerid) //取出即删除
+            playeridsLen = Global.newPlayerIds.length
+
+            //间隔多久消失
+            // this.scheduleOnce(function(){
+            //     var child = self.node.getChildByName(playerid.toString())
+            //     self.node.removeChild(child)
+            //  },5);
+        }
+    },
+
+    checklogout: function(){
+        var logoutlen = Global.DelPlayerIds.length
+        var self = this;
+        for(;logoutlen > 0;) {
+            var playerid = Global.DelPlayerIds.pop()
+            var child = self.node.getChildByName(playerid)
+            if (child != null){
+                self.node.removeChild(child)
+            }
+            logoutlen = Global.DelPlayerIds.length
+        }
+    },
+
+    testcreateplayer: function(){
+        if (Global.test == 1) {
+            return
+        }
+
+        Global.test = 1
+        var playerid = 1122
+        Global.newPlayerIds.push(playerid)
+        var nodex = 100.0
+        var nodey = -88.0
+        var playerProp = {
+            sessionId: playerid,
+            nodex: nodex,
+            nodey: nodey
+        }
+        Global.NewplayerMap.set(playerid, playerProp)
+        //cc.log("new player pos: ", playerid, Global.NewplayerMap.has(playerid))
+        this.checkNewPlayer()
+    },
+
     update: function (dt) {
         //cc.log("game dt: ", dt)
         // 每帧更新计时器，超过限度还没有生成新的星星
         // 就会调用游戏失败逻辑
+        //this.testcreateplayer()
         
-        if (this.timer > this.starDuration) {
-            //cc.log("game over: ", this.timer, this.starDuration)
-            this.gameOver();
-            this.enabled = false;   // disable gameOver logic to avoid load scene repeatedly
-            return;
-        }
+        //检查上线或者移动玩家小球
+        this.checkNewPlayer()
+        //检查下线小球
+        this.checklogout()
+        // if (this.timer > this.starDuration) {
+        //     cc.log("game over: ", this.timer, this.starDuration)
+        //     this.gameOver();
+        //     this.enabled = false;   // disable gameOver logic to avoid load scene repeatedly
+        //     return;
+        // }
 
         this.timer += dt;
         return

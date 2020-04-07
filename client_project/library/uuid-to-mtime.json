@@ -95,12 +95,12 @@
     "relativePath": "mikado_outline_shadow.fnt"
   },
   "5dcd99cb-77a4-4c95-a7d8-4b5b45295ae5": {
-    "asset": 1585915242837,
-    "meta": 1585915242848,
+    "asset": 1586244512895,
+    "meta": 1586244512901,
     "relativePath": "game.fire"
   },
   "51b0ea7f-a166-4130-bf0b-7f70fc60cb1d": {
-    "asset": 1585734342577,
+    "asset": 1586239223483,
     "meta": 1526930962000,
     "relativePath": "scripts"
   },
@@ -574,29 +574,44 @@
     "meta": 1585903759076,
     "relativePath": "scripts\\ioNet.js"
   },
-  "134b4e42-404f-432a-a47a-c9130d518d55": {
-    "asset": 1585914564698,
-    "meta": 1585914840240,
-    "relativePath": "scripts\\common.js"
-  },
-  "4e12f2d2-42ed-4bf8-a57a-426c4389abd4": {
-    "asset": 1585914592529,
-    "meta": 1585914840275,
-    "relativePath": "scripts\\Game.js"
-  },
   "4644fd26-d96b-4005-8472-fa99fa74e686": {
-    "asset": 1585914562819,
-    "meta": 1585914840323,
+    "asset": 1586225484242,
+    "meta": 1586225485442,
     "relativePath": "scripts\\Star.js"
   },
+  "c38aee5b-8ebe-4b3e-9432-a839a2ff8280": {
+    "asset": 1586228195561,
+    "meta": 1586228195560,
+    "relativePath": "resources"
+  },
+  "afc339bf-efa1-47fc-af38-4069e00071eb": {
+    "asset": 1526930962000,
+    "meta": 1586228195660,
+    "relativePath": "resources\\PurpleMonster.png"
+  },
+  "ee2a6c05-4406-43cc-b9c6-6eecc7edd11f": {
+    "asset": 1586239642157,
+    "meta": 1586239788651,
+    "relativePath": "scripts\\playerdata.js"
+  },
+  "134b4e42-404f-432a-a47a-c9130d518d55": {
+    "asset": 1586242059394,
+    "meta": 1586242250460,
+    "relativePath": "scripts\\common.js"
+  },
   "6c688bfb-d907-4e29-a982-1824fec5a01d": {
-    "asset": 1585914863554,
-    "meta": 1585914874028,
+    "asset": 1586242066202,
+    "meta": 1586242250561,
     "relativePath": "scripts\\Player.js"
   },
   "f5f0250b-b558-43e3-b3cd-1f4f25679b91": {
-    "asset": 1585915393396,
-    "meta": 1585915395816,
+    "asset": 1586242241916,
+    "meta": 1586242250590,
     "relativePath": "scripts\\wsNet.js"
+  },
+  "4e12f2d2-42ed-4bf8-a57a-426c4389abd4": {
+    "asset": 1586244508715,
+    "meta": 1586244509557,
+    "relativePath": "scripts\\Game.js"
   }
 }

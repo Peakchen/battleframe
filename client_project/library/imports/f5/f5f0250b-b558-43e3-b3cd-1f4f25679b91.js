@@ -11,14 +11,12 @@ var Global = require("common"); //心跳检测
 
 
 var HeartCheck = {
-  timeout: 1000,
+  timeout: 60000,
   //60秒
   timeoutObj: null,
   serverTimeoutObj: null,
   disconnectioned: false,
   reconnectTimeoutobj: null,
-  state: null,
-  //websocket state
   reset: function reset() {
     clearTimeout(this.timeoutObj);
     clearTimeout(this.serverTimeoutObj);
@@ -56,7 +54,6 @@ var HeartCheck = {
       }, self.timeout);
     }, this.timeout);
   },
-  startCheckStopHeartBeat: function startCheckStopHeartBeat() {},
   hasDisconnected: function hasDisconnected() {
     return this.disconnectioned;
   },

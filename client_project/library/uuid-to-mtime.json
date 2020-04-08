@@ -594,11 +594,6 @@
     "meta": 1586313082010,
     "relativePath": "scripts\\Player.js"
   },
-  "4e12f2d2-42ed-4bf8-a57a-426c4389abd4": {
-    "asset": 1586326646234,
-    "meta": 1586326647196,
-    "relativePath": "scripts\\Game.js"
-  },
   "4644fd26-d96b-4005-8472-fa99fa74e686": {
     "asset": 1586326637545,
     "meta": 1586326647231,
@@ -610,8 +605,13 @@
     "relativePath": "scripts\\common.js"
   },
   "f5f0250b-b558-43e3-b3cd-1f4f25679b91": {
-    "asset": 1586331175029,
-    "meta": 1586331178766,
+    "asset": 1586331442083,
+    "meta": 1586333380459,
     "relativePath": "scripts\\wsNet.js"
+  },
+  "4e12f2d2-42ed-4bf8-a57a-426c4389abd4": {
+    "asset": 1586333619594,
+    "meta": 1586333622456,
+    "relativePath": "scripts\\Game.js"
   }
 }

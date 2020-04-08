@@ -96,6 +96,7 @@ cc.Class({
         //var randY = this.groundY + Math.random() * this.player.getComponent('Player').jumpHeight + 50;
         // 根据屏幕宽度，随机得到一个星星 x 坐标
         var maxX = this.node.width/2;
+        cc.log("star pos maxX: ", maxX)
         this.getBattleObj().postUpdateStarPosMsg(maxX)
         randX = (Math.random() - 0.5) * 2 * maxX;
         if (randX >= this.node.width/2) {

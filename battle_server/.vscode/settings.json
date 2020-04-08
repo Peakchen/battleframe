@@ -1,7 +1,7 @@
 {
    "go.inferGopath":true,
   // Specify GOPATH here to override the one that is set as environment variable. The inferred GOPATH from workspace root overrides this, if go.inferGopath is set to true.
-  "go.gopath": "D:\\battle",
+  "go.gopath": "D:\\checkframe\\battle_server",
   "files.autoSave": "onFocusChange",
   "go.buildOnSave": true,
   "go.lintOnSave": true,

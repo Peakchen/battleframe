@@ -7,4 +7,5 @@ const (
 	MID_move = 3   //移动
 	MID_Bump = 4   //撞击
 	MID_HeartBeat = 5 //心跳
+	MID_StarBorn = 6  //星星出生
 )

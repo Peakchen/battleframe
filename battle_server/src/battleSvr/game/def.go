@@ -8,6 +8,6 @@ const (
 
 //坐标结构体
 type Pos struct {
-	nodex int
-	nodey int
+	Nodex int
+	Nodey int
 }

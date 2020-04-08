@@ -24,18 +24,18 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, sessid, msgid int, data []ui
 		pos = &Pos{}
 	)
 	if uint32(Pos_Right) != data[0] {
-		pos.nodex -= int(data[1])
+		pos.Nodex -= int(data[1])
 	}else{
-		pos.nodex = int(data[1])
+		pos.Nodex = int(data[1])
 	}
 
 	if uint32(Pos_Right) != data[2] {
-		pos.nodey -= int(data[3])
+		pos.Nodey -= int(data[3])
 	}else{
-		pos.nodey = int(data[3])
+		pos.Nodey = int(data[3])
 	}
 	
-	fmt.Printf("update pos, RemoteAddr: %v, nodex: %v, nodey: %v.\n", sess.RemoteAddr, pos.nodex, pos.nodey)
+	fmt.Printf("update pos, RemoteAddr: %v, Nodex: %v, Nodey: %v.\n", sess.RemoteAddr, pos.Nodex, pos.Nodey)
 	GetPlayer().Save(sessid, pos)
 	//broadcast data to others.
 	var (
@@ -52,6 +52,8 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, sessid, msgid int, data []ui
 */
 func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	fmt.Println("proc login message ... ")
+	//检查星星生成
+	checkNewStarPos(sess)
 	//广播我的位置给其他人
 	arrAddr := strings.Split(sess.RemoteAddr, ":")
 	sessid, err := strconv.Atoi(arrAddr[1])
@@ -71,14 +73,14 @@ func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 		}
 
 		posXflag := Pos_Right
-		posX := pos.nodex
-		if pos.nodex < 0 {
+		posX := pos.Nodex
+		if pos.Nodex < 0 {
 			posXflag = Pos_Left
 			posX = 0 - posX
 		}
 		posYflag := Pos_Right
-		posY := pos.nodey
-		if pos.nodey < 0 {
+		posY := pos.Nodey
+		if pos.Nodey < 0 {
 			posYflag = Pos_Left
 			posY = 0 - posY
 		}
@@ -180,21 +182,20 @@ func Bump(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	}
 
 	originPos := &Pos{
-		nodex: int(data[5]),
-		nodey: int(data[7]),
+		Nodex: int(data[5]),
+		Nodey: int(data[7]),
 	}
 
-	go func(){
-		//2.则重新放置星星位置
-		newPos := GetEntity().RandEntityPos(originPos)
-		//3.广播给所有玩家
-		bumpsucc(sess, newPos)
-	}()
+	//2.则重新放置星星位置
+	newPos := GetEntity().RandEntityPos(originPos)
+	//3.广播给所有玩家
+	bumpsucc(sess, newPos)
+	
 	return nil, true
 }
 
 func bumpsucc(sess *myWebSocket.WebSession, newpos *Pos)(error, bool){
-	fmt.Println("bump succ: ", sess.RemoteAddr, newpos.nodex, newpos.nodey)
+	fmt.Println("bump succ: ", sess.RemoteAddr, newpos.Nodex, newpos.Nodey)
 	var (
 		succmsg = []uint32{}
 
@@ -204,18 +205,18 @@ func bumpsucc(sess *myWebSocket.WebSession, newpos *Pos)(error, bool){
 		starX = uint32(0)
 		starY = uint32(0)
 	)
-	starX = uint32(newpos.nodex)
+	starX = uint32(newpos.Nodex)
 	succmsg = append(succmsg, 1)
-	if newpos.nodex < 0 {
+	if newpos.Nodex < 0 {
 		starXflag = uint32(Pos_Left)
-		starX = uint32(0 - newpos.nodex)
+		starX = uint32(0 - newpos.Nodex)
 	}
 	succmsg = append(succmsg, starXflag )
 	succmsg = append(succmsg, starX )
-	starY = uint32(newpos.nodey)
-	if newpos.nodey < 0 {
+	starY = uint32(newpos.Nodey)
+	if newpos.Nodey < 0 {
 		starYflag = uint32(Pos_Left)
-		starY = uint32(0 - newpos.nodey)
+		starY = uint32(0 - newpos.Nodey)
 	}
 	succmsg = append(succmsg, starYflag )
 	succmsg = append(succmsg, starY )

@@ -1,5 +1,6 @@
 let Global = require("common")
 let wsNet = require("wsNet")
+let GM = require("gm")
 
 cc.Class({
     extends: cc.Component,
@@ -24,6 +25,10 @@ cc.Class({
 
     getwsNetObj: function() {
         return new wsNet();
+    },
+
+    getGMObj: function() {
+        return new GM();
     },
 
     setJumpAction: function () {
@@ -143,6 +148,7 @@ cc.Class({
         //第一次连线广播所在位置，然后获取其他小球所在位置然后进行展示
         if (Global.FirstLogin == null && this.getwsNetObj().CanSendMsg()){
             this.sendPlayerPos(Global.MID_login)
+            //this.getGMObj().sendResetStarPos() //gm矫正
             //this.scheduleOnce(function(){ this.sendPlayerPos(Global.MID_login); },2);
             Global.FirstLogin = 1
         }

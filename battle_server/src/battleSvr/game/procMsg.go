@@ -36,7 +36,7 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, sessid, msgid int, data []ui
 	}
 	
 	fmt.Printf("update pos, RemoteAddr: %v, Nodex: %v, Nodey: %v.\n", sess.RemoteAddr, pos.Nodex, pos.Nodey)
-	GetPlayer().Save(sessid, pos)
+	GetPlayers().Save(sessid, pos)
 	//broadcast data to others.
 	var (
 		dstmsg = []uint32{}
@@ -53,7 +53,7 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, sessid, msgid int, data []ui
 func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	fmt.Println("proc login message ... ")
 	//检查星星生成
-	checkNewStarPos(sess)
+	SyncStarPos(sess)
 	//广播我的位置给其他人
 	arrAddr := strings.Split(sess.RemoteAddr, ":")
 	sessid, err := strconv.Atoi(arrAddr[1])
@@ -62,7 +62,7 @@ func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	}
 	saveAndupdatePos(sess, sessid, myWebSocket.MID_login, data)
 	//广播其他人的位置给我
-	allplayers := GetPlayer().GetAll()
+	allplayers := GetPlayers().GetAll()
 	var (
 		dstmsg = []uint32{}
 	)
@@ -107,7 +107,7 @@ func Logout(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 		panic(err)
 	}
 
-	GetPlayer().Remove(sessid)
+	GetPlayers().Remove(sessid)
 	//broadcast data to others.
 	myWebSocket.BroadCastMsg(sess, false, myWebSocket.MID_logout, []uint32{uint32(sessid)})
 	return nil, true
@@ -186,10 +186,13 @@ func Bump(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 		Nodey: int(data[7]),
 	}
 
-	//2.则重新放置星星位置
-	newPos := GetEntity().RandEntityPos(originPos)
-	//3.广播给所有玩家
-	bumpsucc(sess, newPos)
+	go func(){
+		//2.则重新放置星星位置
+		entity,_ := GetEntity()
+		newPos := entity.RandEntityPos(originPos)
+		//3.广播给所有玩家
+		bumpsucc(sess, newPos)
+	}()
 	
 	return nil, true
 }
@@ -241,4 +244,5 @@ func Reg(){
 	myWebSocket.MsgRegister(myWebSocket.MID_logout, Logout)
 	myWebSocket.MsgRegister(myWebSocket.MID_move, Move)
 	myWebSocket.MsgRegister(myWebSocket.MID_Bump, Bump)
+	myWebSocket.MsgRegister(myWebSocket.MID_GM, MainGM)
 }

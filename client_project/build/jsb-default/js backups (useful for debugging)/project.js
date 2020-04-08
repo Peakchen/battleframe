@@ -1,23 +1,23 @@
 window.__require = function e(t, n, s) {
-function o(c, r) {
+function o(c, i) {
 if (!n[c]) {
 if (!t[c]) {
-var i = c.split("/");
-i = i[i.length - 1];
-if (!t[i]) {
-var l = "function" == typeof __require && __require;
-if (!r && l) return l(i, !0);
-if (a) return a(i, !0);
+var r = c.split("/");
+r = r[r.length - 1];
+if (!t[r]) {
+var u = "function" == typeof __require && __require;
+if (!i && u) return u(r, !0);
+if (a) return a(r, !0);
 throw new Error("Cannot find module '" + c + "'");
 }
-c = i;
+c = r;
 }
-var u = n[c] = {
+var l = n[c] = {
 exports: {}
 };
-t[c][0].call(u.exports, function(e) {
+t[c][0].call(l.exports, function(e) {
 return o(t[c][1][e] || e);
-}, u, u.exports, e, t, n, s);
+}, l, l.exports, e, t, n, s);
 }
 return n[c].exports;
 }
@@ -70,29 +70,27 @@ this.getBattleObj().postBattleStartMsg();
 this.groundY = this.ground.y + this.ground.height / 2;
 this.timer = 0;
 this.starDuration = 0;
-this.spawnNewStar();
+this.spawnNewStar(0, 0);
 this.score = 0;
 },
-spawnNewStar: function() {
-var e = cc.instantiate(this.starPrefab);
-this.node.addChild(e);
-e.setPosition(this.getNewStarPosition());
-e.getComponent("Star").game = this;
+spawnNewStar: function(e, t) {
+var n = cc.instantiate(this.starPrefab);
+this.node.addChild(n);
+0 != e || 0 != t ? n.setPosition(cc.v2(e, t)) : n.setPosition(this.getNewStarPosition());
+n.getComponent("Star").game = this;
 this.starDuration = this.minStarDuration + Math.random() * (this.maxStarDuration - this.minStarDuration);
 this.timer = 0;
 },
 getNewStarPosition: function() {
-var e, t = this.node.width / 2;
+var e = 0, t = this.node.width / 2;
 this.getBattleObj().postUpdateStarPosMsg(t);
-2 * (Math.random() - .5) * t;
-e = 2 * (Math.random() - .5) * t;
+(e = 2 * (Math.random() - .5) * t) >= this.node.width / 2 && (e = this.node.width / 3);
+e <= 0 - this.node.width / 2 && (e = 0 - this.node.width / 3);
 return cc.v2(e, -100);
 },
 checkNewPlayer: function() {
 var e = o.newPlayerIds.length;
-if (0 != e) {
-cc.log("create purple monsters.");
-for (var t = this, n = "PurpleMonster"; e > 0; ) {
+if (0 != e) for (var t = this, n = "PurpleMonster"; e > 0; ) {
 var s = o.newPlayerIds.pop();
 if (0 != o.NewplayerMap.has(s)) {
 var a = o.NewplayerMap.get(s), c = t.node.getChildByName(s.toString());
@@ -106,7 +104,6 @@ t.node.addChild(c, 0, s.toString());
 });
 o.NewplayerMap.delete(s);
 e = o.newPlayerIds.length;
-}
 }
 }
 },
@@ -138,7 +135,6 @@ this.timer += e;
 gainScore: function() {
 this.score += 1;
 this.scoreDisplay.string = "Score: " + this.score;
-cc.audioEngine.playEffect(this.scoreAudio, !1);
 },
 gameOver: function() {}
 });
@@ -152,7 +148,7 @@ wsNet: "wsNet"
 Player: [ function(e, t, n) {
 "use strict";
 cc._RF.push(t, "6c688v72QdOKamCGCT+xaAd", "Player");
-var s = e("common"), o = e("wsNet");
+var s = e("common"), o = e("wsNet"), a = e("gm");
 cc.Class({
 extends: cc.Component,
 properties: {
@@ -168,6 +164,9 @@ accDirection: 0
 },
 getwsNetObj: function() {
 return new o();
+},
+getGMObj: function() {
+return new a();
 },
 setJumpAction: function() {
 var e = cc.moveBy(this.jumpDuration, cc.v2(0, this.jumpHeight)).easing(cc.easeCubicActionOut()), t = cc.moveBy(this.jumpDuration, cc.v2(0, -this.jumpHeight)).easing(cc.easeCubicActionIn()), n = cc.callFunc(this.playJumpSound, this);
@@ -197,9 +196,10 @@ this.accRight = !1;
 }
 },
 onLoad: function() {
-cc.game.setFrameRate(100);
+cc.game.setFrameRate(50);
 this.getwsNetObj().swConnect();
 s.FirstLogin = null;
+s.newStarPos = new Map();
 this.accLeft = !1;
 this.accRight = !1;
 this.xSpeed = 2 * (Math.random() - .5) * 10;
@@ -220,7 +220,6 @@ stop: function() {
 this.xSpeed = 0;
 },
 sendPlayerPos: function(e) {
-cc.log("send player pos: ", e, this.TickFrame, this.node.x, this.node.y);
 var t = new ArrayBuffer(24), n = new Uint32Array(t);
 n[0] = e;
 n[1] = 4;
@@ -245,6 +244,10 @@ if (null == s.FirstLogin && this.getwsNetObj().CanSendMsg()) {
 this.sendPlayerPos(s.MID_login);
 s.FirstLogin = 1;
 }
+if (0 == this.accLeft && 0 == this.accRight) {
+this.xSpeed -= .1;
+this.xSpeed < 0 && (this.xSpeed = 0);
+}
 this.accLeft ? this.xSpeed -= this.accel * e : this.accRight && (this.xSpeed += this.accel * e);
 Math.abs(this.xSpeed) > this.maxMoveSpeed && (this.xSpeed = this.maxMoveSpeed * this.xSpeed / Math.abs(this.xSpeed));
 if (this.node.x <= -595) {
@@ -260,7 +263,7 @@ s.Bumped = null;
 this.sendPlayerPos(s.MID_move);
 }
 this.TickFrame += e;
-if (this.TickFrame > 1) {
+if (this.TickFrame > 5) {
 this.sendPlayerPos(s.MID_move);
 this.TickFrame = 0;
 }
@@ -269,6 +272,7 @@ this.TickFrame = 0;
 cc._RF.pop();
 }, {
 common: "common",
+gm: "gm",
 wsNet: "wsNet"
 } ],
 Star: [ function(e, t, n) {
@@ -290,19 +294,57 @@ getPlayerDistance: function() {
 var e = this.game.player.getPosition();
 return this.node.position.sub(e).mag();
 },
-onPicked: function(e, t) {
+getAnyPlayerDistance: function() {},
+onPicked: function() {
 a.Bumped = 1;
-this.getBattleObj().postAttackMsg(e, t);
-this.game.spawnNewStar();
+var e = a.newStarPos.get(a.newStarKey), t = e.nodex, n = e.nodey;
+this.game.spawnNewStar(t, n);
 this.game.gainScore();
 this.node.destroy();
+},
+sendBumpMsg: function() {
+var e = new ArrayBuffer(40), t = new Uint32Array(e);
+t[0] = 4;
+t[1] = 8;
+var n = this.game.player.getPosition(), s = n.x, o = 1;
+if (s < 0) {
+o = 2;
+s = 0 - s;
+}
+var a = n.y, c = 1;
+if (a < 0) {
+c = 2;
+a = 0 - a;
+}
+t[2] = o;
+t[3] = parseInt(s);
+t[4] = c;
+t[5] = parseInt(a);
+var i = this.node.getPosition(), r = i.x, u = 1;
+if (r < 0) {
+u = 2;
+r = 0 - r;
+}
+var l = i.y, d = 1;
+if (l < 0) {
+d = 2;
+l = 0 - l;
+}
+t[6] = u;
+t[7] = parseInt(r);
+t[8] = d;
+t[9] = parseInt(l);
+this.getwsNetObj().sendwsmessage(t);
 },
 update: function(e) {
 if (this.getPlayerDistance() < this.pickRadius) {
 e <= 1 && (e *= 100);
-var t = parseInt(e), n = parseInt(this.getPlayerDistance());
-this.onPicked(t, n);
-} else ;
+parseInt(e), parseInt(this.getPlayerDistance());
+this.sendBumpMsg();
+} else if (a.newStarPos.has(a.newStarKey)) {
+this.onPicked();
+a.newStarPos.delete(a.newStarKey);
+}
 }
 });
 cc._RF.pop();
@@ -354,9 +396,7 @@ t.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 t.responseType = "arraybuffer";
 t.onreadystatechange = function() {
 if (4 == t.readyState && t.status >= 200 && t.status < 300) {
-cc.log("UpdateStarPos response: ", t.response);
 var e = new Uint32Array(t.response);
-cc.log("UpdateStarPos data: ", e);
 o.starPosRandseed = e[0];
 o.starPosRandN = e[1];
 } else ;
@@ -369,10 +409,7 @@ var e = cc.loader.getXMLHttpRequest(), t = this.getHost() + "/BattleStart";
 e.open("POST", t, !0);
 e.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 e.onreadystatechange = function() {
-if (4 == e.readyState && e.status >= 200 && e.status < 300) {
-o.randseed = parseInt(e.responseText);
-cc.log("BattleStart response: ", e.responseText);
-}
+4 == e.readyState && e.status >= 200 && e.status < 300 && (o.randseed = parseInt(e.responseText));
 };
 e.send(new Uint16Array([ 1 ]));
 }
@@ -382,7 +419,7 @@ var n = cc.loader.getXMLHttpRequest(), s = this.getHost() + "/Attack";
 n.open("POST", s, !0);
 n.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 n.onreadystatechange = function() {
-4 == n.readyState && n.status >= 200 && n.status < 300 && cc.log("Attack response: ", n.responseText);
+4 == n.readyState && n.status >= 200 && n.status;
 };
 var o = this.getRandNumber(t);
 n.send(new Uint16Array([ 3, e, t, o ]));
@@ -412,15 +449,53 @@ FirstLogin: null,
 MID_login: 1,
 MID_logout: 2,
 MID_move: 3,
+MID_Bump: 4,
+MID_HeartBeat: 5,
+MID_StarBorn: 6,
+MID_GM: 7,
 Bumped: null,
-newplayerCreated: null,
-newplayerPosx: null,
-newplayerPosy: null,
-newPlayerId: null,
+newStarKey: "Star",
+newStarPos: null,
 test: null
 };
 cc._RF.pop();
 }, {} ],
+gm: [ function(e, t, n) {
+"use strict";
+cc._RF.push(t, "2b4382aBhFPO6s4qV0x0VrN", "gm");
+var s = e("wsNet"), o = e("common"), a = 1;
+cc.Class({
+getwsNetObj: function() {
+return new s();
+},
+sendResetStarPos: function() {
+cc.log("reset star pos...");
+var e = new ArrayBuffer(28), t = new Uint32Array(e);
+t[0] = o.MID_GM;
+t[1] = 5;
+t[2] = a;
+var n = 1, s = 0;
+if (s < 0) {
+n = 2;
+s = 0 - s;
+}
+t[3] = n;
+t[4] = parseInt(s);
+var c = 1, i = -88;
+if (i < 0) {
+c = 2;
+i = 0 - i;
+}
+t[5] = c;
+t[6] = parseInt(i);
+this.getwsNetObj().sendwsmessage(t);
+}
+});
+cc._RF.pop();
+}, {
+common: "common",
+wsNet: "wsNet"
+} ],
 ioNet: [ function(e, t, n) {
 "use strict";
 cc._RF.push(t, "5b591fCkMpNAoTBTiEzeldr", "ioNet");
@@ -487,80 +562,156 @@ cc._RF.pop();
 wsNet: [ function(e, t, n) {
 "use strict";
 cc._RF.push(t, "f5f02ULtVhD47PNH08lZ5uR", "wsNet");
-var s = e("common");
+var s = e("common"), o = {
+timeout: 6e4,
+timeoutObj: null,
+serverTimeoutObj: null,
+disconnectioned: !1,
+reconnectTimeoutobj: null,
+reset: function() {
+clearTimeout(this.timeoutObj);
+clearTimeout(this.serverTimeoutObj);
+return this;
+},
+startHeartBeat: function() {
+var e = this;
+this.timeoutObj = setTimeout(function() {
+cc.log("send heart beat...");
+if (null != s.ws) {
+var t = new ArrayBuffer(12), n = new Uint32Array(t);
+n[0] = s.MID_HeartBeat;
+n[1] = 1;
+n[2] = 0;
+s.ws.send(n);
+e.serverTimeoutObj = setTimeout(function() {
+cc.log("close connection...");
+if (null != s.ws) {
+s.ws.close();
+e.disconnectioned = !0;
+}
+}, e.timeout);
+}
+}, this.timeout);
+},
+hasDisconnected: function() {
+return this.disconnectioned;
+},
+stopReconnectTimer: function() {
+clearTimeout(this.reconnectTimeoutobj);
+}
+};
 cc.Class({
 CanSendMsg: function() {
 return null != s.ws && (s.ws.readyState == WebSocket.CONNECTING || s.ws.readyState == WebSocket.OPEN);
 },
-newPlayer: function(e) {
-s.newplayerCreated = 1;
-s.newplayerPosx = e[4];
-2 == e[3] && (s.newplayerPosx = 0 - s.newplayerPosx);
-s.newplayerPosy = e[6];
-2 == e[5] && (s.newplayerPosy = 0 - s.newplayerPosy);
-},
 swConnect: function() {
-if (null == s.ws) {
+if (null == s.ws || s.ws.readyState != WebSocket.CONNECTING && s.ws.readyState != WebSocket.OPEN) {
+var e = this;
 cc.log("addr: ", s.wsAddr, null == s.ws);
-var e = new WebSocket(s.wsAddr);
-e.onopen = function(t) {
-cc.log("ws open: ", e.readyState);
+var t = new WebSocket(s.wsAddr);
+t.onopen = function(e) {
+cc.log("ws open: ", t.readyState);
+o.reset().startHeartBeat();
 };
-e.onmessage = function(e) {
+t.onmessage = function(e) {
 var t = new Uint32Array(e.data), n = t[0];
 switch (n) {
 case s.MID_login:
 cc.log("ws message MID_login: ", t[1], t[2], t[3], t[4], t[5], t[6]);
-var o = t[2].toString(), a = t[4], c = t[6];
-2 == t[3] && (a = 0 - a);
-2 == t[5] && (c = 0 - c);
+var a = t[2].toString(), c = t[4], i = t[6];
+2 == t[3] && (c = 0 - c);
+2 == t[5] && (i = 0 - i);
 var r = {
 sessionId: t[2],
-nodex: a,
-nodey: c
+nodex: c,
+nodey: i
 };
-0 == s.PlayerSessionMap.has(o) && s.PlayerSessionMap.set(o, r);
-s.NewplayerMap.set(o, r);
-s.newPlayerIds.push(o);
+0 == s.PlayerSessionMap.has(a) && s.PlayerSessionMap.set(a, r);
+s.NewplayerMap.set(a, r);
+s.newPlayerIds.push(a);
 break;
 
 case s.MID_logout:
-o = t[2].toString();
-cc.log("ws message MID_logout, sessionid: ", o);
-s.DelPlayerIds.push(o);
-s.PlayerSessionMap.delete(o);
+a = t[2].toString();
+cc.log("ws message MID_logout, sessionid: ", a);
+s.DelPlayerIds.push(a);
+s.PlayerSessionMap.delete(a);
 break;
 
 case s.MID_move:
-cc.log("ws message MID_move: ", t[1], t[2], t[3], t[4], t[5], t[6]);
-o = t[2].toString(), a = t[4], c = t[6];
-2 == t[3] && (a = 0 - a);
-2 == t[5] && (c = 0 - c);
+a = t[2].toString(), c = t[4], i = t[6];
+2 == t[3] && (c = 0 - c);
+2 == t[5] && (i = 0 - i);
 r = {
 sessionId: t[2],
-nodex: a,
-nodey: c
+nodex: c,
+nodey: i
 };
-0 == s.PlayerSessionMap.has(o) && s.PlayerSessionMap.set(o, r);
-s.NewplayerMap.set(o, r);
-s.newPlayerIds.push(o);
-cc.log("MID_move purple monsters: ", s.newPlayerIds.length);
+0 == s.PlayerSessionMap.has(a) && s.PlayerSessionMap.set(a, r);
+s.NewplayerMap.set(a, r);
+s.newPlayerIds.push(a);
+break;
+
+case s.MID_Bump:
+if (0 == t[2]) {
+cc.log("ws message MID_Bump fail ... ");
+break;
+}
+c = t[4], i = t[6];
+2 == t[3] && (c = 0 - c);
+2 == t[5] && (i = 0 - i);
+var u = {
+nodex: c,
+nodey: i
+};
+s.newStarPos.set(s.newStarKey, u);
+break;
+
+case s.MID_HeartBeat:
+cc.log("ws message MID_HeartBeat: ", n);
+break;
+
+case s.MID_StarBorn:
+cc.log("ws message MID_StarBorn: ", t[2], t[3], t[4], t[5]);
+c = t[3], i = t[5];
+2 == t[2] && (c = 0 - c);
+2 == t[4] && (i = 0 - i);
+u = {
+nodex: c,
+nodey: i
+};
+s.newStarPos.set(s.newStarKey, u);
+break;
+
+case s.MID_GM:
+cc.log("ws message MID_GM...");
 break;
 
 default:
 cc.log("未知 消息id: ", n);
 }
+o.reset().startHeartBeat();
 };
-e.onerror = function(t) {
-cc.log("ws error: ", e.readyState);
-s.ws = null;
+t.onerror = function(n) {
+cc.log("ws error: ", t.readyState);
+if (0 == o.hasDisconnected()) {
+o.stopReconnectTimer();
+o.reconnectTimeoutobj = setTimeout(function() {
+e.swConnect();
+}, 1e3);
+} else o.stopReconnectTimer();
 };
-e.onclose = function(t) {
-cc.log("ws close: ", e.readyState);
-s.ws = null;
+t.onclose = function(n) {
+cc.log("ws close: ", t.readyState);
+if (0 == o.hasDisconnected()) {
+o.stopReconnectTimer();
+o.reconnectTimeoutobj = setTimeout(function() {
+e.swConnect();
+}, 1e3);
+} else o.stopReconnectTimer();
 };
-cc.log("global ws init, state: ", e.readyState);
-s.ws = e;
+cc.log("global ws init, state: ", t.readyState);
+s.ws = t;
 }
 },
 sendwsmessage: function(e) {
@@ -571,4 +722,4 @@ cc._RF.pop();
 }, {
 common: "common"
 } ]
-}, {}, [ "use_v2.0.x_cc.Toggle_event", "Game", "Player", "Star", "api", "battle", "common", "ioNet", "playerdata", "wsNet" ]);
+}, {}, [ "use_v2.0.x_cc.Toggle_event", "Game", "Player", "Star", "api", "battle", "common", "gm", "ioNet", "playerdata", "wsNet" ]);

@@ -6,17 +6,17 @@ import (
 	"fmt"
 )
 
-type wsCallback func (ws *WebSession, data []uint32) (error, bool)
+type WsCallback func (ws *WebSession, data []uint32) (error, bool)
 
 var (
-	msgs = map[int]wsCallback{}
+	msgs = map[int]WsCallback{}
 )
 
-func MsgRegister(id int, cb wsCallback) {
+func MsgRegister(id int, cb WsCallback) {
 	msgs[id] = cb
 }
 
-func GetProcMsg(id int) wsCallback{
+func GetProcMsg(id int) WsCallback{
 	return msgs[id]
 }
 

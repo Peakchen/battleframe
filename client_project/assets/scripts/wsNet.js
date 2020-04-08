@@ -51,7 +51,7 @@ var HeartCheck = {
     },
 
     stopReconnectTimer: function(){
-        cc.log("close reconnectTimeout...")
+        //cc.log("close reconnectTimeout...")
         clearTimeout(this.reconnectTimeoutobj);
     }
 }
@@ -78,7 +78,7 @@ cc.Class({
     swConnect: function(){
         if (Global.ws != null) {
             //return
-            cc.log("readyState: ", Global.ws.readyState)
+            //cc.log("readyState: ", Global.ws.readyState)
             if (Global.ws.readyState == WebSocket.CONNECTING || Global.ws.readyState == WebSocket.OPEN) { //已经连上就不必再连
                 return
             }
@@ -138,7 +138,7 @@ cc.Class({
                     Global.PlayerSessionMap.delete(key)
                     break;
                 case Global.MID_move:
-                    cc.log("ws message MID_move: ", data[1], data[2], data[3], data[4], data[5], data[6])
+                    //cc.log("ws message MID_move: ", data[1], data[2], data[3], data[4], data[5], data[6])
                     var key = data[2].toString()
                     var nodex = data[4]
                     var nodey = data[6]
@@ -158,7 +158,7 @@ cc.Class({
                     }
                     Global.NewplayerMap.set(key, playerProp)
                     Global.newPlayerIds.push(key)
-                    cc.log("MID_move purple monsters: ", Global.newPlayerIds.length)
+                    //cc.log("MID_move purple monsters: ", Global.newPlayerIds.length)
                     break;
                 case Global.MID_Bump:
                     //cc.log("ws message MID_Bump: ", data[1], data[2], data[3], data[4], data[5], data[6])
@@ -193,6 +193,33 @@ cc.Class({
                     break
                 case Global.MID_HeartBeat:
                     cc.log("ws message MID_HeartBeat: ", msgid)
+                    break
+                case Global.MID_StarBorn:
+                    cc.log("ws message MID_StarBorn: ", data[2], data[3], data[4], data[5])
+                    /**
+                     *  0: 消息ID
+                        1：消息长度
+                        2: 星星x坐标正负标志
+                        3: 星星x坐标
+                        4：星星y坐标正负标志
+                        5：星星y坐标
+                     */
+                    var nodex = data[3]
+                    var nodey = data[5]
+                    if (data[2] == 2){
+                        nodex = 0 - nodex
+                    }
+                    if (data[4] == 2){
+                        nodey = 0 - nodey
+                    }
+                    var starProp = {
+                        nodex: nodex,
+                        nodey: nodey
+                    }
+                    Global.newStarPos.set(Global.newStarKey, starProp)
+                    break
+                case Global.MID_GM:
+                    cc.log("ws message MID_GM...")
                     break
                 default:
                     cc.log("未知 消息id: ", msgid)

@@ -32,6 +32,8 @@ module.exports = {
   MID_move: 3,
   MID_Bump: 4,
   MID_HeartBeat: 5,
+  MID_StarBorn: 6,
+  MID_GM: 7,
   //是否碰撞 
   Bumped: null,
   //星星数据

@@ -44,9 +44,9 @@ cc.Class({
 
     request.onreadystatechange = function () {
       if (request.readyState == 4 && request.status >= 200 && request.status < 300) {
-        cc.log("UpdateStarPos response: ", request.response);
-        var data = new Uint32Array(request.response);
-        cc.log("UpdateStarPos data: ", data);
+        //cc.log("UpdateStarPos response: ", request.response)
+        var data = new Uint32Array(request.response); //cc.log("UpdateStarPos data: ", data)
+
         Global.starPosRandseed = data[0];
         Global.starPosRandN = data[1];
         return;
@@ -69,8 +69,7 @@ cc.Class({
 
     request.onreadystatechange = function () {
       if (request.readyState == 4 && request.status >= 200 && request.status < 300) {
-        Global.randseed = parseInt(request.responseText);
-        cc.log("BattleStart response: ", request.responseText);
+        Global.randseed = parseInt(request.responseText); //cc.log("BattleStart response: ", request.responseText)
       }
     };
 

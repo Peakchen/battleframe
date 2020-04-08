@@ -8,6 +8,8 @@ var Global = require("common");
 
 var wsNet = require("wsNet");
 
+var GM = require("gm");
+
 cc.Class({
   "extends": cc.Component,
   properties: {
@@ -29,6 +31,9 @@ cc.Class({
   },
   getwsNetObj: function getwsNetObj() {
     return new wsNet();
+  },
+  getGMObj: function getGMObj() {
+    return new GM();
   },
   setJumpAction: function setJumpAction() {
     // 跳跃上升
@@ -140,7 +145,8 @@ cc.Class({
     //cc.log("player dt: ", this.accLeft, this.accRight)
     //第一次连线广播所在位置，然后获取其他小球所在位置然后进行展示
     if (Global.FirstLogin == null && this.getwsNetObj().CanSendMsg()) {
-      this.sendPlayerPos(Global.MID_login); //this.scheduleOnce(function(){ this.sendPlayerPos(Global.MID_login); },2);
+      this.sendPlayerPos(Global.MID_login); //this.getGMObj().sendResetStarPos() //gm矫正
+      //this.scheduleOnce(function(){ this.sendPlayerPos(Global.MID_login); },2);
 
       Global.FirstLogin = 1;
     } //方向移动操作后没任何方向操作时，则慢慢减速直至停止

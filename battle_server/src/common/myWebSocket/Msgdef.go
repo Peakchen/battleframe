@@ -8,4 +8,5 @@ const (
 	MID_Bump = 4   //撞击
 	MID_HeartBeat = 5 //心跳
 	MID_StarBorn = 6  //星星出生
+	MID_GM  = 7 //gm
 )

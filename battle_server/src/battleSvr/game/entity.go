@@ -10,6 +10,7 @@ import (
 	"math"
 	"common/myWebSocket"
 	"sync"
+	"fmt"
 	//"github.com/globalsign/mgo/bson"
 )
 
@@ -24,11 +25,7 @@ func (this *Entity) Identify() string{
 	return this.StrIdentify
 }
 
-var (
-	_entity *Entity
-)
-
-func GetEntity()*Entity{
+func GetEntity()(_entity *Entity, new bool){
 	_entity = &Entity{}
 	_entity.StrIdentify = "5e0d59f70753bf030c3646ec"
 	common.GetDecodeCache(_entity)
@@ -41,21 +38,29 @@ func GetEntity()*Entity{
 		}
 
 		common.SetEncodeCache(_entity)
+		new = true
 	}
-	return _entity
+	return
 }
 
-func (this *Entity) RandEntityPos(origin *Pos)*Pos{
+const (
+	maxWidth = 960
+)
 
-	//多协程处理数据
-	this.Lock()
-	defer this.Unlock()
-
-	if this.Epos == nil {
-		panic("invalid Epos.")
-		return nil
+func (this *Entity) rand1(){
+	var timeRandSeed = int(time.Now().Unix())
+	randX := common.RandOne(timeRandSeed)
+	this.Epos.Nodex = int(float64(randX - 0.2)*float64(maxWidth))
+	if this.Epos.Nodex > (maxWidth/2) {
+		this.Epos.Nodex = (maxWidth/2)
 	}
 
+	if this.Epos.Nodex < (0 - maxWidth/2) {
+		this.Epos.Nodex = (0 - maxWidth/2)
+	}
+}
+
+func (this *Entity) rand2(origin *Pos){
 	var (
 		hasEqual bool	//是否存在相同的
 		dstNoEnough bool
@@ -64,14 +69,21 @@ func (this *Entity) RandEntityPos(origin *Pos)*Pos{
 		timeRandSeed = int(time.Now().Unix())
 	)
 
-	playersPos := GetPlayer().GetAll()
+	playersPos := GetPlayers().GetAll()
 	for {
 		randX := common.RandOne(timeRandSeed)
-		this.Epos.Nodex = int(float64(randX - 0.5)*float64(960))
-		
+		this.Epos.Nodex = int(float64(randX - 0.2)*float64(maxWidth))
+		if this.Epos.Nodex > (maxWidth/2) {
+			this.Epos.Nodex = (maxWidth/2)
+		}
+
+		if this.Epos.Nodex < (0 - maxWidth/2) {
+			this.Epos.Nodex = (0 - maxWidth/2)
+		}
+
 		if origin != nil {
 			//调整上一次和最新位置距离，太小了会帖在一起相当于没动一样
-			if math.Abs(math.Abs(float64(origin.Nodex)) - float64(this.Epos.Nodex)) < float64(10) {
+			if math.Abs(math.Abs(float64(origin.Nodex)) - float64(this.Epos.Nodex)) < float64(100) {
 				timeRandSeed = int(time.Now().Unix()) + 1
 				continue
 			}
@@ -85,7 +97,7 @@ func (this *Entity) RandEntityPos(origin *Pos)*Pos{
 
 			//判断离上一次球间距，不得小于60
 			result := math.Sqrt(math.Pow(float64(pos.Nodex - this.Epos.Nodex),2) + math.Pow(float64(pos.Nodey - this.Epos.Nodey),2))
-			if result <= float64(60) { //小于此值则碰撞了
+			if result <= float64(100) { //小于此值则碰撞了
 				timeRandSeed = int(time.Now().Unix()) + 1
 				dstNoEnough = true
 				break
@@ -107,6 +119,20 @@ func (this *Entity) RandEntityPos(origin *Pos)*Pos{
 			timeRandSeed = int(time.Now().Unix()) + 1
 		}
 	}
+}
+
+func (this *Entity) RandEntityPos(origin *Pos)*Pos{
+
+	//多协程处理数据
+	this.Lock()
+	defer this.Unlock()
+
+	if this.Epos == nil {
+		panic("invalid Epos.")
+		return nil
+	}
+
+	this.rand1()
 	
 	// timeRandSeed := int(time.Now().Unix())
 	// randX := common.RandOne(timeRandSeed)
@@ -119,27 +145,39 @@ func (this *Entity) IsFirstCreate()bool{
 	return this.Epos.Nodey == 0
 }
 
-func checkNewStarPos(sess *myWebSocket.WebSession){
-	entityptr := GetEntity()
-	if !entityptr.IsFirstCreate() {
-		return
-	}
+func (this *Entity) SetPos(newpos *Pos){
+	this.Epos = newpos
+	common.SetEncodeCache(this)
+}
 
+func SyncStarPos(sess *myWebSocket.WebSession){
 	var (
 		dstmsg = []uint32{}
-	)
+		starpos *Pos
+	) 
 
-	newpos := entityptr.RandEntityPos(nil)
+	entityptr, bnew := GetEntity()
+	if bnew {
+		starpos = entityptr.RandEntityPos(nil)
+	}else{
+		starpos = entityptr.Epos
+	}
+
+	if starpos == nil {
+		panic("invalid pos.")
+	}
+
+	fmt.Println("begin star pos: ", starpos.Nodex, starpos.Nodey)
 	posXflag := Pos_Right
-	posX := newpos.Nodex
-	if newpos.Nodex < 0 {
+	posX := starpos.Nodex
+	if starpos.Nodex < 0 {
 		posXflag = Pos_Left
 		posX = 0 - posX
 	}
 
 	posYflag := Pos_Right
-	posY := newpos.Nodey
-	if newpos.Nodey < 0 {
+	posY := starpos.Nodey
+	if starpos.Nodey < 0 {
 		posYflag = Pos_Left
 		posY = 0 - posY
 	}

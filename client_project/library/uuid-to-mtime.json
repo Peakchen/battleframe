@@ -584,34 +584,39 @@
     "meta": 1586330072086,
     "relativePath": "game.fire"
   },
-  "c7516d28-9c4d-4bf3-9680-61c538d2d68e": {
-    "asset": 1586311288115,
-    "meta": 1586311302758,
-    "relativePath": "scripts\\battle.js"
-  },
-  "6c688bfb-d907-4e29-a982-1824fec5a01d": {
-    "asset": 1586312894019,
-    "meta": 1586313082010,
-    "relativePath": "scripts\\Player.js"
-  },
   "4644fd26-d96b-4005-8472-fa99fa74e686": {
     "asset": 1586326637545,
     "meta": 1586326647231,
     "relativePath": "scripts\\Star.js"
   },
+  "c7516d28-9c4d-4bf3-9680-61c538d2d68e": {
+    "asset": 1586344327074,
+    "meta": 1586344405049,
+    "relativePath": "scripts\\battle.js"
+  },
   "134b4e42-404f-432a-a47a-c9130d518d55": {
-    "asset": 1586328661811,
-    "meta": 1586329016474,
+    "asset": 1586345513171,
+    "meta": 1586346410140,
     "relativePath": "scripts\\common.js"
   },
+  "4e12f2d2-42ed-4bf8-a57a-426c4389abd4": {
+    "asset": 1586344811026,
+    "meta": 1586346410210,
+    "relativePath": "scripts\\Game.js"
+  },
   "f5f0250b-b558-43e3-b3cd-1f4f25679b91": {
-    "asset": 1586331442083,
-    "meta": 1586333380459,
+    "asset": 1586345545978,
+    "meta": 1586346410311,
     "relativePath": "scripts\\wsNet.js"
   },
-  "4e12f2d2-42ed-4bf8-a57a-426c4389abd4": {
-    "asset": 1586333619594,
-    "meta": 1586333622456,
-    "relativePath": "scripts\\Game.js"
+  "2b438d9a-0611-4f3b-ab38-a95d31d15acd": {
+    "asset": 1586346671972,
+    "meta": 1586346674432,
+    "relativePath": "scripts\\gm.js"
+  },
+  "6c688bfb-d907-4e29-a982-1824fec5a01d": {
+    "asset": 1586346844899,
+    "meta": 1586346849422,
+    "relativePath": "scripts\\Player.js"
   }
 }

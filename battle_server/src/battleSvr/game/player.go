@@ -4,34 +4,34 @@ package game
 	运动小球实体
 */
 
-type Player struct {
+type Players struct {
 	MapPos map[int]*Pos
 }
 
 var (
-	_player *Player
+	_Players *Players
 )
 
-func GetPlayer()*Player{
-	if _player == nil {
-		_player = &Player{
+func GetPlayers()*Players{
+	if _Players == nil {
+		_Players = &Players{
 			MapPos: map[int]*Pos{},
 		}
 	}
 
-	return _player
+	return _Players
 }
 
-func (this *Player) GetAll()map[int]*Pos{
+func (this *Players) GetAll()map[int]*Pos{
 	return this.MapPos
 }
 
-func (this *Player) Save(port int, pos *Pos) {
+func (this *Players) Save(port int, pos *Pos) {
 	this.MapPos[port] = pos
 	//新增后广播给其他小球客户端...
 }
 
-func (this *Player) Remove(port int) {
+func (this *Players) Remove(port int) {
 	delete(this.MapPos, port)
 
 	//删掉后广播给其他小球客户端...

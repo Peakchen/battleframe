@@ -1,15 +1,8 @@
 package game
 
-//坐标符号
-const (
-	Pos_Right = uint16(1)
-	Pos_Left = uint16(2)
-)
-
-type Pos struct {
-	nodex int
-	nodey int
-}
+/*
+	运动小球实体
+*/
 
 type Player struct {
 	MapPos map[int]*Pos

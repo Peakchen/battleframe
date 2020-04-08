@@ -85,8 +85,7 @@ cc.Class({
     request.setRequestHeader("Content-Type", "text/plain;charset=UTF-8");
 
     request.onreadystatechange = function () {
-      if (request.readyState == 4 && request.status >= 200 && request.status < 300) {
-        cc.log("Attack response: ", request.responseText);
+      if (request.readyState == 4 && request.status >= 200 && request.status < 300) {//cc.log("Attack response: ", request.responseText)
       }
     };
 

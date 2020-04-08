@@ -93,9 +93,10 @@ var e = o.newPlayerIds.length;
 if (0 != e) {
 cc.log("create purple monsters.");
 for (var t = this, n = "PurpleMonster"; e > 0; ) {
-var s = o.newPlayerIds.pop(), a = o.NewplayerMap.get(s), c = t.node.getChildByName(s.toString());
+var s = o.newPlayerIds.pop();
+if (0 != o.NewplayerMap.has(s)) {
+var a = o.NewplayerMap.get(s), c = t.node.getChildByName(s.toString());
 null != c && t.node.removeChild(c);
-cc.log("new player pos: ", s, o.NewplayerMap.has(s), a.nodex, a.nodey);
 cc.loader.loadRes(n, cc.SpriteFrame, function(e, o) {
 cc.loader.setAutoRelease(n, !0);
 var c = new cc.Node(s.toString());
@@ -105,6 +106,7 @@ t.node.addChild(c, 0, s.toString());
 });
 o.NewplayerMap.delete(s);
 e = o.newPlayerIds.length;
+}
 }
 }
 },
@@ -201,6 +203,7 @@ s.FirstLogin = null;
 this.accLeft = !1;
 this.accRight = !1;
 this.xSpeed = 2 * (Math.random() - .5) * 10;
+this.TickFrame = 0;
 cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
 cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
 this.randPlayerPos();
@@ -217,7 +220,7 @@ stop: function() {
 this.xSpeed = 0;
 },
 sendPlayerPos: function(e) {
-cc.log("send player pos: ", e, this.node.x, this.node.y);
+cc.log("send player pos: ", e, this.TickFrame, this.node.x, this.node.y);
 var t = new ArrayBuffer(24), n = new Uint32Array(t);
 n[0] = e;
 n[1] = 4;
@@ -255,6 +258,11 @@ if (1 == s.Bumped) {
 this.xSpeed = 0;
 s.Bumped = null;
 this.sendPlayerPos(s.MID_move);
+}
+this.TickFrame += e;
+if (this.TickFrame > 1) {
+this.sendPlayerPos(s.MID_move);
+this.TickFrame = 0;
 }
 }
 });
@@ -556,10 +564,7 @@ s.ws = e;
 }
 },
 sendwsmessage: function(e) {
-if (null != s.ws && (null == s.ws || s.ws.readyState != WebSocket.CLOSED && s.ws.readyState != WebSocket.CLOSING)) {
-cc.log("ws sendwsmessage: ", s.ws.readyState);
-s.ws.send(e);
-}
+null != s.ws && (null == s.ws || s.ws.readyState != WebSocket.CLOSED && s.ws.readyState != WebSocket.CLOSING) && s.ws.send(e);
 }
 });
 cc._RF.pop();

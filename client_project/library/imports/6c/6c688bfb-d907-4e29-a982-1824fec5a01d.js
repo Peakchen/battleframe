@@ -69,9 +69,10 @@ cc.Class({
     }
   },
   onLoad: function onLoad() {
-    cc.game.setFrameRate(100);
+    cc.game.setFrameRate(50);
     this.getwsNetObj().swConnect();
-    Global.FirstLogin = null; // 初始化跳跃动作
+    Global.FirstLogin = null;
+    Global.newStarPos = new Map(); // 初始化跳跃动作
     //this.jumpAction = this.setJumpAction();
     //this.node.runAction(this.jumpAction);
     // 加速度方向开关
@@ -79,7 +80,8 @@ cc.Class({
     this.accLeft = false;
     this.accRight = false; // 主角当前水平方向速度
 
-    this.xSpeed = (Math.random() - 0.5) * 2 * 10; // 初始化键盘输入监听
+    this.xSpeed = (Math.random() - 0.5) * 2 * 10;
+    this.TickFrame = 0; // 初始化键盘输入监听
 
     cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
     cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this); //初始化小球位置
@@ -101,7 +103,7 @@ cc.Class({
     this.xSpeed = 0;
   },
   sendPlayerPos: function sendPlayerPos(msgid) {
-    cc.log("send player pos: ", msgid, this.node.x, this.node.y);
+    //cc.log("send player pos: ", msgid, this.TickFrame, this.node.x, this.node.y)
     var buff = new ArrayBuffer(24);
     var data = new Uint32Array(buff);
     data[0] = msgid; //消息ID
@@ -135,12 +137,21 @@ cc.Class({
     this.getwsNetObj().sendwsmessage(data);
   },
   update: function update(dt) {
-    //cc.log("player dt: ", this.accDirection, this.xSpeed)
+    //cc.log("player dt: ", this.accLeft, this.accRight)
     //第一次连线广播所在位置，然后获取其他小球所在位置然后进行展示
     if (Global.FirstLogin == null && this.getwsNetObj().CanSendMsg()) {
       this.sendPlayerPos(Global.MID_login); //this.scheduleOnce(function(){ this.sendPlayerPos(Global.MID_login); },2);
 
       Global.FirstLogin = 1;
+    } //方向移动操作后没任何方向操作时，则慢慢减速直至停止
+
+
+    if (this.accLeft == false && this.accRight == false) {
+      this.xSpeed -= 0.1;
+
+      if (this.xSpeed < 0) {
+        this.xSpeed = 0;
+      }
     } // 根据当前加速度方向每帧更新速度
 
 
@@ -178,6 +189,14 @@ cc.Class({
       Global.Bumped = null; //移动广播所在位置，然后获取其他小球所在位置然后进行展示
 
       this.sendPlayerPos(Global.MID_move);
+    }
+
+    this.TickFrame += dt;
+
+    if (this.TickFrame > 5.0) {
+      //更新帧数据
+      this.sendPlayerPos(Global.MID_move);
+      this.TickFrame = 0;
     } //cc.log("player pos: ", this.node.x, this.node.y)
 
   }

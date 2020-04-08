@@ -60,7 +60,7 @@ func (this *WebSocketSvr) disconnloop(){
 		if proc := GetProcMsg(MID_logout); proc != nil {
 			proc(sess, nil)
 		}
-		BroadCastMsg(sess, MID_logout, []uint32{uint32(sessid)})
+		BroadCastMsg(sess, false, MID_logout, []uint32{uint32(sessid)})
 	}
 }
 

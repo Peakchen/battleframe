@@ -16,6 +16,9 @@ const (
 
     //允许来自对等方的最大信息大小。
     maxMessageSize = 512
+
+    //发送通信管道最大信息量
+    maxWriteMsgSize = 1000
 )
 
 const (

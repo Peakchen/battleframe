@@ -25,15 +25,15 @@ module.exports = {
     MID_login: 1,
     MID_logout: 2,
     MID_move: 3,
+    MID_Bump: 4,
+    MID_HeartBeat: 5,
 
     //是否碰撞 
     Bumped: null,
 
-    //创建精灵数据
-    newplayerCreated: null,
-    newplayerPosx: null,
-    newplayerPosy: null,
-    newPlayerId: null,
+    //星星数据
+    newStarKey: "Star",
+    newStarPos: null,
 
     //测试
     test: null

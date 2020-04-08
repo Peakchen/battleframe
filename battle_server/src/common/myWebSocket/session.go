@@ -5,6 +5,8 @@ import (
 	"github.com/gorilla/websocket"
 	"fmt"
 	"encoding/binary"
+	//"io"
+	"strings"
 )
 
 type wsMessage struct {
@@ -25,8 +27,8 @@ func NewWebSession(conn *websocket.Conn, off chan *WebSession) *WebSession{
 		wsconn: conn,
 		offch: off,
 		RemoteAddr: conn.RemoteAddr().String(),
-		writeCh: make(chan *wsMessage, 1000),
-		readCh: make(chan *wsMessage, 1000),
+		writeCh: make(chan *wsMessage, maxWriteMsgSize),
+		readCh: make(chan *wsMessage, maxWriteMsgSize),
 	}
 }
 
@@ -36,6 +38,8 @@ func (this *WebSession) Handle(){
 }
 
 func (this *WebSession) exit(){
+	this.wsconn.Close()
+
 	this.offch <-this
 
 	if _, noclosed := <-this.writeCh; !noclosed {
@@ -56,14 +60,19 @@ func (this *WebSession) readloop(){
 	}()
 
 	this.wsconn.SetReadLimit(maxMessageSize)
-	//this.wsconn.SetReadDeadline(time.Now().Add(pongWait))
+	this.wsconn.SetReadDeadline(time.Now().Add(pongWait))
 	
 	for {
         msgType, data, err := this.wsconn.ReadMessage()
         if err != nil {
             websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure)
-            fmt.Println("msg read fail, err: ", err.Error())
-            this.wsconn.Close()
+			if strings.EqualFold(err.Error(), "unexpected EOF") {
+				fmt.Println("client close connection, err: ", err.Error(), time.Now().Unix())
+			}else if strings.EqualFold(err.Error(), "use of closed network connection") {
+				fmt.Println("server close connection, err: ", err.Error(), time.Now().Unix())
+			}else{
+				fmt.Println("other info msg read fail, err: ", err.Error(), time.Now().Unix())
+			}
             return
 		}
 		
@@ -77,12 +86,12 @@ func (this *WebSession) readloop(){
 }
 
 func (this *WebSession) read(msg *wsMessage){
-	fmt.Println("read messageType: ", msg.messageType)
+	fmt.Println("read messageType: ", msg.messageType, len(msg.data), time.Now().Unix())
 	switch msg.messageType {
 		case websocket.TextMessage:
 			{
 				fmt.Println("read TextMessage data: ", string(msg.data))
-				this.Write(websocket.TextMessage, []byte("TextMessage hello,too!"))
+				this.Write(websocket.TextMessage, []byte("hello,too!"))
 			}
 		case websocket.BinaryMessage:
 			{
@@ -111,6 +120,7 @@ func (this *WebSession) read(msg *wsMessage){
 					return
 				}
 				
+				fmt.Println("receive msgid: ", msgid)
 				if proc := GetProcMsg(int(msgid)); proc != nil {
 					err, _ := proc(this, params)
 					if err != nil {
@@ -123,15 +133,16 @@ func (this *WebSession) read(msg *wsMessage){
 			}
 		case websocket.CloseMessage:
 			{
+				fmt.Println("read CloseMessage.")
 				this.offch <-this
 			}
 		case websocket.PingMessage:
 			{
-
+				fmt.Println("read PingMessage.")
 			}
 		case websocket.PongMessage:
 			{
-
+				fmt.Println("read PongMessage.")
 			}
 		default:
 			fmt.Println("invalid msg type: ", msg.messageType)
@@ -139,9 +150,9 @@ func (this *WebSession) read(msg *wsMessage){
 }
 
 func (this *WebSession) writeloop(){
-	//ticker := time.NewTicker(pingPeriod)
+	ticker := time.NewTicker(pingPeriod)
     defer func() {
-		//ticker.Stop()
+		ticker.Stop()
 		this.exit()
 	}()
 	
@@ -149,25 +160,33 @@ func (this *WebSession) writeloop(){
 		select {
 			case msg := <-this.writeCh:
 				if err := this.wsconn.WriteMessage(msg.messageType, msg.data); err != nil {
-					fmt.Println("send msg fail, err: ", err.Error())
-					this.wsconn.Close()
+					fmt.Println("send msg fail, err: ", err.Error(), time.Now().Unix())
 					return
 				}
-			// case <-ticker.C:
-			// 	this.wsconn.SetWriteDeadline(time.Now().Add(writeWait))
-			// 	if err := this.wsconn.WriteMessage(websocket.PingMessage, nil); err != nil {
-			// 		fmt.Println("send msg over time, err: ", err.Error())
-			// 		this.wsconn.Close()
-			// 		return
-			// 	}
+			case <-ticker.C:
+				this.wsconn.SetWriteDeadline(time.Now().Add(writeWait))
+				if err := this.wsconn.WriteMessage(websocket.PingMessage, nil); err != nil {
+					fmt.Println("send msg over time, err: ", err.Error(), time.Now().Unix())
+					return
+				}
 			}
 	}
 }
 
 func (this *WebSession) Write(msgtype int, data []byte) {
-	this.writeCh <- &wsMessage{
-		messageType: msgtype,
-		data: data,
+	fmt.Println("session writed channel data len: ", len(this.writeCh), time.Now().Unix())
+	if len(this.writeCh) >= maxWriteMsgSize{
+		time.AfterFunc(time.Duration(5*time.Second), func (){
+			this.writeCh <- &wsMessage{
+				messageType: msgtype,
+				data: data,
+			}
+		})
+	}else{
+		this.writeCh <- &wsMessage{
+			messageType: msgtype,
+			data: data,
+		}
 	}
 }
 

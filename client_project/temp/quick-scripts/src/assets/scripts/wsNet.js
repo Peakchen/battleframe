@@ -7,9 +7,64 @@ cc._RF.push(module, 'f5f02ULtVhD47PNH08lZ5uR', 'wsNet');
 /**
  * websocket 
  */
-var Global = require("common"); //let Player = require("Player")
+var Global = require("common"); //心跳检测
 
 
+var HeartCheck = {
+  timeout: 1000,
+  //60秒
+  timeoutObj: null,
+  serverTimeoutObj: null,
+  disconnectioned: false,
+  reconnectTimeoutobj: null,
+  state: null,
+  //websocket state
+  reset: function reset() {
+    clearTimeout(this.timeoutObj);
+    clearTimeout(this.serverTimeoutObj);
+    return this;
+  },
+  startHeartBeat: function startHeartBeat() {
+    var self = this;
+    this.timeoutObj = setTimeout(function () {
+      //这里发送一个心跳，后端收到后，返回一个心跳消息，onmessage拿到返回的心跳就说明连接正常
+      cc.log("send heart beat...");
+
+      if (Global.ws == null) {
+        return;
+      }
+
+      var buff = new ArrayBuffer(12);
+      var data = new Uint32Array(buff);
+      data[0] = Global.MID_HeartBeat; //消息ID
+
+      data[1] = 1; //消息长度
+
+      data[2] = 0; //anything 随意填充一个数
+
+      Global.ws.send(data);
+      self.serverTimeoutObj = setTimeout(function () {
+        //心跳超时主动断开
+        cc.log("close connection...");
+
+        if (Global.ws == null) {
+          return;
+        }
+
+        Global.ws.close();
+        self.disconnectioned = true;
+      }, self.timeout);
+    }, this.timeout);
+  },
+  startCheckStopHeartBeat: function startCheckStopHeartBeat() {},
+  hasDisconnected: function hasDisconnected() {
+    return this.disconnectioned;
+  },
+  stopReconnectTimer: function stopReconnectTimer() {
+    cc.log("close reconnectTimeout...");
+    clearTimeout(this.reconnectTimeoutobj);
+  }
+};
 cc.Class({
   //extends: cc.Component,
 
@@ -27,23 +82,9 @@ cc.Class({
 
     return Global.ws.readyState == WebSocket.CONNECTING || Global.ws.readyState == WebSocket.OPEN;
   },
-  newPlayer: function newPlayer(arrData) {
-    Global.newplayerCreated = 1;
-    Global.newplayerPosx = arrData[4];
-
-    if (arrData[3] == 2) {
-      Global.newplayerPosx = 0 - Global.newplayerPosx;
-    }
-
-    Global.newplayerPosy = arrData[6];
-
-    if (arrData[5] == 2) {
-      Global.newplayerPosy = 0 - Global.newplayerPosy;
-    }
-  },
   swConnect: function swConnect() {
     if (Global.ws != null) {
-      return;
+      //return
       cc.log("readyState: ", Global.ws.readyState);
 
       if (Global.ws.readyState == WebSocket.CONNECTING || Global.ws.readyState == WebSocket.OPEN) {
@@ -52,11 +93,14 @@ cc.Class({
       }
     }
 
+    var self = this;
     cc.log("addr: ", Global.wsAddr, Global.ws == null);
     var ws = new WebSocket(Global.wsAddr);
 
     ws.onopen = function (e) {
-      cc.log("ws open: ", ws.readyState);
+      cc.log("ws open: ", ws.readyState); //发送心跳
+
+      HeartCheck.reset().startHeartBeat();
     };
 
     ws.onmessage = function (e) {
@@ -138,20 +182,78 @@ cc.Class({
           cc.log("MID_move purple monsters: ", Global.newPlayerIds.length);
           break;
 
+        case Global.MID_Bump:
+          //cc.log("ws message MID_Bump: ", data[1], data[2], data[3], data[4], data[5], data[6])
+
+          /**
+           *  0: 消息ID
+              1：消息长度
+              2: 成功失败标志 (失败则只需要前三个字段)
+              3: 星星x坐标正负标志
+              4: 星星x坐标
+              5：星星y坐标正负标志
+              6：星星y坐标
+           */
+          if (data[2] == 0) {
+            //失败
+            cc.log("ws message MID_Bump fail ... ");
+            break;
+          }
+
+          var nodex = data[4];
+          var nodey = data[6];
+
+          if (data[3] == 2) {
+            nodex = 0 - nodex;
+          }
+
+          if (data[5] == 2) {
+            nodey = 0 - nodey;
+          }
+
+          var starProp = {
+            nodex: nodex,
+            nodey: nodey
+          };
+          Global.newStarPos.set(Global.newStarKey, starProp);
+          break;
+
+        case Global.MID_HeartBeat:
+          cc.log("ws message MID_HeartBeat: ", msgid);
+          break;
+
         default:
           cc.log("未知 消息id: ", msgid);
-      }
+      } //发送心跳
+
+
+      HeartCheck.reset().startHeartBeat();
     };
 
     ws.onerror = function (e) {
-      cc.log("ws error: ", ws.readyState);
-      Global.ws = null;
+      cc.log("ws error: ", ws.readyState); //Global.ws = null
+
+      if (HeartCheck.hasDisconnected() == false) {
+        HeartCheck.stopReconnectTimer();
+        HeartCheck.reconnectTimeoutobj = setTimeout(function () {
+          self.swConnect();
+        }, 1000);
+      } else {
+        HeartCheck.stopReconnectTimer();
+      }
     };
 
     ws.onclose = function (e) {
-      cc.log("ws close: ", ws.readyState); //Player.sendPlayerPos()
+      cc.log("ws close: ", ws.readyState); //Global.ws = null
 
-      Global.ws = null;
+      if (HeartCheck.hasDisconnected() == false) {
+        HeartCheck.stopReconnectTimer();
+        HeartCheck.reconnectTimeoutobj = setTimeout(function () {
+          self.swConnect();
+        }, 1000);
+      } else {
+        HeartCheck.stopReconnectTimer();
+      }
     };
 
     cc.log("global ws init, state: ", ws.readyState);
@@ -172,9 +274,9 @@ cc.Class({
         //正在断开或者已经断开，则不能发送消息
         return;
       }
-    }
+    } //cc.log("ws sendwsmessage: ", Global.ws.readyState)
 
-    cc.log("ws sendwsmessage: ", Global.ws.readyState);
+
     Global.ws.send(data);
   }
 });

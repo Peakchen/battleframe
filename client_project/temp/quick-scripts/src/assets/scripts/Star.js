@@ -29,7 +29,8 @@ cc.Class({
     var dist = this.node.position.sub(playerPos).mag();
     return dist;
   },
-  onPicked: function onPicked(frame, dist) {
+  getAnyPlayerDistance: function getAnyPlayerDistance() {},
+  onPicked: function onPicked() {
     //碰撞后发送一个消息
     // var buff = new ArrayBuffer(12)
     // var data = new Uint32Array(buff)
@@ -39,15 +40,86 @@ cc.Class({
     //     data[i] = i + 1
     // }
     Global.Bumped = 1; // this.getwsNetObj().sendwsmessage(data)
-    // 发送撞击星星事件
+    // 当星星被收集时，调用 Game 脚本中的接口，生成一个新的星星
 
-    this.getBattleObj().postAttackMsg(frame, dist); // 当星星被收集时，调用 Game 脚本中的接口，生成一个新的星星
+    var data = Global.newStarPos.get(Global.newStarKey);
+    var nodex = data.nodex;
+    var nodey = data.nodey; //cc.log("update star pos: ", data.nodex, data.nodey)
 
-    this.game.spawnNewStar(); // 调用 Game 脚本的得分方法
+    this.game.spawnNewStar(nodex, nodey); // 调用 Game 脚本的得分方法
 
     this.game.gainScore(); // 然后销毁当前星星节点
 
     this.node.destroy();
+  },
+
+  /*
+  撞击响应
+  请求消息结构：
+  0: 消息ID
+  1：消息长度 8
+  2: 小球x坐标正负标志
+  3: 小球x坐标
+  4：小球y坐标正负标志
+  5：小球y坐标
+  6: 星星x坐标正负标志
+  7: 星星x坐标
+  8：星星y坐标正负标志
+      9：星星y坐标
+  */
+  sendBumpMsg: function sendBumpMsg() {
+    var buff = new ArrayBuffer(40);
+    var data = new Uint32Array(buff);
+    data[0] = 4; //消息ID
+
+    data[1] = 8; //消息长度
+    //小球信息
+
+    var playerPos = this.game.player.getPosition();
+    var playerX = playerPos.x;
+    var playerXflag = 1;
+
+    if (playerX < 0.0) {
+      playerXflag = 2;
+      playerX = 0.0 - playerX;
+    }
+
+    var playerY = playerPos.y;
+    var playerYflag = 1;
+
+    if (playerY < 0.0) {
+      playerYflag = 2;
+      playerY = 0.0 - playerY;
+    }
+
+    data[2] = playerXflag;
+    data[3] = parseInt(playerX);
+    data[4] = playerYflag;
+    data[5] = parseInt(playerY); //星星信息
+
+    var starPos = this.node.getPosition();
+    var starX = starPos.x;
+    var starXflag = 1;
+
+    if (starX < 0.0) {
+      starXflag = 2;
+      starX = 0.0 - starX;
+    }
+
+    var starY = starPos.y;
+    var starYflag = 1;
+
+    if (starY < 0.0) {
+      starYflag = 2;
+      starY = 0.0 - starY;
+    }
+
+    data[6] = starXflag;
+    data[7] = parseInt(starX);
+    data[8] = starYflag;
+    data[9] = parseInt(starY); //cc.log("send bump star: ", data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9])
+
+    this.getwsNetObj().sendwsmessage(data);
   },
   update: function update(dt) {
     //cc.log("star dt: ", dt)
@@ -59,10 +131,17 @@ cc.Class({
       }
 
       var frame = parseInt(dt);
-      var dist = parseInt(this.getPlayerDistance()); //cc.log("star info: ", dt, frame, dist)
+      var dist = parseInt(this.getPlayerDistance()); // 发送撞击星星事件
+      //this.getBattleObj().postAttackMsg(frame, dist);
+      //cc.log("star info: ", dt, frame, dist)
 
-      this.onPicked(frame, dist);
+      this.sendBumpMsg();
       return;
+    }
+
+    if (Global.newStarPos.has(Global.newStarKey)) {
+      this.onPicked();
+      Global.newStarPos["delete"](Global.newStarKey);
     } // 根据 Game 脚本中的计时器更新星星的透明度
     //var opacityRatio = 1 - this.game.timer/this.game.starDuration;
     //var minOpacity = 50;

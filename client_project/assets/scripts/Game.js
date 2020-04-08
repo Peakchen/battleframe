@@ -62,18 +62,26 @@ cc.Class({
         this.timer = 0;
         this.starDuration = 0;
         // 生成一个新的星星
-        this.spawnNewStar();
+        this.spawnNewStar(0.0, 0.0);
         // 初始化计分
         this.score = 0;
     },
 
-    spawnNewStar: function() {
+    spawnNewStar: function(x, y) {
+        //cc.log("new star pos: ", x, y)
         // 使用给定的模板在场景中生成一个新节点
         var newStar = cc.instantiate(this.starPrefab);
         // 将新增的节点添加到 Canvas 节点下面
         this.node.addChild(newStar);
         // 为星星设置一个随机位置
-        newStar.setPosition(this.getNewStarPosition());
+        if (x != 0.0 || y != 0.0 ){
+            //var maxX = this.node.width/2;
+           // var newx = (x - 0.5) * 2 * maxX;
+            newStar.setPosition(cc.v2(x, y));
+        }else{
+            newStar.setPosition(this.getNewStarPosition());
+        }
+        
         // 在星星组件上暂存 Game 对象的引用
         newStar.getComponent('Star').game = this;
         // 重置计时器，根据消失时间范围随机取一个值
@@ -90,6 +98,13 @@ cc.Class({
         var maxX = this.node.width/2;
         this.getBattleObj().postUpdateStarPosMsg(maxX)
         randX = (Math.random() - 0.5) * 2 * maxX;
+        if (randX >= this.node.width/2) {
+            randX = this.node.width/3
+        }
+
+        if (randX <= (0-this.node.width/2)){
+            randX = (0-this.node.width/3)
+        }
 
         //服务器给的坐标，客户端随便检验看看是否一致
         // var randN = this.getBattleObj().getRandOne(Global.starPosRandseed)
@@ -97,8 +112,6 @@ cc.Class({
         //     cc.log("invalid rand number: ", randN, Global.starPosRandN)
         //     return cc.v2(randX, randY); 
         // }
-
-        randX = (Math.random() - 0.5) * 2 * maxX;
         //cc.log("star randX: ", randX)
         //randX = (this.getBattleObj().getRandNumber(4)*Math.random() - 2.0) * maxX;
         // 返回星星坐标
@@ -118,6 +131,10 @@ cc.Class({
         var url = "PurpleMonster"
         for (;playeridsLen > 0;){
             var playerid = Global.newPlayerIds.pop() //弹出数据
+            if (Global.NewplayerMap.has(playerid) == false) {
+                continue
+            }
+
             var data = Global.NewplayerMap.get(playerid) //节点数据坐标
             var child = self.node.getChildByName(playerid.toString())
             if (child != null){
@@ -125,7 +142,7 @@ cc.Class({
             }
 
             //创建精灵
-            cc.log("new player pos: ", playerid, Global.NewplayerMap.has(playerid), data.nodex, data.nodey)
+            //cc.log("new player pos: ", playerid, data.nodex, data.nodey)
             cc.loader.loadRes(url, cc.SpriteFrame, function(err, spriteFrame){
                 cc.loader.setAutoRelease(url, true);
                 var node = new cc.Node(playerid.toString())
@@ -206,7 +223,7 @@ cc.Class({
         // 更新 scoreDisplay Label 的文字
         this.scoreDisplay.string = 'Score: ' + this.score;
         // 播放得分音效
-        cc.audioEngine.playEffect(this.scoreAudio, false);
+        //cc.audioEngine.playEffect(this.scoreAudio, false);
     },
 
     gameOver: function () {

@@ -94,11 +94,6 @@
     "meta": 1585572892907,
     "relativePath": "mikado_outline_shadow.fnt"
   },
-  "5dcd99cb-77a4-4c95-a7d8-4b5b45295ae5": {
-    "asset": 1586244512895,
-    "meta": 1586244512901,
-    "relativePath": "game.fire"
-  },
   "51b0ea7f-a166-4130-bf0b-7f70fc60cb1d": {
     "asset": 1586239223483,
     "meta": 1526930962000,
@@ -564,20 +559,10 @@
     "meta": 1585830309632,
     "relativePath": "model\\primitives.fbx"
   },
-  "c7516d28-9c4d-4bf3-9680-61c538d2d68e": {
-    "asset": 1585903591261,
-    "meta": 1585903758998,
-    "relativePath": "scripts\\battle.js"
-  },
   "5b5917c2-90ca-4d02-84c1-4e21337a576b": {
     "asset": 1585903590140,
     "meta": 1585903759076,
     "relativePath": "scripts\\ioNet.js"
-  },
-  "4644fd26-d96b-4005-8472-fa99fa74e686": {
-    "asset": 1586225484242,
-    "meta": 1586225485442,
-    "relativePath": "scripts\\Star.js"
   },
   "c38aee5b-8ebe-4b3e-9432-a839a2ff8280": {
     "asset": 1586228195561,
@@ -594,24 +579,39 @@
     "meta": 1586239788651,
     "relativePath": "scripts\\playerdata.js"
   },
-  "134b4e42-404f-432a-a47a-c9130d518d55": {
-    "asset": 1586242059394,
-    "meta": 1586242250460,
-    "relativePath": "scripts\\common.js"
+  "5dcd99cb-77a4-4c95-a7d8-4b5b45295ae5": {
+    "asset": 1586330072080,
+    "meta": 1586330072086,
+    "relativePath": "game.fire"
+  },
+  "c7516d28-9c4d-4bf3-9680-61c538d2d68e": {
+    "asset": 1586311288115,
+    "meta": 1586311302758,
+    "relativePath": "scripts\\battle.js"
   },
   "6c688bfb-d907-4e29-a982-1824fec5a01d": {
-    "asset": 1586242066202,
-    "meta": 1586242250561,
+    "asset": 1586312894019,
+    "meta": 1586313082010,
     "relativePath": "scripts\\Player.js"
   },
-  "f5f0250b-b558-43e3-b3cd-1f4f25679b91": {
-    "asset": 1586242241916,
-    "meta": 1586242250590,
-    "relativePath": "scripts\\wsNet.js"
-  },
   "4e12f2d2-42ed-4bf8-a57a-426c4389abd4": {
-    "asset": 1586244508715,
-    "meta": 1586244509557,
+    "asset": 1586326646234,
+    "meta": 1586326647196,
     "relativePath": "scripts\\Game.js"
+  },
+  "4644fd26-d96b-4005-8472-fa99fa74e686": {
+    "asset": 1586326637545,
+    "meta": 1586326647231,
+    "relativePath": "scripts\\Star.js"
+  },
+  "134b4e42-404f-432a-a47a-c9130d518d55": {
+    "asset": 1586328661811,
+    "meta": 1586329016474,
+    "relativePath": "scripts\\common.js"
+  },
+  "f5f0250b-b558-43e3-b3cd-1f4f25679b91": {
+    "asset": 1586331175029,
+    "meta": 1586331178766,
+    "relativePath": "scripts\\wsNet.js"
   }
 }

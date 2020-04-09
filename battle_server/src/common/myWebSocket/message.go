@@ -16,7 +16,7 @@ func MsgRegister(id int, cb WsCallback) {
 	msgs[id] = cb
 }
 
-func GetProcMsg(id int) WsCallback{
+func GetGameLogicProcMsg(id int) WsCallback{
 	return msgs[id]
 }
 

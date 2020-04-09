@@ -57,7 +57,7 @@ func (this *WebSocketSvr) disconnloop(){
 		if err != nil {
 			panic(err)
 		}
-		if proc := GetProcMsg(MID_logout); proc != nil {
+		if proc := GetGameLogicProcMsg(MID_logout); proc != nil {
 			proc(sess, nil)
 		}
 		BroadCastMsg(sess, false, MID_logout, []uint32{uint32(sessid)})

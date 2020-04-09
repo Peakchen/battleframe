@@ -5,19 +5,19 @@ if (!t[c]) {
 var r = c.split("/");
 r = r[r.length - 1];
 if (!t[r]) {
-var u = "function" == typeof __require && __require;
-if (!i && u) return u(r, !0);
+var l = "function" == typeof __require && __require;
+if (!i && l) return l(r, !0);
 if (a) return a(r, !0);
 throw new Error("Cannot find module '" + c + "'");
 }
 c = r;
 }
-var l = n[c] = {
+var u = n[c] = {
 exports: {}
 };
-t[c][0].call(l.exports, function(e) {
+t[c][0].call(u.exports, function(e) {
 return o(t[c][1][e] || e);
-}, l, l.exports, e, t, n, s);
+}, u, u.exports, e, t, n, s);
 }
 return n[c].exports;
 }
@@ -62,6 +62,7 @@ getwsNetObj: function() {
 return new a();
 },
 onLoad: function() {
+cc.log("game on load init...");
 o.PlayerSessionMap = new Map();
 o.NewplayerMap = new Map();
 o.newPlayerIds = new Array();
@@ -90,25 +91,37 @@ return cc.v2(e, -100);
 },
 checkNewPlayer: function() {
 var e = o.newPlayerIds.length;
-if (0 != e) for (var t = this, n = "PurpleMonster"; e > 0; ) {
-var s = o.newPlayerIds.pop();
-if (0 != o.NewplayerMap.has(s)) {
-var a = o.NewplayerMap.get(s), c = t.node.getChildByName(s.toString());
-null != c && t.node.removeChild(c);
-cc.loader.loadRes(n, cc.SpriteFrame, function(e, o) {
-cc.loader.setAutoRelease(n, !0);
-var c = new cc.Node(s.toString());
-c.position = cc.v2(a.nodex, a.nodey);
-c.addComponent(cc.Sprite).spriteFrame = o;
-t.node.addChild(c, 0, s.toString());
-});
-o.NewplayerMap.delete(s);
-e = o.newPlayerIds.length;
+if (0 != e) for (var t = this, n = "PurpleMonster", s = !1; e > 0; ) {
+var a = o.newPlayerIds.pop();
+if (0 == o.NewplayerMap.has(a)) {
+cc.log("NewplayerMap not find, playerid: ", a);
+break;
 }
+var c = o.NewplayerMap.get(a), i = t.node.getChildByName(a.toString());
+if (null != i) {
+cc.log("child pos: ", i.x, i.y);
+if (i.x != c.nodex || c.nodey != i.y) {
+t.node.removeChild(i);
+s = !0;
+}
+} else s = !0;
+if (s) {
+cc.loader.loadRes(n, cc.SpriteFrame, function(e, s) {
+cc.loader.setAutoRelease(n, !0);
+var o = new cc.Node(a.toString());
+o.position = cc.v2(c.nodex, c.nodey);
+o.addComponent(cc.Sprite).spriteFrame = s;
+t.node.addChild(o, 0, a.toString());
+});
+s = !1;
+}
+o.NewplayerMap.delete(a);
+e = o.newPlayerIds.length;
 }
 },
 checklogout: function() {
 for (var e = o.DelPlayerIds.length; e > 0; ) {
+cc.log("checklogout...");
 var t = o.DelPlayerIds.pop(), n = this.node.getChildByName(t);
 null != n && this.node.removeChild(n);
 e = o.DelPlayerIds.length;
@@ -320,20 +333,20 @@ t[2] = o;
 t[3] = parseInt(s);
 t[4] = c;
 t[5] = parseInt(a);
-var i = this.node.getPosition(), r = i.x, u = 1;
+var i = this.node.getPosition(), r = i.x, l = 1;
 if (r < 0) {
-u = 2;
+l = 2;
 r = 0 - r;
 }
-var l = i.y, d = 1;
-if (l < 0) {
+var u = i.y, d = 1;
+if (u < 0) {
 d = 2;
-l = 0 - l;
+u = 0 - u;
 }
-t[6] = u;
+t[6] = l;
 t[7] = parseInt(r);
 t[8] = d;
-t[9] = parseInt(l);
+t[9] = parseInt(u);
 this.getwsNetObj().sendwsmessage(t);
 },
 update: function(e) {
@@ -629,6 +642,7 @@ nodey: i
 0 == s.PlayerSessionMap.has(a) && s.PlayerSessionMap.set(a, r);
 s.NewplayerMap.set(a, r);
 s.newPlayerIds.push(a);
+cc.log("ws message MID_login: ", s.newPlayerIds.length, a, s.NewplayerMap.has(a));
 break;
 
 case s.MID_logout:
@@ -650,6 +664,7 @@ nodey: i
 0 == s.PlayerSessionMap.has(a) && s.PlayerSessionMap.set(a, r);
 s.NewplayerMap.set(a, r);
 s.newPlayerIds.push(a);
+cc.log("MID_move purple monsters: ", s.newPlayerIds.length, a, s.NewplayerMap.has(a));
 break;
 
 case s.MID_Bump:
@@ -660,11 +675,11 @@ break;
 c = t[4], i = t[6];
 2 == t[3] && (c = 0 - c);
 2 == t[5] && (i = 0 - i);
-var u = {
+var l = {
 nodex: c,
 nodey: i
 };
-s.newStarPos.set(s.newStarKey, u);
+s.newStarPos.set(s.newStarKey, l);
 break;
 
 case s.MID_HeartBeat:
@@ -676,11 +691,11 @@ cc.log("ws message MID_StarBorn: ", t[2], t[3], t[4], t[5]);
 c = t[3], i = t[5];
 2 == t[2] && (c = 0 - c);
 2 == t[4] && (i = 0 - i);
-u = {
+l = {
 nodex: c,
 nodey: i
 };
-s.newStarPos.set(s.newStarKey, u);
+s.newStarPos.set(s.newStarKey, l);
 break;
 
 case s.MID_GM:

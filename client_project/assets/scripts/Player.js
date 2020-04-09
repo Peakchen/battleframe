@@ -76,6 +76,7 @@ cc.Class({
         this.getwsNetObj().swConnect()
         Global.FirstLogin = null
         Global.newStarPos = new Map();
+        
         // 初始化跳跃动作
         //this.jumpAction = this.setJumpAction();
         //this.node.runAction(this.jumpAction);

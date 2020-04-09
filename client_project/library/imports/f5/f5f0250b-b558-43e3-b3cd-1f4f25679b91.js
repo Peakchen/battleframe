@@ -140,6 +140,7 @@ cc.Class({
 
           Global.NewplayerMap.set(key, playerProp);
           Global.newPlayerIds.push(key);
+          cc.log("ws message MID_login: ", Global.newPlayerIds.length, key, Global.NewplayerMap.has(key));
           break;
 
         case Global.MID_logout:
@@ -174,8 +175,8 @@ cc.Class({
           }
 
           Global.NewplayerMap.set(key, playerProp);
-          Global.newPlayerIds.push(key); //cc.log("MID_move purple monsters: ", Global.newPlayerIds.length)
-
+          Global.newPlayerIds.push(key);
+          cc.log("MID_move purple monsters: ", Global.newPlayerIds.length, key, Global.NewplayerMap.has(key));
           break;
 
         case Global.MID_Bump:

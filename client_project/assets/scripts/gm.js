@@ -2,6 +2,7 @@
 let wsNet = require("wsNet")
 let Global = require("common")
 
+// gm id列表
 var GMID = {
     resetStarPos: 1,
 }

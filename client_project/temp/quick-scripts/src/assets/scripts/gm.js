@@ -6,7 +6,8 @@ cc._RF.push(module, '2b4382aBhFPO6s4qV0x0VrN', 'gm');
 
 var wsNet = require("wsNet");
 
-var Global = require("common");
+var Global = require("common"); // gm id列表
+
 
 var GMID = {
   resetStarPos: 1

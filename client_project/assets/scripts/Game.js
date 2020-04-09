@@ -46,7 +46,7 @@ cc.Class({
     },
 
     onLoad: function () {
-
+        cc.log("game on load init...")
         //this.getwsNetObj().sendwsmessage("hello")
         Global.PlayerSessionMap = new Map();
         Global.NewplayerMap = new Map();
@@ -130,29 +130,40 @@ cc.Class({
         //cc.log("create purple monsters.")
         var self = this;
         var url = "PurpleMonster"
+        var needCreate = false
         for (;playeridsLen > 0;){
             var playerid = Global.newPlayerIds.pop() //弹出数据
             if (Global.NewplayerMap.has(playerid) == false) {
-                continue
+                cc.log("NewplayerMap not find, playerid: ", playerid)
+                break
             }
 
             var data = Global.NewplayerMap.get(playerid) //节点数据坐标
             var child = self.node.getChildByName(playerid.toString())
             if (child != null){
-                self.node.removeChild(child)
+                if (child.x != data.nodex || data.nodey != child.y) {   //位置相同就不用频繁刷新了
+                    self.node.removeChild(child)
+                    needCreate = true
+                }
+            }else{
+                needCreate = true
             }
 
-            //创建精灵
-            //cc.log("new player pos: ", playerid, data.nodex, data.nodey)
-            cc.loader.loadRes(url, cc.SpriteFrame, function(err, spriteFrame){
-                cc.loader.setAutoRelease(url, true);
-                var node = new cc.Node(playerid.toString())
-                node.position = cc.v2(data.nodex, data.nodey);
-                const sprite = node.addComponent(cc.Sprite)
-                sprite.spriteFrame = spriteFrame
-                self.node.addChild(node, 0, playerid.toString()) //https://blog.csdn.net/zhang431705/article/details/21650727
-            })
+            if (needCreate) {
+                //创建精灵
+                //cc.log("new player pos: ", playerid, data.nodex, data.nodey)
+                cc.loader.loadRes(url, cc.SpriteFrame, function(err, spriteFrame){
+                    cc.loader.setAutoRelease(url, true);
+                    var node = new cc.Node(playerid.toString())
+                    node.position = cc.v2(data.nodex, data.nodey);
+                    const sprite = node.addComponent(cc.Sprite)
+                    sprite.spriteFrame = spriteFrame
+                    self.node.addChild(node, 0, playerid.toString()) //https://blog.csdn.net/zhang431705/article/details/21650727
+                })
 
+                needCreate = false
+            }
+           
             //剩余长度检查
             Global.NewplayerMap.delete(playerid) //取出即删除
             playeridsLen = Global.newPlayerIds.length
@@ -169,6 +180,7 @@ cc.Class({
         var logoutlen = Global.DelPlayerIds.length
         var self = this;
         for(;logoutlen > 0;) {
+            cc.log("checklogout...")
             var playerid = Global.DelPlayerIds.pop()
             var child = self.node.getChildByName(playerid)
             if (child != null){

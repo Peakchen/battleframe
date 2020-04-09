@@ -4,7 +4,7 @@ import (
 	"time"
 	"github.com/gorilla/websocket"
 	"fmt"
-	"encoding/binary"
+	//"encoding/binary"
 	//"io"
 	"strings"
 )
@@ -87,65 +87,10 @@ func (this *WebSession) readloop(){
 
 func (this *WebSession) read(msg *wsMessage){
 	fmt.Println("read messageType: ", msg.messageType, len(msg.data), time.Now().Unix())
-	switch msg.messageType {
-		case websocket.TextMessage:
-			{
-				fmt.Println("read TextMessage data: ", string(msg.data))
-				this.Write(websocket.TextMessage, []byte("hello,too!"))
-			}
-		case websocket.BinaryMessage:
-			{
-				var pos int
-				msgid := binary.LittleEndian.Uint32(msg.data[pos:])	//消息id
-				pos+=4
-
-				datalen := binary.LittleEndian.Uint32(msg.data[pos:]) //消息长度
-				pos+=4
-
-				// sendType := binary.LittleEndian.Uint32(msg.data[pos:]) //消息发送类型
-				// pos+=2
-
-				var (
-					params = []uint32{}	
-				)
-				for i := uint32(0); i < datalen; i++ {
-					param := binary.LittleEndian.Uint32(msg.data[pos:])
-					pos+=4
-
-					params = append(params, param)
-				}
-
-				if len(params) <= 0 {
-					fmt.Println("invalid params: ", params)
-					return
-				}
-				
-				fmt.Println("receive msgid: ", msgid)
-				if proc := GetProcMsg(int(msgid)); proc != nil {
-					err, _ := proc(this, params)
-					if err != nil {
-						fmt.Println("proc msg err: ", err)
-					}
-				}else{
-					fmt.Println("invalid msg id: ", msgid)
-				}
-
-			}
-		case websocket.CloseMessage:
-			{
-				fmt.Println("read CloseMessage.")
-				this.offch <-this
-			}
-		case websocket.PingMessage:
-			{
-				fmt.Println("read PingMessage.")
-			}
-		case websocket.PongMessage:
-			{
-				fmt.Println("read PongMessage.")
-			}
-		default:
-			fmt.Println("invalid msg type: ", msg.messageType)
+	if handler := GetMessageHandler(msg.messageType); handler != nil {
+		handler(this, msg)
+	}else{
+		panic(fmt.Errorf("invalid message type: %v.", msg.messageType))
 	}
 }
 

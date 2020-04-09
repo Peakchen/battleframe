@@ -47,8 +47,7 @@ const (
 	maxWidth = 960
 )
 
-func (this *Entity) rand1(){
-	var timeRandSeed = int(time.Now().Unix())
+func (this *Entity) rand1(timeRandSeed int){
 	randX := common.RandOne(timeRandSeed)
 	this.Epos.Nodex = int(float64(randX - 0.2)*float64(maxWidth))
 	if this.Epos.Nodex > (maxWidth/2) {
@@ -71,16 +70,7 @@ func (this *Entity) rand2(origin *Pos){
 
 	playersPos := GetPlayers().GetAll()
 	for {
-		randX := common.RandOne(timeRandSeed)
-		this.Epos.Nodex = int(float64(randX - 0.2)*float64(maxWidth))
-		if this.Epos.Nodex > (maxWidth/2) {
-			this.Epos.Nodex = (maxWidth/2)
-		}
-
-		if this.Epos.Nodex < (0 - maxWidth/2) {
-			this.Epos.Nodex = (0 - maxWidth/2)
-		}
-
+		this.rand1(timeRandSeed)
 		if origin != nil {
 			//调整上一次和最新位置距离，太小了会帖在一起相当于没动一样
 			if math.Abs(math.Abs(float64(origin.Nodex)) - float64(this.Epos.Nodex)) < float64(100) {
@@ -132,7 +122,7 @@ func (this *Entity) RandEntityPos(origin *Pos)*Pos{
 		return nil
 	}
 
-	this.rand1()
+	this.rand1(int(time.Now().Unix()))
 	
 	// timeRandSeed := int(time.Now().Unix())
 	// randX := common.RandOne(timeRandSeed)

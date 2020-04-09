@@ -60,9 +60,8 @@ func (this *WebSession) readloop(){
 	}()
 
 	this.wsconn.SetReadLimit(maxMessageSize)
-	this.wsconn.SetReadDeadline(time.Now().Add(pongWait))
-	
 	for {
+		this.wsconn.SetReadDeadline(time.Now().Add(pongWait))
         msgType, data, err := this.wsconn.ReadMessage()
         if err != nil {
             websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure)
@@ -104,6 +103,7 @@ func (this *WebSession) writeloop(){
 	for {
 		select {
 			case msg := <-this.writeCh:
+				this.wsconn.SetWriteDeadline(time.Now().Add(writeWait))
 				if err := this.wsconn.WriteMessage(msg.messageType, msg.data); err != nil {
 					fmt.Println("send msg fail, err: ", err.Error(), time.Now().Unix())
 					return

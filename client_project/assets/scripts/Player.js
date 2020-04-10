@@ -118,11 +118,15 @@ cc.Class({
     sendPlayerPos: function(msgid) {
         //cc.log("send player pos: ", msgid, this.TickFrame, this.node.x, this.node.y)
 
-        var buff = new ArrayBuffer(24)
+        if (Global.mySessionId == null) {
+            return
+        }
+
+        var buff = new ArrayBuffer(28)
         var data = new Uint32Array(buff)
 
         data[0] = msgid //消息ID
-        data[1] = 4 //消息长度
+        data[1] = 5 //消息长度
 
         var nodexflag = 1
         var nodex = this.node.x
@@ -142,6 +146,7 @@ cc.Class({
 
         data[4] = nodeyflag    //y坐标正负
         data[5] = parseInt(nodey) //y坐标
+        data[6] = Global.mySessionId
 
         this.getwsNetObj().sendwsmessage(data)
     },
@@ -192,7 +197,7 @@ cc.Class({
         }
 
         this.TickFrame += dt
-        if (this.TickFrame > 5.0 ){
+        if (this.TickFrame > 10.0 ){
             //更新帧数据
             this.sendPlayerPos(Global.MID_move)
             this.TickFrame = 0

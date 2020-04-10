@@ -9,8 +9,8 @@ import (
 	"github.com/gorilla/websocket"
 	"fmt"
 	"time"
-	"strings"
-	"strconv"
+	//"strings"
+	//"strconv"
 )
 
 type WebSocketSvr struct {
@@ -50,17 +50,16 @@ func (this *WebSocketSvr) wsSvrHandler(resp http.ResponseWriter, req *http.Reque
 func (this *WebSocketSvr) disconnloop(){
 	for {
 		sess := <-this.offch
-		fmt.Println("exit ws socket: ", sess.RemoteAddr, time.Now().Unix())
+		mosterid := sess.GetId()
+		fmt.Println("exit ws socket: ", sess.RemoteAddr, mosterid, time.Now().Unix())
 		GwebSessionMgr.RemoveSession(sess.RemoteAddr)
-		arrAddr := strings.Split(sess.RemoteAddr, ":")
-		sessid, err := strconv.Atoi(arrAddr[1])
-		if err != nil {
-			panic(err)
-		}
 		if proc := GetGameLogicProcMsg(MID_logout); proc != nil {
 			proc(sess, nil)
 		}
-		BroadCastMsg(sess, false, MID_logout, []uint32{uint32(sessid)})
+
+		if mosterid != 0 {
+			BroadCastMsg(sess, false, MID_logout, []uint32{mosterid})
+		}
 	}
 }
 

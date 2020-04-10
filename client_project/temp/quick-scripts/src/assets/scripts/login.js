@@ -132,7 +132,7 @@ cc.Class({
         }
 
         Global.DoLoginAction = 0;
-      }, 1);
+      }, 2);
     }
   },
   //是否都是数字

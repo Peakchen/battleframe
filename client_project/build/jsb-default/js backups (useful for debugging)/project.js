@@ -228,24 +228,27 @@ stop: function() {
 this.xSpeed = 0;
 },
 sendPlayerPos: function(e) {
-var t = new ArrayBuffer(24), n = new Uint32Array(t);
+if (null != s.mySessionId) {
+var t = new ArrayBuffer(28), n = new Uint32Array(t);
 n[0] = e;
-n[1] = 4;
-var s = 1, o = this.node.x;
-if (o < 0) {
-s = 2;
-o = 0 - o;
+n[1] = 5;
+var o = 1, c = this.node.x;
+if (c < 0) {
+o = 2;
+c = 0 - c;
 }
-n[2] = s;
-n[3] = parseInt(o);
-var c = 1, i = -88;
-if (i < 0) {
-c = 2;
-i = 0 - i;
+n[2] = o;
+n[3] = parseInt(c);
+var i = 1, a = -88;
+if (a < 0) {
+i = 2;
+a = 0 - a;
 }
-n[4] = c;
-n[5] = parseInt(i);
+n[4] = i;
+n[5] = parseInt(a);
+n[6] = s.mySessionId;
 this.getwsNetObj().sendwsmessage(n);
+}
 },
 update: function(e) {
 if (0 == this.accLeft && 0 == this.accRight) {
@@ -659,7 +662,7 @@ cc.log("玩家登陆成功, id：", o.mySessionId);
 this.change2GameMain();
 }
 o.DoLoginAction = 0;
-}, 1);
+}, 2);
 },
 containDigital: function(e) {
 return new RegExp("^[0-9]*$").test(e);
@@ -757,11 +760,12 @@ cc.log("ws message MID_logout, sessionid: ", t);
 s.DelPlayerIds.push(t);
 s.PlayerSessionMap.delete(t);
 }, a = function(e) {
-var t = e[2].toString(), n = e[4], o = e[6];
-2 == e[3] && (n = 0 - n);
-2 == e[5] && (o = 0 - o);
+cc.log("ws message MID_move: ", e[1], e[2], e[3], e[4], e[5], e[6]);
+var t = e[6].toString(), n = e[3], o = e[5];
+2 == e[2] && (n = 0 - n);
+2 == e[4] && (o = 0 - o);
 var c = {
-sessionId: e[2],
+sessionId: e[6],
 nodex: n,
 nodey: o
 };
@@ -811,6 +815,19 @@ s.newPlayerIds.push(t);
 }, g = function(e) {
 cc.log("ws message MID_Register: ", e[2]);
 s.RegisterSucc = e[2];
+}, h = function(e) {
+cc.log("ws message MID_SyncPos: ", e[1], e[2], e[3], e[4], e[5], e[6]);
+var t = e[6].toString(), n = e[3], o = e[5];
+2 == e[2] && (n = 0 - n);
+2 == e[4] && (o = 0 - o);
+var c = {
+sessionId: e[6],
+nodex: n,
+nodey: o
+};
+0 == s.PlayerSessionMap.has(t) && s.PlayerSessionMap.set(t, c);
+s.NewplayerMap.set(t, c);
+s.newPlayerIds.push(t);
 };
 cc.Class({
 CanSendMsg: function() {
@@ -862,6 +879,10 @@ break;
 
 case s.MID_Register:
 g(t);
+break;
+
+case s.MID_SyncPos:
+h(t);
 break;
 
 default:

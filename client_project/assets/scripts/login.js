@@ -141,7 +141,7 @@ cc.Class({
                     this.change2GameMain()
                 }
                 Global.DoLoginAction = 0
-             },1);
+             },2);
         }
     },
 

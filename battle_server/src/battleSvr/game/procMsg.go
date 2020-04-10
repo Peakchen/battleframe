@@ -19,7 +19,7 @@ import (
 	* 6：nodey y坐标值 
 */
 
-func saveAndupdatePos(sess *myWebSocket.WebSession, sessid, msgid int, data []uint32) (error, bool) {
+func saveAndupdatePos(sess *myWebSocket.WebSession, msgid int, data []uint32) (error, bool) {
 	var (
 		pos = &Pos{}
 	)
@@ -36,12 +36,11 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, sessid, msgid int, data []ui
 	}
 	
 	fmt.Printf("update pos, RemoteAddr: %v, Nodex: %v, Nodey: %v.\n", sess.RemoteAddr, pos.Nodex, pos.Nodey)
-	GetGlobalPurpleMonsters().Save(sessid, pos)
+	GetGlobalPurpleMonsters().Save(int(data[4]), pos)
 	//broadcast data to others.
 	var (
 		dstmsg = []uint32{}
 	)
-	dstmsg = append(dstmsg, uint32(sessid))
 	dstmsg = append(dstmsg, data...)
 	myWebSocket.BroadCastMsg(sess, false, msgid, dstmsg)
 	return nil, true
@@ -59,7 +58,8 @@ func Register(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 		return registerfail(sess)
 	}
 
-	return registerSucc(sess, moster.ID)
+	sess.SetId(moster.ID)
+	return registerSucc(sess)
 }
 
 func registerfail(sess *myWebSocket.WebSession)(error, bool) {
@@ -71,7 +71,7 @@ func registerfail(sess *myWebSocket.WebSession)(error, bool) {
 	return nil, true
 }
 
-func registerSucc(sess *myWebSocket.WebSession, id uint32)(error, bool) {
+func registerSucc(sess *myWebSocket.WebSession)(error, bool) {
 	var (
 		dstmsg = []uint32{}
 	)
@@ -94,6 +94,7 @@ func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 		return loginfail(sess)
 	}
 
+	sess.SetId(moster.ID)
 	// 发送获取自身id
 	return loginSucc(sess, moster.ID)
 }
@@ -125,13 +126,8 @@ func SyncPos(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	fmt.Println("proc SyncPos message ... ")
 	//检查星星生成
 	SyncStarPos(sess)
-	arrAddr := strings.Split(sess.RemoteAddr, ":")
-	sessid, err := strconv.Atoi(arrAddr[1])
-	if err != nil {
-		panic(err)
-	}
 	//广播我的位置给其他人
-	saveAndupdatePos(sess, sessid, myWebSocket.MID_Online4Other, data)
+	saveAndupdatePos(sess, myWebSocket.MID_Online4Other, data)
 	//广播其他人的位置给我
 	allplayers := GetGlobalPurpleMonsters().GetAll()
 	var (
@@ -139,7 +135,7 @@ func SyncPos(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	)
 	for key, pos := range allplayers{
 		//不把自己的信息发给自己
-		if key == sessid{
+		if key == int(data[4]){
 			continue
 		}
 
@@ -190,12 +186,7 @@ func Logout(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 func Move(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	fmt.Println("proc move message ... ")
 	//广播自己移动位置给别人
-	arrAddr := strings.Split(sess.RemoteAddr, ":")
-	sessid, err := strconv.Atoi(arrAddr[1])
-	if err != nil {
-		panic(err)
-	}
-	return saveAndupdatePos(sess, sessid, myWebSocket.MID_move, data)
+	return saveAndupdatePos(sess, myWebSocket.MID_move, data)
 }
 
 /*

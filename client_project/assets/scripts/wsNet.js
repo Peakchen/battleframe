@@ -86,18 +86,18 @@ var MessageStateFunc = {
     },
 
     onmove: function(data) {
-        //cc.log("ws message MID_move: ", data[1], data[2], data[3], data[4], data[5], data[6])
-        var key = data[2].toString()
-        var nodex = data[4]
-        var nodey = data[6]
-        if (data[3] == 2){
+        cc.log("ws message MID_move: ", data[1], data[2], data[3], data[4], data[5], data[6])
+        var key = data[6].toString()
+        var nodex = data[3]
+        var nodey = data[5]
+        if (data[2] == 2){
             nodex = 0 - nodex
         }
-        if (data[5] == 2){
+        if (data[4] == 2){
             nodey = 0 - nodey
         }
         var playerProp = {
-            sessionId: data[2],
+            sessionId: data[6],
             nodex: nodex,
             nodey: nodey
         }
@@ -202,6 +202,29 @@ var MessageStateFunc = {
     onRegister: function(data){
         cc.log("ws message MID_Register: ", data[2])
         Global.RegisterSucc = data[2]
+    },
+
+    onSyncPos: function(data) {
+        cc.log("ws message MID_SyncPos: ", data[1], data[2], data[3], data[4], data[5], data[6])
+        var key = data[6].toString()
+        var nodex = data[3]
+        var nodey = data[5]
+        if (data[2] == 2){
+            nodex = 0 - nodex
+        }
+        if (data[4] == 2){
+            nodey = 0 - nodey
+        }
+        var playerProp = {
+            sessionId: data[6],
+            nodex: nodex,
+            nodey: nodey
+        }
+        if (Global.PlayerSessionMap.has(key) == false) {
+            Global.PlayerSessionMap.set(key, playerProp)
+        }
+        Global.NewplayerMap.set(key, playerProp)
+        Global.newPlayerIds.push(key)
     }
 }
 
@@ -272,6 +295,9 @@ cc.Class({
                     break
                 case Global.MID_Register:
                     MessageStateFunc.onRegister(data)
+                    break
+                case Global.MID_SyncPos:
+                    MessageStateFunc.onSyncPos(data)
                     break
                 default:
                     cc.log("未知 消息id: ", msgid)

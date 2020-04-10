@@ -20,6 +20,7 @@ type WebSession struct {
 	RemoteAddr string
 	writeCh chan *wsMessage //写通道
 	readCh  chan *wsMessage //读通道
+	IdCh    chan uint32
 }
 
 func NewWebSession(conn *websocket.Conn, off chan *WebSession) *WebSession{
@@ -29,7 +30,16 @@ func NewWebSession(conn *websocket.Conn, off chan *WebSession) *WebSession{
 		RemoteAddr: conn.RemoteAddr().String(),
 		writeCh: make(chan *wsMessage, maxWriteMsgSize),
 		readCh: make(chan *wsMessage, maxWriteMsgSize),
+		IdCh: make(chan uint32, 1),
 	}
+}
+
+func (this *WebSession) SetId(id uint32){
+	this.IdCh <- id
+}
+
+func (this *WebSession) GetId() uint32{
+	return <-this.IdCh
 }
 
 func (this *WebSession) Handle(){

@@ -594,19 +594,14 @@
     "meta": 1586397087298,
     "relativePath": "scripts\\gm.js"
   },
-  "4644fd26-d96b-4005-8472-fa99fa74e686": {
-    "asset": 1586482899440,
-    "meta": 1586482900346,
-    "relativePath": "scripts\\Star.js"
-  },
   "ba4006c2-1895-4d62-8923-ff75b3bed0a2": {
     "asset": 1586483755433,
     "meta": 1586483755435,
     "relativePath": "scene"
   },
   "8a21ac88-fe5a-46e4-befc-db88bd6e61dd": {
-    "asset": 1586501809683,
-    "meta": 1586501809691,
+    "asset": 1586506458976,
+    "meta": 1586506458983,
     "relativePath": "scene\\login.fire"
   },
   "0db780d9-7701-4874-a9b3-5f2c8d88659b": {
@@ -624,29 +619,34 @@
     "meta": 1586486276083,
     "relativePath": "resources\\loginbg.png"
   },
-  "134b4e42-404f-432a-a47a-c9130d518d55": {
-    "asset": 1586502654362,
-    "meta": 1586503478404,
-    "relativePath": "scripts\\common.js"
-  },
   "4e12f2d2-42ed-4bf8-a57a-426c4389abd4": {
     "asset": 1586502570529,
     "meta": 1586503478476,
     "relativePath": "scripts\\Game.js"
   },
-  "85d2a7f4-3717-4bb1-8ba6-182872c712ff": {
-    "asset": 1586503700353,
-    "meta": 1586503707667,
-    "relativePath": "scripts\\login.js"
-  },
-  "6c688bfb-d907-4e29-a982-1824fec5a01d": {
-    "asset": 1586503702097,
-    "meta": 1586503707718,
-    "relativePath": "scripts\\Player.js"
+  "134b4e42-404f-432a-a47a-c9130d518d55": {
+    "asset": 1586505400476,
+    "meta": 1586505637623,
+    "relativePath": "scripts\\common.js"
   },
   "f5f0250b-b558-43e3-b3cd-1f4f25679b91": {
-    "asset": 1586503623707,
-    "meta": 1586503707785,
+    "asset": 1586505568772,
+    "meta": 1586505637837,
     "relativePath": "scripts\\wsNet.js"
+  },
+  "6c688bfb-d907-4e29-a982-1824fec5a01d": {
+    "asset": 1586506071513,
+    "meta": 1586506158278,
+    "relativePath": "scripts\\Player.js"
+  },
+  "85d2a7f4-3717-4bb1-8ba6-182872c712ff": {
+    "asset": 1586506182882,
+    "meta": 1586506185838,
+    "relativePath": "scripts\\login.js"
+  },
+  "4644fd26-d96b-4005-8472-fa99fa74e686": {
+    "asset": 1586506457114,
+    "meta": 1586506457524,
+    "relativePath": "scripts\\Star.js"
   }
 }

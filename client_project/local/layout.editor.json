@@ -104,7 +104,8 @@
         "cocos-services"
       ]
     },
-    "window-1586487610212": {}
+    "window-1586504047862": {},
+    "worker": {}
   },
   "panels": {
     "builder": {

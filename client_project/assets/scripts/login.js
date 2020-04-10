@@ -47,6 +47,7 @@ cc.Class({
 
     onLoad: function() {
         cc.log("login init...")
+
         this.getwsNetObj().swConnect()
 
         Global.PlayerSessionMap = new Map();
@@ -128,15 +129,19 @@ cc.Class({
     //检查登陆结果
     checkLoginActionResult: function(){
         if (Global.DoLoginAction == 1) {
-            cc.log("LoginSucc: ", Global.LoginSucc)
-            if (Global.LoginSucc == 0 ) {
-                this.tip_info.string = "用户名和密码重复或者错误"
-            }else{
-                this.tip_info.string = "登陆成功"
-                // 切换场景
-                this.change2GameMain()
-            }
-            Global.DoLoginAction = 0
+            //等到回复消息正常取值
+            this.scheduleOnce(function(){
+                cc.log("LoginSucc: ", Global.LoginSucc)
+                if (Global.LoginSucc == 0 ) {
+                    this.tip_info.string = "用户名和密码重复或者错误"
+                }else{
+                    this.tip_info.string = "登陆成功"
+                    cc.log("玩家登陆成功, id：", Global.mySessionId)
+                    // 切换场景
+                    this.change2GameMain()
+                }
+                Global.DoLoginAction = 0
+             },1);
         }
     },
 
@@ -155,7 +160,7 @@ cc.Class({
         var disableShow = true
         if (Global.AccountName == "" || Global.AccountPwd == "") {
             this.tip_info.string = "用户名或者密码不能为空！！！"
-        }else if (this.containDigital(Global.AccountName) && this.containDigital(Global.AccountPwd)) {
+        }else if (this.containDigital(Global.AccountName) == false && this.containDigital(Global.AccountPwd) == false) {
             this.tip_info.string = "用户名或者密码不为数字！！！"
         }else if ((parseInt(Global.AccountName) > Global.maxDigital) || (parseInt(Global.AccountPwd) > Global.maxDigital)) {
             this.tip_info.string = "用户名或者密码长度超了！！！"

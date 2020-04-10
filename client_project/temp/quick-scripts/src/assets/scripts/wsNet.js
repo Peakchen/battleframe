@@ -79,12 +79,12 @@ var MessageStateFunc = {
    */
   onlogin: function onlogin(data) {
     cc.log("ws message MID_login: ", data[2], data[3]);
-    Global.LoginSucc = data[2];
 
     if (data[2] == 1) {
       Global.mySessionId = data[3];
-    } //cc.log("ws message MID_login: ", Global.newPlayerIds.length, key, Global.NewplayerMap.has(key))
+    }
 
+    Global.LoginSucc = data[2];
   },
   onlogout: function onlogout(data) {
     var key = data[2].toString();
@@ -120,7 +120,6 @@ var MessageStateFunc = {
     Global.newPlayerIds.push(key); //cc.log("MID_move purple monsters: ", Global.newPlayerIds.length, key, Global.NewplayerMap.has(key))
   },
   onBump: function onBump(data) {
-    cc.log("ws message MID_Bump: ", data[1], data[2], data[3], data[4], data[5], data[6]);
     /**
      *  0: 消息ID
         1：消息长度
@@ -130,13 +129,13 @@ var MessageStateFunc = {
         5：星星y坐标正负标志
         6：星星y坐标
         */
-
     if (data[2] == 0) {
       //失败
       cc.log("ws message MID_Bump fail ... ");
       return;
     }
 
+    cc.log("ws message MID_Bump: ", data[1], data[2], data[3], data[4], data[5], data[6], data[7]);
     var nodex = data[4];
     var nodey = data[6];
 
@@ -148,6 +147,7 @@ var MessageStateFunc = {
       nodey = 0 - nodey;
     }
 
+    Global.BumpedPlayerId = data[7];
     var starProp = {
       nodex: nodex,
       nodey: nodey

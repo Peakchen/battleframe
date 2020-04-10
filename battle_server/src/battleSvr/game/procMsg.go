@@ -261,12 +261,11 @@ func Bump(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	entity,_ := GetEntity()
 	newPos := entity.RandEntityPos(originPos)
 	//3.广播给所有玩家
-	bumpsucc(sess, newPos)
-	
+	bumpsucc(sess, newPos, data[8])
 	return nil, true
 }
 
-func bumpsucc(sess *myWebSocket.WebSession, newpos *Pos)(error, bool){
+func bumpsucc(sess *myWebSocket.WebSession, newpos *Pos, monsterId uint32)(error, bool){
 	fmt.Println("bump succ: ", sess.RemoteAddr, newpos.Nodex, newpos.Nodey)
 	var (
 		succmsg = []uint32{}
@@ -292,6 +291,7 @@ func bumpsucc(sess *myWebSocket.WebSession, newpos *Pos)(error, bool){
 	}
 	succmsg = append(succmsg, starYflag )
 	succmsg = append(succmsg, starY )
+	succmsg = append(succmsg, monsterId)
 	myWebSocket.BroadCastMsg(sess, true, myWebSocket.MID_Bump, succmsg)
 	return nil, true
 }

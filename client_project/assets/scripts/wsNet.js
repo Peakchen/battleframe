@@ -72,11 +72,10 @@ var MessageStateFunc = {
      */
     onlogin: function(data) {
         cc.log("ws message MID_login: ", data[2], data[3])
-        Global.LoginSucc = data[2]
         if (data[2] == 1) {
             Global.mySessionId = data[3]
         }
-        //cc.log("ws message MID_login: ", Global.newPlayerIds.length, key, Global.NewplayerMap.has(key))
+        Global.LoginSucc = data[2]
     },
 
     onlogout: function(data) {
@@ -111,7 +110,6 @@ var MessageStateFunc = {
     },
 
     onBump: function (data) {
-        cc.log("ws message MID_Bump: ", data[1], data[2], data[3], data[4], data[5], data[6])
         /**
          *  0: 消息ID
             1：消息长度
@@ -127,6 +125,8 @@ var MessageStateFunc = {
             return
         }
         
+        cc.log("ws message MID_Bump: ", data[1], data[2], data[3], data[4], data[5], data[6], data[7])
+
         var nodex = data[4]
         var nodey = data[6]
         if (data[3] == 2){
@@ -135,6 +135,7 @@ var MessageStateFunc = {
         if (data[5] == 2){
             nodey = 0 - nodey
         }
+        Global.BumpedPlayerId = data[7]
         var starProp = {
             nodex: nodex,
             nodey: nodey

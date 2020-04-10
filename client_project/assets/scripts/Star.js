@@ -26,7 +26,6 @@ cc.Class({
     },
 
     onLoad: function() {
-        cc.log("star load init.")
         this.updateFrame = 0
     },
 
@@ -40,7 +39,7 @@ cc.Class({
         //     data[i] = i + 1
         // }
 
-        if (Global.newStarPos.has(Global.newStarKey) == false) {
+        if (Global.newStarPos.has(Global.newStarKey) == false && Global.BumpedPlayerId == null) {
             return
         }
 
@@ -52,8 +51,11 @@ cc.Class({
         var nodey = data.nodey
         //cc.log("update star pos: ", data.nodex, data.nodey)
         this.game.spawnNewStar(nodex, nodey);
+
         // 调用 Game 脚本的得分方法
-        this.game.gainScore();
+        if (Global.mySessionId == Global.BumpedPlayerId)
+            this.game.gainScore();
+
         // 然后销毁当前星星节点
         this.node.destroy();
         Global.Bumped = 1
@@ -74,11 +76,11 @@ cc.Class({
         9：星星y坐标
     */
     sendBumpMsg: function(){
-        var buff = new ArrayBuffer(40)
+        var buff = new ArrayBuffer(44)
         var data = new Uint32Array(buff)
 
         data[0] = Global.MID_Bump //消息ID
-        data[1] = 8 //消息长度
+        data[1] = 9 //消息长度
 
         //小球信息
         var playerPos = this.game.player.getPosition();
@@ -121,7 +123,7 @@ cc.Class({
         data[7] = parseInt(starX)
         data[8] = starYflag
         data[9] = parseInt(starY)
-
+        data[10] = Global.mySessionId
         //cc.log("send bump star: ", data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9])
         this.getwsNetObj().sendwsmessage(data)
     },

@@ -41,6 +41,7 @@ module.exports = {
   MID_SyncPos: 10,
   //是否碰撞 
   Bumped: null,
+  BumpedPlayerId: null,
   //星星数据
   newStarKey: "Star",
   newStarPos: null,

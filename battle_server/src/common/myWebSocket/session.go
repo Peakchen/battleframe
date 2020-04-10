@@ -95,6 +95,7 @@ func (this *WebSession) read(msg *wsMessage){
 
 func (this *WebSession) writeloop(){
 	ticker := time.NewTicker(pingPeriod)
+	deadline := time.Duration(pingPeriod/2)
     defer func() {
 		ticker.Stop()
 		this.exit()
@@ -109,8 +110,7 @@ func (this *WebSession) writeloop(){
 					return
 				}
 			case <-ticker.C:
-				this.wsconn.SetWriteDeadline(time.Now().Add(writeWait))
-				if err := this.wsconn.WriteMessage(websocket.PingMessage, nil); err != nil {
+				if err := this.wsconn.WriteControl(websocket.PingMessage, nil, time.Now().Add(deadline)); err != nil {
 					fmt.Println("send msg over time, err: ", err.Error(), time.Now().Unix())
 					return
 				}

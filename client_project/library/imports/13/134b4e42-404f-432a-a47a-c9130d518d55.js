@@ -23,6 +23,8 @@ module.exports = {
   //同屏玩家session id
   DelPlayerIds: null,
   //同屏下限玩家
+  mySessionId: null,
+  //当前客户端id
   // 
   FirstLogin: null,
   //1:表示首次
@@ -34,6 +36,7 @@ module.exports = {
   MID_HeartBeat: 5,
   MID_StarBorn: 6,
   MID_GM: 7,
+  MID_Online4Other: 8,
   //是否碰撞 
   Bumped: null,
   //星星数据

@@ -28,29 +28,33 @@ func DialDefaultServer() (redis.Conn, error) {
 	return c, nil
 }
 
-func SetEncodeCache(src IDBCache){
-	data, err := bson.Marshal(src)
+func SetEncodeCache(src IDBCache)(err error){
+	var data []byte = nil
+	data, err = bson.Marshal(src)
 	if err != nil {
-		err = fmt.Errorf("bson.Marshal err: %v.\n", err)
-		panic(err)
 		return
 	}
 
 	SetCache(src.Identify(), data)
+	return
 }
 
-func GetDecodeCache(out IDBCache){
-	data, err := GetCache(out.Identify())
+func GetDecodeCache(out IDBCache)(err error, succ bool){
+	var data interface{} = nil
+	data, err = GetCache(out.Identify())
 	if err != nil {
-		panic(err)
+		return
+	}
+
+	if data == nil {
+		err = fmt.Errorf("data is empty.")
+		succ = true
+		return
 	}
 
 	err = bson.Unmarshal(data.([]byte), out)
-	if err != nil {
-		ret := fmt.Errorf("get data fail, key: %v, err: %v.\n", out.Identify(), err)
-		panic(ret)
-		return
-	}
+	succ = true
+	return
 }
 
 func SetCache(key string, val interface{})(succ bool){

@@ -9,35 +9,46 @@ import (
 	"time"
 	"math"
 	"common/myWebSocket"
-	"sync"
+	//"sync"
 	"fmt"
+	"common/AsyncLock"
 	//"github.com/globalsign/mgo/bson"
 )
 
 type Entity struct {
 	common.IDBModule
-	sync.Mutex
 
 	Epos *Pos
 }
 
+const (
+	module_entity = string("EntityStar")
+)
+
 func (this *Entity) Identify() string{
-	return this.StrIdentify
+	return module_entity
 }
 
-func GetEntity()(_entity *Entity, new bool){
-	_entity = &Entity{}
-	_entity.StrIdentify = "5e0d59f70753bf030c3646ec"
-	common.GetDecodeCache(_entity)
-	if _entity.Epos == nil {
-		_entity = &Entity{
+func GetEntity()(this *Entity, new bool){
+	this = &Entity{}
+	this.StrIdentify = module_entity
+	err, succ := common.GetDecodeCache(this)
+	if !succ {
+		panic(err)
+	}
+
+	if err != nil {
+		this = &Entity{
 			Epos: &Pos{
 				Nodex: 0,
 				Nodey: -88,
 			},
 		}
 
-		common.SetEncodeCache(_entity)
+		err := common.SetEncodeCache(this)
+		if err != nil {
+			panic(err)
+		}
 		new = true
 	}
 	return
@@ -68,7 +79,7 @@ func (this *Entity) rand2(origin *Pos){
 		timeRandSeed = int(time.Now().Unix())
 	)
 
-	playersPos := GetPlayers().GetAll()
+	PurpleMonstersPos := GetGlobalPurpleMonsters().GetAll()
 	for {
 		this.rand1(timeRandSeed)
 		if origin != nil {
@@ -79,7 +90,7 @@ func (this *Entity) rand2(origin *Pos){
 			}
 		}
 
-		for _, pos := range playersPos {
+		for _, pos := range PurpleMonstersPos {
 			if this.Epos.Nodex == pos.Nodex{
 				hasEqual = true
 				break
@@ -114,8 +125,8 @@ func (this *Entity) rand2(origin *Pos){
 func (this *Entity) RandEntityPos(origin *Pos)*Pos{
 
 	//多协程处理数据
-	this.Lock()
-	defer this.Unlock()
+	AsyncLock.AddZKLock("global", module_entity)
+	defer AsyncLock.ReleaseZKLock("global", module_entity)
 
 	if this.Epos == nil {
 		panic("invalid Epos.")
@@ -123,11 +134,10 @@ func (this *Entity) RandEntityPos(origin *Pos)*Pos{
 	}
 
 	this.rand1(int(time.Now().Unix()))
-	
-	// timeRandSeed := int(time.Now().Unix())
-	// randX := common.RandOne(timeRandSeed)
-	// this.Epos.Nodex = int(float64(randX - 0.5)*float64(595.0))
-	common.SetEncodeCache(this)
+	err := common.SetEncodeCache(this)
+	if err != nil {
+		panic(err)
+	}
 	return this.Epos
 }
 
@@ -137,7 +147,10 @@ func (this *Entity) IsFirstCreate()bool{
 
 func (this *Entity) SetPos(newpos *Pos){
 	this.Epos = newpos
-	common.SetEncodeCache(this)
+	err := common.SetEncodeCache(this)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func SyncStarPos(sess *myWebSocket.WebSession){

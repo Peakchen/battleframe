@@ -36,7 +36,7 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, sessid, msgid int, data []ui
 	}
 	
 	fmt.Printf("update pos, RemoteAddr: %v, Nodex: %v, Nodey: %v.\n", sess.RemoteAddr, pos.Nodex, pos.Nodey)
-	GetPlayers().Save(sessid, pos)
+	GetGlobalPurpleMonsters().Save(sessid, pos)
 	//broadcast data to others.
 	var (
 		dstmsg = []uint32{}
@@ -48,21 +48,36 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, sessid, msgid int, data []ui
 }
 
 /*
-	上限响应
+	注册
+*/
+
+func Register(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
+
+	return nil, true
+}
+
+/*
+	上线响应
 */
 func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	fmt.Println("proc login message ... ")
 	//检查星星生成
 	SyncStarPos(sess)
-	//广播我的位置给其他人
 	arrAddr := strings.Split(sess.RemoteAddr, ":")
 	sessid, err := strconv.Atoi(arrAddr[1])
 	if err != nil {
 		panic(err)
 	}
-	saveAndupdatePos(sess, sessid, myWebSocket.MID_login, data)
+	// 发送获取自身id
+	var (
+		loginmsg = []uint32{}
+	)
+	loginmsg = append(loginmsg, uint32(sessid))
+	myWebSocket.SendMsg(sess, myWebSocket.MID_login, loginmsg)
+	//广播我的位置给其他人
+	saveAndupdatePos(sess, sessid, myWebSocket.MID_Online4Other, data)
 	//广播其他人的位置给我
-	allplayers := GetPlayers().GetAll()
+	allplayers := GetGlobalPurpleMonsters().GetAll()
 	var (
 		dstmsg = []uint32{}
 	)
@@ -90,7 +105,7 @@ func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 		dstmsg = append(dstmsg, uint32(posX))
 		dstmsg = append(dstmsg, uint32(posYflag))
 		dstmsg = append(dstmsg, uint32(posY))
-		myWebSocket.SendMsg(sess, myWebSocket.MID_login, dstmsg)
+		myWebSocket.SendMsg(sess, myWebSocket.MID_Online4Other, dstmsg)
 		dstmsg = []uint32{}
 	}
 	return nil, true
@@ -107,7 +122,7 @@ func Logout(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 		panic(err)
 	}
 
-	GetPlayers().Remove(sessid)
+	GetGlobalPurpleMonsters().Remove(sessid)
 	//broadcast data to others.
 	myWebSocket.BroadCastMsg(sess, false, myWebSocket.MID_logout, []uint32{uint32(sessid)})
 	return nil, true
@@ -186,13 +201,11 @@ func Bump(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 		Nodey: int(data[7]),
 	}
 
-	go func(){
-		//2.则重新放置星星位置
-		entity,_ := GetEntity()
-		newPos := entity.RandEntityPos(originPos)
-		//3.广播给所有玩家
-		bumpsucc(sess, newPos)
-	}()
+	//2.则重新放置星星位置
+	entity,_ := GetEntity()
+	newPos := entity.RandEntityPos(originPos)
+	//3.广播给所有玩家
+	bumpsucc(sess, newPos)
 	
 	return nil, true
 }
@@ -240,6 +253,7 @@ func bumpfail(sess *myWebSocket.WebSession)(error, bool){
 
 func Reg(){
 	fmt.Println("reg proc msg.")
+	myWebSocket.MsgRegister(myWebSocket.MID_Register, Register)
 	myWebSocket.MsgRegister(myWebSocket.MID_login, Login)
 	myWebSocket.MsgRegister(myWebSocket.MID_logout, Logout)
 	myWebSocket.MsgRegister(myWebSocket.MID_move, Move)

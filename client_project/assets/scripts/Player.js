@@ -72,11 +72,11 @@ cc.Class({
     },
 
     onLoad: function() {
-        cc.game.setFrameRate(50);
+        cc.game.setFrameRate(10);
         this.getwsNetObj().swConnect()
         Global.FirstLogin = null
         Global.newStarPos = new Map();
-        
+
         // 初始化跳跃动作
         //this.jumpAction = this.setJumpAction();
         //this.node.runAction(this.jumpAction);
@@ -191,7 +191,7 @@ cc.Class({
         }
 
         if (Global.Bumped == 1){
-            this.xSpeed = 0
+            //this.xSpeed = 0
             Global.Bumped = null
             //移动广播所在位置，然后获取其他小球所在位置然后进行展示
             this.sendPlayerPos(Global.MID_move)

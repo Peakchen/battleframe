@@ -5,19 +5,19 @@ if (!t[c]) {
 var r = c.split("/");
 r = r[r.length - 1];
 if (!t[r]) {
-var l = "function" == typeof __require && __require;
-if (!i && l) return l(r, !0);
+var u = "function" == typeof __require && __require;
+if (!i && u) return u(r, !0);
 if (a) return a(r, !0);
 throw new Error("Cannot find module '" + c + "'");
 }
 c = r;
 }
-var u = n[c] = {
+var l = n[c] = {
 exports: {}
 };
-t[c][0].call(u.exports, function(e) {
+t[c][0].call(l.exports, function(e) {
 return o(t[c][1][e] || e);
-}, u, u.exports, e, t, n, s);
+}, l, l.exports, e, t, n, s);
 }
 return n[c].exports;
 }
@@ -99,7 +99,6 @@ break;
 }
 var c = o.NewplayerMap.get(a), i = t.node.getChildByName(a.toString());
 if (null != i) {
-cc.log("child pos: ", i.x, i.y);
 if (i.x != c.nodex || c.nodey != i.y) {
 t.node.removeChild(i);
 s = !0;
@@ -209,7 +208,7 @@ this.accRight = !1;
 }
 },
 onLoad: function() {
-cc.game.setFrameRate(50);
+cc.game.setFrameRate(10);
 this.getwsNetObj().swConnect();
 s.FirstLogin = null;
 s.newStarPos = new Map();
@@ -271,7 +270,6 @@ this.node.x = 575;
 this.xSpeed = 0;
 } else this.node.x += this.xSpeed * e;
 if (1 == s.Bumped) {
-this.xSpeed = 0;
 s.Bumped = null;
 this.sendPlayerPos(s.MID_move);
 }
@@ -307,56 +305,64 @@ getPlayerDistance: function() {
 var e = this.game.player.getPosition();
 return this.node.position.sub(e).mag();
 },
-getAnyPlayerDistance: function() {},
+onLoad: function() {
+cc.log("star load init.");
+this.updateFrame = 0;
+},
 onPicked: function() {
-a.Bumped = 1;
-var e = a.newStarPos.get(a.newStarKey), t = e.nodex, n = e.nodey;
+if (0 != a.newStarPos.has(a.newStarKey)) {
+var e = a.newStarPos.get(a.newStarKey);
+a.newStarPos.delete(a.newStarKey);
+var t = e.nodex, n = e.nodey;
 this.game.spawnNewStar(t, n);
 this.game.gainScore();
 this.node.destroy();
+a.Bumped = 1;
+}
 },
 sendBumpMsg: function() {
 var e = new ArrayBuffer(40), t = new Uint32Array(e);
-t[0] = 4;
+t[0] = a.MID_Bump;
 t[1] = 8;
 var n = this.game.player.getPosition(), s = n.x, o = 1;
 if (s < 0) {
 o = 2;
 s = 0 - s;
 }
-var a = n.y, c = 1;
-if (a < 0) {
-c = 2;
-a = 0 - a;
+var c = n.y, i = 1;
+if (c < 0) {
+i = 2;
+c = 0 - c;
 }
 t[2] = o;
 t[3] = parseInt(s);
-t[4] = c;
-t[5] = parseInt(a);
-var i = this.node.getPosition(), r = i.x, l = 1;
-if (r < 0) {
-l = 2;
-r = 0 - r;
-}
-var u = i.y, d = 1;
+t[4] = i;
+t[5] = parseInt(c);
+var r = this.node.getPosition(), u = r.x, l = 1;
 if (u < 0) {
-d = 2;
+l = 2;
 u = 0 - u;
 }
+var d = r.y, p = 1;
+if (d < 0) {
+p = 2;
+d = 0 - d;
+}
 t[6] = l;
-t[7] = parseInt(r);
-t[8] = d;
-t[9] = parseInt(u);
+t[7] = parseInt(u);
+t[8] = p;
+t[9] = parseInt(d);
 this.getwsNetObj().sendwsmessage(t);
 },
 update: function(e) {
-if (this.getPlayerDistance() < this.pickRadius) {
+if (this.updateFrame >= 1 && this.getPlayerDistance() < this.pickRadius) {
+this.updateFrame = 0;
 e <= 1 && (e *= 100);
 parseInt(e), parseInt(this.getPlayerDistance());
 this.sendBumpMsg();
-} else if (a.newStarPos.has(a.newStarKey)) {
-this.onPicked();
-a.newStarPos.delete(a.newStarKey);
+} else {
+a.newStarPos.has(a.newStarKey) && this.onPicked();
+this.updateFrame += e;
 }
 }
 });
@@ -458,6 +464,7 @@ PlayerSessionMap: null,
 NewplayerMap: null,
 newPlayerIds: null,
 DelPlayerIds: null,
+mySessionId: null,
 FirstLogin: null,
 MID_login: 1,
 MID_logout: 2,
@@ -466,6 +473,7 @@ MID_Bump: 4,
 MID_HeartBeat: 5,
 MID_StarBorn: 6,
 MID_GM: 7,
+MID_Online4Other: 8,
 Bumped: null,
 newStarKey: "Star",
 newStarPos: null,
@@ -612,6 +620,65 @@ return this.disconnectioned;
 stopReconnectTimer: function() {
 clearTimeout(this.reconnectTimeoutobj);
 }
+}, a = function(e) {
+cc.log("ws message MID_login: ", e[1], e[2]);
+s.mySessionId = e[2];
+}, c = function(e) {
+var t = e[2].toString();
+cc.log("ws message MID_logout, sessionid: ", t);
+s.DelPlayerIds.push(t);
+s.PlayerSessionMap.delete(t);
+}, i = function(e) {
+var t = e[2].toString(), n = e[4], o = e[6];
+2 == e[3] && (n = 0 - n);
+2 == e[5] && (o = 0 - o);
+var a = {
+sessionId: e[2],
+nodex: n,
+nodey: o
+};
+0 == s.PlayerSessionMap.has(t) && s.PlayerSessionMap.set(t, a);
+s.NewplayerMap.set(t, a);
+s.newPlayerIds.push(t);
+}, r = function(e) {
+cc.log("ws message MID_Bump: ", e[1], e[2], e[3], e[4], e[5], e[6]);
+if (0 != e[2]) {
+var t = e[4], n = e[6];
+2 == e[3] && (t = 0 - t);
+2 == e[5] && (n = 0 - n);
+var o = {
+nodex: t,
+nodey: n
+};
+s.newStarPos.set(s.newStarKey, o);
+} else cc.log("ws message MID_Bump fail ... ");
+}, u = function(e) {
+cc.log("ws message MID_HeartBeat: ", msgid);
+}, l = function(e) {
+cc.log("ws message MID_StarBorn: ", e[2], e[3], e[4], e[5]);
+var t = e[3], n = e[5];
+2 == e[2] && (t = 0 - t);
+2 == e[4] && (n = 0 - n);
+var o = {
+nodex: t,
+nodey: n
+};
+s.newStarPos.set(s.newStarKey, o);
+}, d = function(e) {
+cc.log("ws message MID_GM...");
+}, p = function(e) {
+cc.log("ws message MID_Online4Other: ", e[1], e[2], e[3], e[4], e[5], e[6]);
+var t = e[2].toString(), n = e[4], o = e[6];
+2 == e[3] && (n = 0 - n);
+2 == e[5] && (o = 0 - o);
+var a = {
+sessionId: e[2],
+nodex: n,
+nodey: o
+};
+0 == s.PlayerSessionMap.has(t) && s.PlayerSessionMap.set(t, a);
+s.NewplayerMap.set(t, a);
+s.newPlayerIds.push(t);
 };
 cc.Class({
 CanSendMsg: function() {
@@ -630,76 +697,35 @@ t.onmessage = function(e) {
 var t = new Uint32Array(e.data), n = t[0];
 switch (n) {
 case s.MID_login:
-cc.log("ws message MID_login: ", t[1], t[2], t[3], t[4], t[5], t[6]);
-var a = t[2].toString(), c = t[4], i = t[6];
-2 == t[3] && (c = 0 - c);
-2 == t[5] && (i = 0 - i);
-var r = {
-sessionId: t[2],
-nodex: c,
-nodey: i
-};
-0 == s.PlayerSessionMap.has(a) && s.PlayerSessionMap.set(a, r);
-s.NewplayerMap.set(a, r);
-s.newPlayerIds.push(a);
-cc.log("ws message MID_login: ", s.newPlayerIds.length, a, s.NewplayerMap.has(a));
+a(t);
 break;
 
 case s.MID_logout:
-a = t[2].toString();
-cc.log("ws message MID_logout, sessionid: ", a);
-s.DelPlayerIds.push(a);
-s.PlayerSessionMap.delete(a);
+c(t);
 break;
 
 case s.MID_move:
-a = t[2].toString(), c = t[4], i = t[6];
-2 == t[3] && (c = 0 - c);
-2 == t[5] && (i = 0 - i);
-r = {
-sessionId: t[2],
-nodex: c,
-nodey: i
-};
-0 == s.PlayerSessionMap.has(a) && s.PlayerSessionMap.set(a, r);
-s.NewplayerMap.set(a, r);
-s.newPlayerIds.push(a);
-cc.log("MID_move purple monsters: ", s.newPlayerIds.length, a, s.NewplayerMap.has(a));
+i(t);
 break;
 
 case s.MID_Bump:
-if (0 == t[2]) {
-cc.log("ws message MID_Bump fail ... ");
-break;
-}
-c = t[4], i = t[6];
-2 == t[3] && (c = 0 - c);
-2 == t[5] && (i = 0 - i);
-var l = {
-nodex: c,
-nodey: i
-};
-s.newStarPos.set(s.newStarKey, l);
+r(t);
 break;
 
 case s.MID_HeartBeat:
-cc.log("ws message MID_HeartBeat: ", n);
+u(t);
 break;
 
 case s.MID_StarBorn:
-cc.log("ws message MID_StarBorn: ", t[2], t[3], t[4], t[5]);
-c = t[3], i = t[5];
-2 == t[2] && (c = 0 - c);
-2 == t[4] && (i = 0 - i);
-l = {
-nodex: c,
-nodey: i
-};
-s.newStarPos.set(s.newStarKey, l);
+l(t);
 break;
 
 case s.MID_GM:
-cc.log("ws message MID_GM...");
+d(t);
+break;
+
+case s.MID_Online4Other:
+p(t);
 break;
 
 default:

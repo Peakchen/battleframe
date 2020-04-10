@@ -5,7 +5,7 @@ import (
 	//"common/tcpNet"
 	"common/myWebSocket"
 	"battleSvr/game"
-	//"battleSvr/gametest"
+	"common/AsyncLock"
 )
 
 func init(){
@@ -16,6 +16,7 @@ func init(){
 
 func main(){
 	game.Reg()
+	AsyncLock.NewZKLock([]string{"127.0.0.1:2181"})
 	ws := myWebSocket.NewWebsocketSvr(":13001")
 	ws.Run()
 	http.ListenAndServe(":13001", nil)	

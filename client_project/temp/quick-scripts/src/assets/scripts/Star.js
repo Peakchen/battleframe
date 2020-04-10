@@ -29,7 +29,10 @@ cc.Class({
     var dist = this.node.position.sub(playerPos).mag();
     return dist;
   },
-  getAnyPlayerDistance: function getAnyPlayerDistance() {},
+  onLoad: function onLoad() {
+    cc.log("star load init.");
+    this.updateFrame = 0;
+  },
   onPicked: function onPicked() {
     //碰撞后发送一个消息
     // var buff = new ArrayBuffer(12)
@@ -39,10 +42,14 @@ cc.Class({
     // for (var i = 2; i <= data.length-1; i++) {
     //     data[i] = i + 1
     // }
-    Global.Bumped = 1; // this.getwsNetObj().sendwsmessage(data)
+    if (Global.newStarPos.has(Global.newStarKey) == false) {
+      return;
+    } // this.getwsNetObj().sendwsmessage(data)
     // 当星星被收集时，调用 Game 脚本中的接口，生成一个新的星星
 
+
     var data = Global.newStarPos.get(Global.newStarKey);
+    Global.newStarPos["delete"](Global.newStarKey);
     var nodex = data.nodex;
     var nodey = data.nodey; //cc.log("update star pos: ", data.nodex, data.nodey)
 
@@ -51,6 +58,7 @@ cc.Class({
     this.game.gainScore(); // 然后销毁当前星星节点
 
     this.node.destroy();
+    Global.Bumped = 1;
   },
 
   /*
@@ -70,7 +78,7 @@ cc.Class({
   sendBumpMsg: function sendBumpMsg() {
     var buff = new ArrayBuffer(40);
     var data = new Uint32Array(buff);
-    data[0] = 4; //消息ID
+    data[0] = Global.MID_Bump; //消息ID
 
     data[1] = 8; //消息长度
     //小球信息
@@ -122,10 +130,11 @@ cc.Class({
     this.getwsNetObj().sendwsmessage(data);
   },
   update: function update(dt) {
-    //cc.log("star dt: ", dt)
+    //cc.log("star dt: ", this.updateFrame)
     // 每帧判断和主角之间的距离是否小于收集距离
-    if (this.getPlayerDistance() < this.pickRadius) {
-      // 调用收集行为
+    if (this.updateFrame >= 1.0 && this.getPlayerDistance() < this.pickRadius) {
+      this.updateFrame = 0; // 调用收集行为
+
       if (dt <= 1.0) {
         dt *= 100.0;
       }
@@ -141,12 +150,12 @@ cc.Class({
 
     if (Global.newStarPos.has(Global.newStarKey)) {
       this.onPicked();
-      Global.newStarPos["delete"](Global.newStarKey);
-    } // 根据 Game 脚本中的计时器更新星星的透明度
+    }
+
+    this.updateFrame += dt; // 根据 Game 脚本中的计时器更新星星的透明度
     //var opacityRatio = 1 - this.game.timer/this.game.starDuration;
     //var minOpacity = 50;
     //this.node.opacity = minOpacity + Math.floor(opacityRatio * (255 - minOpacity));
-
   }
 });
 

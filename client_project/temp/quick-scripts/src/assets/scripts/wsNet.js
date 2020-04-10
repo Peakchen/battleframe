@@ -62,6 +62,155 @@ var HeartCheck = {
     clearTimeout(this.reconnectTimeoutobj);
   }
 };
+/**
+ * 消息回复处理
+ */
+
+var MessageStateFunc = {
+  /**
+   * 消息解析 
+   * 0: 消息id
+   * 1：消息长度
+   * 2：sessionid
+   * 3：nodex x坐标正负标记
+   * 4：nodex x坐标值
+   * 5：nodey y坐标正负标记
+   * 6：nodey y坐标值 
+   */
+  onlogin: function onlogin(data) {
+    cc.log("ws message MID_login: ", data[1], data[2]);
+    Global.mySessionId = data[2]; //cc.log("ws message MID_login: ", Global.newPlayerIds.length, key, Global.NewplayerMap.has(key))
+  },
+  onlogout: function onlogout(data) {
+    var key = data[2].toString();
+    cc.log("ws message MID_logout, sessionid: ", key);
+    Global.DelPlayerIds.push(key);
+    Global.PlayerSessionMap["delete"](key);
+  },
+  onmove: function onmove(data) {
+    //cc.log("ws message MID_move: ", data[1], data[2], data[3], data[4], data[5], data[6])
+    var key = data[2].toString();
+    var nodex = data[4];
+    var nodey = data[6];
+
+    if (data[3] == 2) {
+      nodex = 0 - nodex;
+    }
+
+    if (data[5] == 2) {
+      nodey = 0 - nodey;
+    }
+
+    var playerProp = {
+      sessionId: data[2],
+      nodex: nodex,
+      nodey: nodey
+    };
+
+    if (Global.PlayerSessionMap.has(key) == false) {
+      Global.PlayerSessionMap.set(key, playerProp);
+    }
+
+    Global.NewplayerMap.set(key, playerProp);
+    Global.newPlayerIds.push(key); //cc.log("MID_move purple monsters: ", Global.newPlayerIds.length, key, Global.NewplayerMap.has(key))
+  },
+  onBump: function onBump(data) {
+    cc.log("ws message MID_Bump: ", data[1], data[2], data[3], data[4], data[5], data[6]);
+    /**
+     *  0: 消息ID
+        1：消息长度
+        2: 成功失败标志 (失败则只需要前三个字段)
+        3: 星星x坐标正负标志
+        4: 星星x坐标
+        5：星星y坐标正负标志
+        6：星星y坐标
+        */
+
+    if (data[2] == 0) {
+      //失败
+      cc.log("ws message MID_Bump fail ... ");
+      return;
+    }
+
+    var nodex = data[4];
+    var nodey = data[6];
+
+    if (data[3] == 2) {
+      nodex = 0 - nodex;
+    }
+
+    if (data[5] == 2) {
+      nodey = 0 - nodey;
+    }
+
+    var starProp = {
+      nodex: nodex,
+      nodey: nodey
+    };
+    Global.newStarPos.set(Global.newStarKey, starProp);
+  },
+  onHeartBeat: function onHeartBeat(data) {
+    cc.log("ws message MID_HeartBeat: ", msgid);
+  },
+  onStarBorn: function onStarBorn(data) {
+    cc.log("ws message MID_StarBorn: ", data[2], data[3], data[4], data[5]);
+    /**
+     *  0: 消息ID
+        1：消息长度
+        2: 星星x坐标正负标志
+        3: 星星x坐标
+        4：星星y坐标正负标志
+        5：星星y坐标
+     */
+
+    var nodex = data[3];
+    var nodey = data[5];
+
+    if (data[2] == 2) {
+      nodex = 0 - nodex;
+    }
+
+    if (data[4] == 2) {
+      nodey = 0 - nodey;
+    }
+
+    var starProp = {
+      nodex: nodex,
+      nodey: nodey
+    };
+    Global.newStarPos.set(Global.newStarKey, starProp);
+  },
+  onGM: function onGM(data) {
+    cc.log("ws message MID_GM...");
+  },
+  Online4Other: function Online4Other(data) {
+    cc.log("ws message MID_Online4Other: ", data[1], data[2], data[3], data[4], data[5], data[6]);
+    var key = data[2].toString();
+    var nodex = data[4];
+    var nodey = data[6];
+
+    if (data[3] == 2) {
+      nodex = 0 - nodex;
+    }
+
+    if (data[5] == 2) {
+      nodey = 0 - nodey;
+    }
+
+    var playerProp = {
+      sessionId: data[2],
+      nodex: nodex,
+      nodey: nodey
+    };
+
+    if (Global.PlayerSessionMap.has(key) == false) {
+      Global.PlayerSessionMap.set(key, playerProp);
+    }
+
+    Global.NewplayerMap.set(key, playerProp);
+    Global.newPlayerIds.push(key);
+  }
+};
 cc.Class({
   //extends: cc.Component,
 
@@ -100,156 +249,40 @@ cc.Class({
     };
 
     ws.onmessage = function (e) {
-      /**
-       * 消息解析 
-       * 0: 消息id
-       * 1：消息长度
-       * 2：sessionid
-       * 3：nodex x坐标正负标记
-       * 4：nodex x坐标值
-       * 5：nodey y坐标正负标记
-       * 6：nodey y坐标值 
-       */
       var data = new Uint32Array(e.data);
       var msgid = data[0];
 
       switch (msgid) {
         case Global.MID_login:
-          cc.log("ws message MID_login: ", data[1], data[2], data[3], data[4], data[5], data[6]);
-          var key = data[2].toString();
-          var nodex = data[4];
-          var nodey = data[6];
-
-          if (data[3] == 2) {
-            nodex = 0 - nodex;
-          }
-
-          if (data[5] == 2) {
-            nodey = 0 - nodey;
-          }
-
-          var playerProp = {
-            sessionId: data[2],
-            nodex: nodex,
-            nodey: nodey
-          };
-
-          if (Global.PlayerSessionMap.has(key) == false) {
-            Global.PlayerSessionMap.set(key, playerProp);
-          }
-
-          Global.NewplayerMap.set(key, playerProp);
-          Global.newPlayerIds.push(key); //cc.log("ws message MID_login: ", Global.newPlayerIds.length, key, Global.NewplayerMap.has(key))
-
+          MessageStateFunc.onlogin(data);
           break;
 
         case Global.MID_logout:
-          var key = data[2].toString();
-          cc.log("ws message MID_logout, sessionid: ", key);
-          Global.DelPlayerIds.push(key);
-          Global.PlayerSessionMap["delete"](key);
+          MessageStateFunc.onlogout(data);
           break;
 
         case Global.MID_move:
-          //cc.log("ws message MID_move: ", data[1], data[2], data[3], data[4], data[5], data[6])
-          var key = data[2].toString();
-          var nodex = data[4];
-          var nodey = data[6];
-
-          if (data[3] == 2) {
-            nodex = 0 - nodex;
-          }
-
-          if (data[5] == 2) {
-            nodey = 0 - nodey;
-          }
-
-          var playerProp = {
-            sessionId: data[2],
-            nodex: nodex,
-            nodey: nodey
-          };
-
-          if (Global.PlayerSessionMap.has(key) == false) {
-            Global.PlayerSessionMap.set(key, playerProp);
-          }
-
-          Global.NewplayerMap.set(key, playerProp);
-          Global.newPlayerIds.push(key); //cc.log("MID_move purple monsters: ", Global.newPlayerIds.length, key, Global.NewplayerMap.has(key))
-
+          MessageStateFunc.onmove(data);
           break;
 
         case Global.MID_Bump:
-          //cc.log("ws message MID_Bump: ", data[1], data[2], data[3], data[4], data[5], data[6])
-
-          /**
-           *  0: 消息ID
-              1：消息长度
-              2: 成功失败标志 (失败则只需要前三个字段)
-              3: 星星x坐标正负标志
-              4: 星星x坐标
-              5：星星y坐标正负标志
-              6：星星y坐标
-           */
-          if (data[2] == 0) {
-            //失败
-            cc.log("ws message MID_Bump fail ... ");
-            break;
-          }
-
-          var nodex = data[4];
-          var nodey = data[6];
-
-          if (data[3] == 2) {
-            nodex = 0 - nodex;
-          }
-
-          if (data[5] == 2) {
-            nodey = 0 - nodey;
-          }
-
-          var starProp = {
-            nodex: nodex,
-            nodey: nodey
-          };
-          Global.newStarPos.set(Global.newStarKey, starProp);
+          MessageStateFunc.onBump(data);
           break;
 
         case Global.MID_HeartBeat:
-          cc.log("ws message MID_HeartBeat: ", msgid);
+          MessageStateFunc.onHeartBeat(data);
           break;
 
         case Global.MID_StarBorn:
-          cc.log("ws message MID_StarBorn: ", data[2], data[3], data[4], data[5]);
-          /**
-           *  0: 消息ID
-              1：消息长度
-              2: 星星x坐标正负标志
-              3: 星星x坐标
-              4：星星y坐标正负标志
-              5：星星y坐标
-           */
-
-          var nodex = data[3];
-          var nodey = data[5];
-
-          if (data[2] == 2) {
-            nodex = 0 - nodex;
-          }
-
-          if (data[4] == 2) {
-            nodey = 0 - nodey;
-          }
-
-          var starProp = {
-            nodex: nodex,
-            nodey: nodey
-          };
-          Global.newStarPos.set(Global.newStarKey, starProp);
+          MessageStateFunc.onStarBorn(data);
           break;
 
         case Global.MID_GM:
-          cc.log("ws message MID_GM...");
+          MessageStateFunc.onGM(data);
+          break;
+
+        case Global.MID_Online4Other:
+          MessageStateFunc.Online4Other(data);
           break;
 
         default:

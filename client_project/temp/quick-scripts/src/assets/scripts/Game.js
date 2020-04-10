@@ -52,11 +52,7 @@ cc.Class({
   },
   onLoad: function onLoad() {
     cc.log("game on load init..."); //this.getwsNetObj().sendwsmessage("hello")
-
-    Global.PlayerSessionMap = new Map();
-    Global.NewplayerMap = new Map();
-    Global.newPlayerIds = new Array();
-    Global.DelPlayerIds = new Array(); //发起战斗开始请求
+    //发起战斗开始请求
 
     this.getBattleObj().postBattleStartMsg(); // 获取地平面的 y 轴坐标
 

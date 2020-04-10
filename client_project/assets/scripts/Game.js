@@ -1,3 +1,4 @@
+
 let Battle = require("battle")
 let Global = require("common")
 let wsNet = require("wsNet")
@@ -47,12 +48,8 @@ cc.Class({
 
     onLoad: function () {
         cc.log("game on load init...")
-        //this.getwsNetObj().sendwsmessage("hello")
-        Global.PlayerSessionMap = new Map();
-        Global.NewplayerMap = new Map();
-        Global.newPlayerIds = new Array();
-        Global.DelPlayerIds = new Array();
 
+        //this.getwsNetObj().sendwsmessage("hello")
         //发起战斗开始请求
         this.getBattleObj().postBattleStartMsg();
 
@@ -65,6 +62,7 @@ cc.Class({
         this.spawnNewStar(0.0, 0.0);
         // 初始化计分
         this.score = 0;
+   
     },
 
     spawnNewStar: function(x, y) {

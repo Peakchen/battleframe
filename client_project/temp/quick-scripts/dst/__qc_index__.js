@@ -19,6 +19,7 @@ require('./assets/scripts/battle');
 require('./assets/scripts/common');
 require('./assets/scripts/gm');
 require('./assets/scripts/ioNet');
+require('./assets/scripts/login');
 require('./assets/scripts/playerdata');
 require('./assets/scripts/wsNet');
 

@@ -78,8 +78,13 @@ var MessageStateFunc = {
    * 6：nodey y坐标值 
    */
   onlogin: function onlogin(data) {
-    cc.log("ws message MID_login: ", data[1], data[2]);
-    Global.mySessionId = data[2]; //cc.log("ws message MID_login: ", Global.newPlayerIds.length, key, Global.NewplayerMap.has(key))
+    cc.log("ws message MID_login: ", data[2], data[3]);
+    Global.LoginSucc = data[2];
+
+    if (data[2] == 1) {
+      Global.mySessionId = data[3];
+    } //cc.log("ws message MID_login: ", Global.newPlayerIds.length, key, Global.NewplayerMap.has(key))
+
   },
   onlogout: function onlogout(data) {
     var key = data[2].toString();
@@ -209,6 +214,10 @@ var MessageStateFunc = {
 
     Global.NewplayerMap.set(key, playerProp);
     Global.newPlayerIds.push(key);
+  },
+  onRegister: function onRegister(data) {
+    cc.log("ws message MID_Register: ", data[2]);
+    Global.RegisterSucc = data[2];
   }
 };
 cc.Class({
@@ -283,6 +292,10 @@ cc.Class({
 
         case Global.MID_Online4Other:
           MessageStateFunc.Online4Other(data);
+          break;
+
+        case Global.MID_Register:
+          MessageStateFunc.onRegister(data);
           break;
 
         default:

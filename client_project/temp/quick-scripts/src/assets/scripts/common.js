@@ -37,11 +37,21 @@ module.exports = {
   MID_StarBorn: 6,
   MID_GM: 7,
   MID_Online4Other: 8,
+  MID_Register: 9,
+  MID_SyncPos: 10,
   //是否碰撞 
   Bumped: null,
   //星星数据
   newStarKey: "Star",
   newStarPos: null,
+  //用户数据
+  AccountName: null,
+  AccountPwd: null,
+  DoRegisterAction: null,
+  RegisterSucc: null,
+  DoLoginAction: null,
+  LoginSucc: null,
+  maxDigital: 2100000000,
   //测试
   test: null
 };

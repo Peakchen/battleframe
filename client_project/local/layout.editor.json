@@ -20,21 +20,21 @@
                 ],
                 "height": 441,
                 "type": "panel",
-                "width": 204
+                "width": 242
               },
               {
                 "active": 0,
                 "children": [
                   "assets"
                 ],
-                "height": 436,
+                "height": 435,
                 "type": "panel",
-                "width": 204
+                "width": 242
               }
             ],
-            "height": 880,
+            "height": 879,
             "type": "dock-v",
-            "width": 204
+            "width": 242
           },
           {
             "children": [
@@ -45,23 +45,23 @@
                     "children": [
                       "scene"
                     ],
-                    "height": 437,
+                    "height": 454,
                     "type": "panel",
-                    "width": 951
+                    "width": 923
                   },
                   {
                     "active": 0,
                     "children": [
                       "node-library"
                     ],
-                    "height": 437,
+                    "height": 454,
                     "type": "panel",
-                    "width": 361
+                    "width": 350
                   }
                 ],
-                "height": 437,
+                "height": 454,
                 "type": "dock-h",
-                "width": 1315
+                "width": 1276
               },
               {
                 "active": 0,
@@ -70,14 +70,14 @@
                   "timeline",
                   "game-window"
                 ],
-                "height": 439.984375,
+                "height": 422,
                 "type": "panel",
-                "width": 1315
+                "width": 1276
               }
             ],
-            "height": 880,
+            "height": 879,
             "type": "dock-v",
-            "width": 1315
+            "width": 1276
           },
           {
             "active": 0,
@@ -85,7 +85,7 @@
               "inspector",
               "cocos-services"
             ],
-            "height": 880,
+            "height": 879,
             "type": "panel",
             "width": 377
           }
@@ -104,12 +104,11 @@
         "cocos-services"
       ]
     },
-    "window-1586399143322": {},
-    "worker": {}
+    "window-1586487610212": {}
   },
   "panels": {
     "builder": {
-      "x": 494,
+      "x": 495,
       "y": 123,
       "width": 670,
       "height": 736
@@ -119,14 +118,28 @@
       "y": 220,
       "width": 600,
       "height": 564
+    },
+    "sprite-editor": {
+      "x": 702,
+      "y": 220,
+      "width": 516,
+      "height": 538
+    },
+    "project-settings": {
+      "x": 672,
+      "y": 220,
+      "width": 600,
+      "height": 564
     }
   },
   "panelLabelWidth": {
     "inspector": null,
     "builder": null,
-    "preferences": null
+    "preferences": null,
+    "project-settings": null
   },
   "panelLabelWidth.inspector": null,
   "panelLabelWidth.builder": null,
-  "panelLabelWidth.preferences": null
+  "panelLabelWidth.preferences": null,
+  "panelLabelWidth.project-settings": null
 }

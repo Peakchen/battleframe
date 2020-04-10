@@ -52,7 +52,31 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, sessid, msgid int, data []ui
 */
 
 func Register(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
+	sname := strconv.Itoa(int(data[0]))
+	spwd := strconv.Itoa(int(data[1]))
+	moster, succ := NewMoster(sname, spwd) 
+	if !succ{
+		return registerfail(sess)
+	}
 
+	return registerSucc(sess, moster.ID)
+}
+
+func registerfail(sess *myWebSocket.WebSession)(error, bool) {
+	var (
+		dstmsg = []uint32{}
+	)
+	dstmsg = append(dstmsg, 0)
+	myWebSocket.SendMsg(sess, myWebSocket.MID_Register, dstmsg)
+	return nil, true
+}
+
+func registerSucc(sess *myWebSocket.WebSession, id uint32)(error, bool) {
+	var (
+		dstmsg = []uint32{}
+	)
+	dstmsg = append(dstmsg, 1)
+	myWebSocket.SendMsg(sess, myWebSocket.MID_Register, dstmsg)
 	return nil, true
 }
 
@@ -61,6 +85,44 @@ func Register(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 */
 func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	fmt.Println("proc login message ... ")
+	sname := strconv.Itoa(int(data[0]))
+	spwd := strconv.Itoa(int(data[1]))
+
+	moster, err := GetExistMonster(sname, spwd)
+	if err != nil {
+		//不存在
+		return loginfail(sess)
+	}
+
+	// 发送获取自身id
+	return loginSucc(sess, moster.ID)
+}
+
+func loginfail(sess *myWebSocket.WebSession) (error, bool) {
+	var (
+		loginmsg = []uint32{}
+	)
+	loginmsg = append(loginmsg, 0)
+	myWebSocket.SendMsg(sess, myWebSocket.MID_login, loginmsg)
+	return nil, true
+}
+
+func loginSucc(sess *myWebSocket.WebSession, id uint32) (error, bool) {
+	var (
+		loginmsg = []uint32{}
+	)
+	loginmsg = append(loginmsg, 1)
+	loginmsg = append(loginmsg, id)
+	myWebSocket.SendMsg(sess, myWebSocket.MID_login, loginmsg)
+	return nil, true
+}
+
+/*
+	位置同步响应
+	此时当前作为小场景可以全部广播，如果到了地图上，则需要分块视野范围内才能同步
+*/
+func SyncPos(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
+	fmt.Println("proc SyncPos message ... ")
 	//检查星星生成
 	SyncStarPos(sess)
 	arrAddr := strings.Split(sess.RemoteAddr, ":")
@@ -68,12 +130,6 @@ func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	if err != nil {
 		panic(err)
 	}
-	// 发送获取自身id
-	var (
-		loginmsg = []uint32{}
-	)
-	loginmsg = append(loginmsg, uint32(sessid))
-	myWebSocket.SendMsg(sess, myWebSocket.MID_login, loginmsg)
 	//广播我的位置给其他人
 	saveAndupdatePos(sess, sessid, myWebSocket.MID_Online4Other, data)
 	//广播其他人的位置给我
@@ -255,6 +311,7 @@ func Reg(){
 	fmt.Println("reg proc msg.")
 	myWebSocket.MsgRegister(myWebSocket.MID_Register, Register)
 	myWebSocket.MsgRegister(myWebSocket.MID_login, Login)
+	myWebSocket.MsgRegister(myWebSocket.MID_SyncPos, SyncPos)
 	myWebSocket.MsgRegister(myWebSocket.MID_logout, Logout)
 	myWebSocket.MsgRegister(myWebSocket.MID_move, Move)
 	myWebSocket.MsgRegister(myWebSocket.MID_Bump, Bump)

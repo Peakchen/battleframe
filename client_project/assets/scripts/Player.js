@@ -73,7 +73,7 @@ cc.Class({
 
     onLoad: function() {
         cc.game.setFrameRate(10);
-        this.getwsNetObj().swConnect()
+        
         Global.FirstLogin = null
         Global.newStarPos = new Map();
 
@@ -93,6 +93,9 @@ cc.Class({
         
         //初始化小球位置
         this.randPlayerPos()
+        //发送初始位置
+        if (this.getwsNetObj().CanSendMsg())
+            this.sendPlayerPos(Global.MID_SyncPos)
     },
 
     onDestroy () {
@@ -105,7 +108,6 @@ cc.Class({
     randPlayerPos: function() {
         this.node.x = this.xSpeed * (this.node.width/2)
         this.xSpeed = 0
-        //this.sendPlayerPos(Global.MID_login)
         //cc.log("randPlayerPos player pos: ", this.node.x, this.node.y)
     },
 
@@ -146,14 +148,6 @@ cc.Class({
 
     update: function (dt) {
         //cc.log("player dt: ", this.accLeft, this.accRight)
-        //第一次连线广播所在位置，然后获取其他小球所在位置然后进行展示
-        if (Global.FirstLogin == null && this.getwsNetObj().CanSendMsg()){
-            this.sendPlayerPos(Global.MID_login)
-            //this.getGMObj().sendResetStarPos() //gm矫正
-            //this.scheduleOnce(function(){ this.sendPlayerPos(Global.MID_login); },2);
-            Global.FirstLogin = 1
-        }
-
         //方向移动操作后没任何方向操作时，则慢慢减速直至停止
         if (this.accLeft == false && this.accRight == false) {
             this.xSpeed -= 0.1

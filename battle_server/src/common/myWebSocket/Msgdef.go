@@ -11,4 +11,5 @@ const (
 	MID_GM  = 7 	  //gm
 	MID_Online4Other = 8 //上线获取别人数据显示或者广播自己数据给别人显示
 	MID_Register = 9 	 //注册
+	MID_SyncPos = 10     //同步位置
 )

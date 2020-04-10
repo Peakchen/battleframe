@@ -13,7 +13,7 @@ import (
 type GlobalPurpleMonsters struct {
 	common.IDBModule
 
-	MapPos map[int]*Pos
+	Monsters []uint32
 }
 
 const (
@@ -34,7 +34,7 @@ func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 
 	if err != nil {
 		this = &GlobalPurpleMonsters{
-			MapPos: map[int]*Pos{},
+			Monsters: []uint32{},
 		}
 
 		err := common.SetEncodeCache(this)
@@ -46,24 +46,26 @@ func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 	return
 }
 
-func (this *GlobalPurpleMonsters) GetAll()map[int]*Pos{
-	return this.MapPos
+func (this *GlobalPurpleMonsters) GetAll()[]uint32{
+	return this.Monsters
 }
 
-func (this *GlobalPurpleMonsters) Save(port int, pos *Pos) {
+func (this *GlobalPurpleMonsters) Insert(id uint32) {
 	AsyncLock.AddZKLock("global", module_GlobalPurpleMonsters)
 	defer AsyncLock.ReleaseZKLock("global", module_GlobalPurpleMonsters)
 
-	this.MapPos[port] = pos
-	//新增后广播给其他小球客户端...
+	this.Monsters = append(this.Monsters, id)
 }
 
-func (this *GlobalPurpleMonsters) Remove(port int) {
+func (this *GlobalPurpleMonsters) Remove(id uint32) {
 	AsyncLock.AddZKLock("global", module_GlobalPurpleMonsters)
 	defer AsyncLock.ReleaseZKLock("global", module_GlobalPurpleMonsters)
 
-	delete(this.MapPos, port)
-
-	//删掉后广播给其他小球客户端...
+	for i:=0;i<len(this.Monsters);i++{
+		if this.Monsters[i] == id {
+			this.Monsters = append(this.Monsters[:i], this.Monsters[i+1:]...)
+			break
+		}
+	}
 } 
 

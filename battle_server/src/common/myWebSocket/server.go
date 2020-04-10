@@ -54,7 +54,7 @@ func (this *WebSocketSvr) disconnloop(){
 		fmt.Println("exit ws socket: ", sess.RemoteAddr, mosterid, time.Now().Unix())
 		GwebSessionMgr.RemoveSession(sess.RemoteAddr)
 		if proc := GetGameLogicProcMsg(MID_logout); proc != nil {
-			proc(sess, nil)
+			proc(sess, []uint32{mosterid})
 		}
 
 		if mosterid != 0 {

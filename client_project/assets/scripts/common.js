@@ -33,6 +33,7 @@ module.exports = {
     MID_Online4Other: 8,
     MID_Register: 9,
     MID_SyncPos: 10,
+    MID_MonsterInfo: 11,
 
     //是否碰撞 
     Bumped: null,
@@ -49,6 +50,9 @@ module.exports = {
     DoLoginAction: null,
     LoginSucc: null,
     maxDigital: 2100000000,
+    MonsterScore: 0,
+    MosterPosX: 0,
+    MosterPosY: 0,
 
     //测试
     test: null

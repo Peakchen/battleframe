@@ -84,15 +84,22 @@ cc.Class({
     this.accLeft = false;
     this.accRight = false; // 主角当前水平方向速度
 
-    this.xSpeed = (Math.random() - 0.5) * 2 * 10;
+    this.xSpeed = 0; //this.xSpeed = (Math.random() - 0.5) * 2 * 10;
+
     this.TickFrame = 0; // 初始化键盘输入监听
 
     cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
     cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this); //初始化小球位置
+    //this.randPlayerPos()
+    //发送初始位置
 
-    this.randPlayerPos(); //发送初始位置
-
-    if (this.getwsNetObj().CanSendMsg()) this.sendPlayerPos(Global.MID_SyncPos);
+    if (this.getwsNetObj().CanSendMsg()) {
+      this.scheduleOnce(function () {
+        this.node.x = Global.MosterPosX;
+        this.node.y = Global.MosterPosY;
+        this.sendPlayerPos(Global.MID_SyncPos);
+      }, 1);
+    }
   },
   onDestroy: function onDestroy() {
     // 取消键盘输入监听
@@ -132,7 +139,7 @@ cc.Class({
     data[3] = parseInt(nodex); //x坐标
 
     var nodeyflag = 1;
-    var nodey = -88; //this.node.y
+    var nodey = this.node.y; //-88
 
     if (nodey < 0.0) {
       nodeyflag = 2;
@@ -147,7 +154,7 @@ cc.Class({
     this.getwsNetObj().sendwsmessage(data);
   },
   update: function update(dt) {
-    //cc.log("player dt: ", this.accLeft, this.accRight)
+    //cc.log("player dt: ", this.node.x, this.node.y)
     //方向移动操作后没任何方向操作时，则慢慢减速直至停止
     if (this.accLeft == false && this.accRight == false) {
       this.xSpeed -= 0.1;

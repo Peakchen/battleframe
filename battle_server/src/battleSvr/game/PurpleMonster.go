@@ -8,6 +8,7 @@ import (
 	"common"
 	"strconv"
 	"fmt"
+	"time"
 )
 
 type PurpleMonster struct {
@@ -15,10 +16,27 @@ type PurpleMonster struct {
 
 	Mypos *Pos
 	ID 	  uint32
+	Score uint32
 }
 
 func (this *PurpleMonster) Identify() string{
 	return this.StrIdentify
+}
+
+func (this *PurpleMonster) SetPos(pos *Pos) {
+	this.Mypos = pos
+}
+
+func (this *PurpleMonster) AddScore()uint32{
+	this.Score++
+	return this.Score
+}
+
+func (this *PurpleMonster) UpdateCache(){
+	err := common.SetEncodeCache(this)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func NewMoster(name, pwd string)(this *PurpleMonster, newsucc bool){
@@ -37,6 +55,11 @@ func NewMoster(name, pwd string)(this *PurpleMonster, newsucc bool){
 
 	this.ID = GetGlobalMonsterIdx()
 	//this.Mypos  给个出生点坐标？
+	randX := common.RandOne(int(time.Now().Unix()))
+	this.Mypos = &Pos{
+		Nodex: int(float64(randX - 0.2)*float64(maxWidth)),
+		Nodey: -120,
+	}
 	common.SetCache(strconv.Itoa(int(this.ID)), Identify)
 	common.SetEncodeCache(this)
 	newsucc = true

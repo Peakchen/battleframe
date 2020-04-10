@@ -78,13 +78,27 @@ var MessageStateFunc = {
    * 6：nodey y坐标值 
    */
   onlogin: function onlogin(data) {
-    cc.log("ws message MID_login: ", data[2], data[3]);
-
     if (data[2] == 1) {
       Global.mySessionId = data[3];
+    } else {
+      return;
     }
 
+    cc.log("ws message MID_login: ", data[2], data[3], data[4], data[5], data[6], data[7]);
     Global.LoginSucc = data[2];
+    var nodex = data[5];
+    var nodey = data[7];
+
+    if (data[4] == 2) {
+      nodex = 0 - nodex;
+    }
+
+    if (data[6] == 2) {
+      nodey = 0 - nodey;
+    }
+
+    Global.MosterPosX = nodex;
+    Global.MosterPosY = nodey;
   },
   onlogout: function onlogout(data) {
     var key = data[2].toString();
@@ -245,6 +259,10 @@ var MessageStateFunc = {
 
     Global.NewplayerMap.set(key, playerProp);
     Global.newPlayerIds.push(key);
+  },
+  onMonsterInfo: function onMonsterInfo(data) {
+    cc.log("ws message MID_MonsterInfo: ", data[2], data[3]);
+    Global.MonsterScore = data[3];
   }
 };
 cc.Class({
@@ -327,6 +345,10 @@ cc.Class({
 
         case Global.MID_SyncPos:
           MessageStateFunc.onSyncPos(data);
+          break;
+
+        case Global.MID_MonsterInfo:
+          MessageStateFunc.onMonsterInfo(data);
           break;
 
         default:

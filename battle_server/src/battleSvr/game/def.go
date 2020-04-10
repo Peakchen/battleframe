@@ -11,3 +11,7 @@ type Pos struct {
 	Nodex int
 	Nodey int
 }
+
+const (
+	maxWidth = 960
+)

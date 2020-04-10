@@ -3,7 +3,7 @@ package game
 import (
 	"common/myWebSocket"
 	"fmt"
-	"strings"
+	//"strings"
 	"strconv"
 	"math"
 )
@@ -36,7 +36,11 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, msgid int, data []uint32) (e
 	}
 	
 	fmt.Printf("update pos, RemoteAddr: %v, Nodex: %v, Nodey: %v.\n", sess.RemoteAddr, pos.Nodex, pos.Nodey)
-	GetGlobalPurpleMonsters().Save(int(data[4]), pos)
+	//保存个体怪物数据
+	moster := GetPurpleMonsterByID(data[4])
+	moster.SetPos(pos)
+	moster.UpdateCache()
+
 	//broadcast data to others.
 	var (
 		dstmsg = []uint32{}
@@ -95,8 +99,9 @@ func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	}
 
 	sess.SetId(moster.ID)
+	GetGlobalPurpleMonsters().Insert(moster.ID)
 	// 发送获取自身id
-	return loginSucc(sess, moster.ID)
+	return loginSucc(sess, moster.ID, moster.Mypos)
 }
 
 func loginfail(sess *myWebSocket.WebSession) (error, bool) {
@@ -108,12 +113,33 @@ func loginfail(sess *myWebSocket.WebSession) (error, bool) {
 	return nil, true
 }
 
-func loginSucc(sess *myWebSocket.WebSession, id uint32) (error, bool) {
+func loginSucc(sess *myWebSocket.WebSession, id uint32, pos *Pos) (error, bool) {
 	var (
 		loginmsg = []uint32{}
+		monsterXflag = uint32(Pos_Right)
+		monsterYflag = uint32(Pos_Right)
+
+		monsterX = uint32(0)
+		monsterY = uint32(0)
 	)
+
 	loginmsg = append(loginmsg, 1)
 	loginmsg = append(loginmsg, id)
+	monsterX = uint32(pos.Nodex)
+	if pos.Nodex < 0 {
+		monsterXflag = uint32(Pos_Left)
+		monsterX = uint32(0 - pos.Nodex)
+	}
+
+	loginmsg = append(loginmsg, monsterXflag )
+	loginmsg = append(loginmsg, monsterX )
+	monsterY = uint32(pos.Nodey)
+	if pos.Nodey < 0 {
+		monsterYflag = uint32(Pos_Left)
+		monsterY = uint32(0 - pos.Nodey)
+	}
+	loginmsg = append(loginmsg, monsterYflag )
+	loginmsg = append(loginmsg, monsterY )
 	myWebSocket.SendMsg(sess, myWebSocket.MID_login, loginmsg)
 	return nil, true
 }
@@ -133,26 +159,31 @@ func SyncPos(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	var (
 		dstmsg = []uint32{}
 	)
-	for key, pos := range allplayers{
+	for _, id := range allplayers{
+		moster := GetPurpleMonsterByID(id)
+		if moster.Mypos == nil {
+			continue
+		}
+
 		//不把自己的信息发给自己
-		if key == int(data[4]){
+		if id == data[4]{
 			continue
 		}
 
 		posXflag := Pos_Right
-		posX := pos.Nodex
-		if pos.Nodex < 0 {
+		posX := moster.Mypos.Nodex
+		if moster.Mypos.Nodex < 0 {
 			posXflag = Pos_Left
 			posX = 0 - posX
 		}
 		posYflag := Pos_Right
-		posY := pos.Nodey
-		if pos.Nodey < 0 {
+		posY := moster.Mypos.Nodey
+		if moster.Mypos.Nodey < 0 {
 			posYflag = Pos_Left
 			posY = 0 - posY
 		}
 		
-		dstmsg = append(dstmsg, uint32(key))
+		dstmsg = append(dstmsg, uint32(id))
 		dstmsg = append(dstmsg, uint32(posXflag))
 		dstmsg = append(dstmsg, uint32(posX))
 		dstmsg = append(dstmsg, uint32(posYflag))
@@ -168,15 +199,13 @@ func SyncPos(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 */
 func Logout(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	fmt.Println("proc logout message ... ")
-	arrAddr := strings.Split(sess.RemoteAddr, ":")
-	sessid, err := strconv.Atoi(arrAddr[1])
-	if err != nil {
-		panic(err)
-	}
-
-	GetGlobalPurpleMonsters().Remove(sessid)
 	//broadcast data to others.
-	myWebSocket.BroadCastMsg(sess, false, myWebSocket.MID_logout, []uint32{uint32(sessid)})
+	var (
+		msg = []uint32{}
+	)
+
+	msg = append(msg, data[0])
+	myWebSocket.BroadCastMsg(sess, false, myWebSocket.MID_logout, msg)
 	return nil, true
 }
 
@@ -243,6 +272,17 @@ func Bump(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 		return bumpfail(sess)
 	}
 
+	//分值记录
+	moster := GetPurpleMonsterByID(data[8])
+	moster.SetPos(&Pos{
+		Nodex: int(PurpleMonsterPosX),
+		Nodey: int(PurpleMonsterPosY),
+	})
+	score := moster.AddScore()
+	moster.UpdateCache()
+	//同步信息
+	syncMonsterInfo(sess, data[8], score)
+
 	originPos := &Pos{
 		Nodex: int(data[5]),
 		Nodey: int(data[7]),
@@ -254,6 +294,16 @@ func Bump(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	//3.广播给所有玩家
 	bumpsucc(sess, newPos, data[8])
 	return nil, true
+}
+
+func syncMonsterInfo(sess *myWebSocket.WebSession, id, score uint32){
+	var (
+		msg = []uint32{}
+	)
+
+	msg = append(msg, id)
+	msg = append(msg, score)
+	myWebSocket.SendMsg(sess, myWebSocket.MID_MonsterInfo, msg)
 }
 
 func bumpsucc(sess *myWebSocket.WebSession, newpos *Pos, monsterId uint32)(error, bool){

@@ -54,10 +54,6 @@ func GetEntity()(this *Entity, new bool){
 	return
 }
 
-const (
-	maxWidth = 960
-)
-
 func (this *Entity) rand1(timeRandSeed int){
 	randX := common.RandOne(timeRandSeed)
 	this.Epos.Nodex = int(float64(randX - 0.2)*float64(maxWidth))
@@ -79,7 +75,7 @@ func (this *Entity) rand2(origin *Pos){
 		timeRandSeed = int(time.Now().Unix())
 	)
 
-	PurpleMonstersPos := GetGlobalPurpleMonsters().GetAll()
+	PurpleMonsters := GetGlobalPurpleMonsters().GetAll()
 	for {
 		this.rand1(timeRandSeed)
 		if origin != nil {
@@ -90,14 +86,19 @@ func (this *Entity) rand2(origin *Pos){
 			}
 		}
 
-		for _, pos := range PurpleMonstersPos {
-			if this.Epos.Nodex == pos.Nodex{
+		for _, id := range PurpleMonsters {
+			moster := GetPurpleMonsterByID(id)
+			if moster.Mypos == nil {
+				continue
+			}
+
+			if this.Epos.Nodex == moster.Mypos.Nodex{
 				hasEqual = true
 				break
 			}
-
+			
 			//判断离上一次球间距，不得小于60
-			result := math.Sqrt(math.Pow(float64(pos.Nodex - this.Epos.Nodex),2) + math.Pow(float64(pos.Nodey - this.Epos.Nodey),2))
+			result := math.Sqrt(math.Pow(float64(moster.Mypos.Nodex - this.Epos.Nodex),2) + math.Pow(float64(moster.Mypos.Nodey - this.Epos.Nodey),2))
 			if result <= float64(100) { //小于此值则碰撞了
 				timeRandSeed = int(time.Now().Unix()) + 1
 				dstNoEnough = true

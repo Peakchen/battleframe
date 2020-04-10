@@ -46635,3 +46635,157 @@ libpng warning: iCCP: known incorrect sRGB profile
 2020-04-10T09:20:08.208Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_move:  5 2 235 2 88 3
 2020-04-10T09:20:13.220Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_move:  5 2 235 2 88 3
 2020-04-10T09:20:18.220Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_move:  5 2 235 2 88 3
+2020-04-10T09:20:23.223Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_move:  5 2 235 2 88 3
+2020-04-10T09:20:28.324Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_move:  5 2 235 2 88 3
+2020-04-10T09:20:33.245Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_move:  5 2 235 2 88 3
+2020-04-10T09:20:38.246Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_move:  5 2 235 2 88 3
+2020-04-10T09:20:43.249Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_move:  5 2 235 2 88 3
+2020-04-10T09:20:48.347Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_move:  5 2 235 2 88 3
+2020-04-10T09:20:48.464Z - normal: Simulator: D/jswrapper (455): ScriptEngine::cleanup begin ...
+2020-04-10T09:20:48.464Z - normal: Simulator: D/jswrapper (594): GC begin ..., (js->native map) size: 264, all objects: 568
+2020-04-10T09:20:48.470Z - normal: Simulator: D/jswrapper (643): XMLHttpRequest_finalize, 0E6FF8E8 ... 
+2020-04-10T09:20:48.470Z - normal: Simulator: D/jswrapper (643): XMLHttpRequest_finalize, 0E84B980 ... 
+2020-04-10T09:20:48.494Z - normal: Simulator: D/jswrapper (602): GC end ..., (js->native map) size: 104, all objects: 344
+2020-04-10T09:20:48.494Z - normal: Simulator: D/jswrapper (594): GC begin ..., (js->native map) size: 104, all objects: 342
+2020-04-10T09:20:48.515Z - normal: Simulator: D/jswrapper (602): GC end ..., (js->native map) size: 104, all objects: 342
+2020-04-10T09:20:48.516Z - normal: Simulator: D/jswrapper (594): GC begin ..., (js->native map) size: 0, all objects: 0
+2020-04-10T09:20:48.538Z - normal: Simulator: D/jswrapper (602): GC end ..., (js->native map) size: 0, all objects: 0
+2020-04-10T09:20:48.539Z - normal: Simulator: D/jswrapper (516): ScriptEngine::cleanup end ...
+2020-04-10T09:20:48.722Z - warn: Simulator: libpng warning: iCCP: known incorrect sRGB profile
+libpng warning: iCCP: known incorrect sRGB profile
+2020-04-10T09:47:25.284Z - normal: Simulator: SCREEN DPI = 96, SCREEN SCALE = 1.00
+2020-04-10T09:47:25.295Z - normal: Simulator: WORKAREA WIDTH 1912.00, HEIGHT 948.00
+2020-04-10T09:47:25.296Z - normal: Simulator: FRAME SCALE = 0.50
+2020-04-10T09:47:25.875Z - normal: Simulator: Ready for GLSL
+2020-04-10T09:47:25.875Z - normal: Simulator: Ready for OpenGL 2.0
+2020-04-10T09:47:25.904Z - normal: Simulator: Project Config:
+2020-04-10T09:47:25.905Z - normal: Simulator:     project dir: D:\CocosCreator_2.3.1\resources\cocos2d-x\simulator\win32\
+2020-04-10T09:47:25.905Z - normal: Simulator:     writable path: $(PROJDIR)\
+2020-04-10T09:47:25.905Z - normal: Simulator:     script file: $(PROJDIR)\main.js
+2020-04-10T09:47:25.906Z - normal: Simulator:     frame size: 750 x 1334
+2020-04-10T09:47:25.906Z - normal: Simulator:     frame scale: 0.50
+2020-04-10T09:47:25.906Z - normal: Simulator:     show console: NO
+2020-04-10T09:47:25.906Z - normal: Simulator:     write debug log: NO ()
+2020-04-10T09:47:25.907Z - normal: Simulator:     listen: 
+2020-04-10T09:47:25.907Z - normal: Simulator:     debugger: none
+2020-04-10T09:47:25.907Z - normal: Simulator:     add searching path:
+2020-04-10T09:47:25.908Z - normal: Simulator: 
+2020-04-10T09:47:25.908Z - normal: Simulator: 
+2020-04-10T09:47:25.909Z - normal: Simulator: 
+2020-04-10T09:47:25.912Z - normal: Simulator: resetDesignResolution request
+2020-04-10T09:47:25.912Z - normal: Simulator: ------------------------------------------------
+2020-04-10T09:47:25.912Z - normal: Simulator: LOAD Js FILE: jsb-adapter/jsb-builtin.js
+2020-04-10T09:47:25.913Z - normal: Simulator: ------------------------------------------------
+2020-04-10T09:47:25.913Z - normal: Simulator: D/jswrapper (367): Initializing V8, version: 7.5.288.22
+2020-04-10T09:47:26.691Z - normal: Simulator: D/jswrapper (813): libuv version: 1.13.1
+2020-04-10T09:47:26.693Z - normal: Simulator: D/jswrapper (112): Debugger listening..., visit [ chrome-devtools://devtools/bundled/js_app.html?v8only=true&ws=0.0.0.0:5086/00010002-0003-4004-8005-000600070008 ] in chrome browser to debug!
+2020-04-10T09:47:26.693Z - normal: Simulator: D/jswrapper (115): For help see https://nodejs.org/en/docs/inspector
+2020-04-10T09:47:26.729Z - normal: Simulator: D/jswrapper (130): JS: Enable batch GL commands optimization!
+2020-04-10T09:47:26.730Z - normal: Simulator: resetDesignResolution request
+2020-04-10T09:47:26.731Z - normal: Simulator: ------------------------------------------------
+2020-04-10T09:47:26.731Z - normal: Simulator: LOAD Js FILE: main.js
+2020-04-10T09:47:26.731Z - normal: Simulator: ------------------------------------------------
+2020-04-10T09:47:27.105Z - normal: Simulator: D/renderer (616): Device caps: maxVextexTextures: 32, maxFragUniforms: 1024, maxTextureUints: 32, maxVertexAttributes: 16, maxDrawBuffers: 8, maxColorAttatchments: 8
+2020-04-10T09:47:27.105Z - normal: Simulator: iShow!
+2020-04-10T09:47:27.214Z - normal: Simulator: D/jswrapper (130): JS: Cocos Creator v2.3.1
+2020-04-10T09:47:27.285Z - normal: Simulator: D/jswrapper (130): JS: login init...
+2020-04-10T09:47:27.285Z - normal: Simulator: D/jswrapper (149): JS: addr:  ws://localhost:13001/ws true
+2020-04-10T09:47:27.286Z - normal: Simulator: D/jswrapper (149): JS: global ws init, state:  0
+2020-04-10T09:47:27.408Z - normal: Simulator: D/jswrapper (149): JS: ws open:  1
+2020-04-10T09:47:42.322Z - normal: Simulator: D/jswrapper (149): JS: edit name:  1
+2020-04-10T09:47:42.527Z - normal: Simulator: D/jswrapper (149): JS: edit name:  11
+2020-04-10T09:47:43.270Z - normal: Simulator: D/jswrapper (149): JS: edit pwd:  1
+2020-04-10T09:47:43.456Z - normal: Simulator: D/jswrapper (149): JS: edit pwd:  11
+2020-04-10T09:47:43.644Z - normal: Simulator: D/jswrapper (149): JS: edit pwd:  111
+2020-04-10T09:47:44.375Z - normal: Simulator: D/jswrapper (130): JS: click login...
+2020-04-10T09:47:44.393Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_login:  1 2
+2020-04-10T09:47:46.392Z - normal: Simulator: D/jswrapper (149): JS: LoginSucc:  1
+2020-04-10T09:47:46.392Z - normal: Simulator: D/jswrapper (149): JS: 玩家登陆成功, id： 2
+2020-04-10T09:47:46.415Z - normal: Simulator: D/jswrapper (130): JS: LoadScene 5dcd99cb-77a4-4c95-a7d8-4b5b45295ae5: 22.447000000000116ms
+2020-04-10T09:47:46.423Z - normal: Simulator: D/jswrapper (130): JS: game on load init...
+2020-04-10T09:47:46.423Z - normal: Simulator: In the constructor of HttpClient!
+2020-04-10T09:47:46.513Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_StarBorn:  2 72 2 88
+2020-04-10T09:48:46.522Z - normal: Simulator: D/jswrapper (130): JS: send heart beat...
+2020-04-10T09:48:46.620Z - warn: Simulator: libpng warning: iCCP: known incorrect sRGB profile
+libpng warning: iCCP: known incorrect sRGB profile
+E/jswrapper (272): ERROR: Uncaught ReferenceError: msgid is not defined, location: dst/assets/scripts/wsNet.js:0:0
+STACK:
+[0]onHeartBeat@dst/assets/scripts/wsNet.js:169
+[1]ws.onmessage@dst/assets/scripts/wsNet.js:320
+E/jswrapper (562): [ERROR] (f:\jenkins\workspace\creator_2d\cocos2d-x-lite\windows\cocos2d-x-lite\cocos\scripting\js-bindings\jswrapper\v8\object.cpp, 562): Invoking function (09EA11C0) failed!
+2020-04-10T09:49:46.521Z - normal: Simulator: D/jswrapper (130): JS: close connection...
+2020-04-10T09:49:46.624Z - normal: Simulator: D/jswrapper (149): JS: ws close:  3
+2020-04-10T11:09:53.525Z - normal: Simulator: D/jswrapper (455): ScriptEngine::cleanup begin ...
+2020-04-10T11:09:53.525Z - normal: Simulator: D/jswrapper (594): GC begin ..., (js->native map) size: 244, all objects: 543
+2020-04-10T11:09:53.528Z - normal: Simulator: D/jswrapper (643): XMLHttpRequest_finalize, 0F4CFC28 ... 
+2020-04-10T11:09:53.528Z - normal: Simulator: D/jswrapper (643): XMLHttpRequest_finalize, 00437638 ... 
+2020-04-10T11:09:53.551Z - normal: Simulator: D/jswrapper (602): GC end ..., (js->native map) size: 99, all objects: 334
+2020-04-10T11:09:53.551Z - normal: Simulator: D/jswrapper (594): GC begin ..., (js->native map) size: 99, all objects: 332
+2020-04-10T11:09:53.566Z - normal: Simulator: D/jswrapper (602): GC end ..., (js->native map) size: 99, all objects: 332
+2020-04-10T11:09:53.570Z - normal: Simulator: D/jswrapper (594): GC begin ..., (js->native map) size: 0, all objects: 0
+2020-04-10T11:09:53.591Z - normal: Simulator: D/jswrapper (602): GC end ..., (js->native map) size: 0, all objects: 0
+2020-04-10T11:09:53.601Z - normal: Simulator: D/jswrapper (516): ScriptEngine::cleanup end ...
+2020-04-10T11:10:00.178Z - normal: Simulator: SCREEN DPI = 96, SCREEN SCALE = 1.00
+2020-04-10T11:10:00.183Z - normal: Simulator: WORKAREA WIDTH 1912.00, HEIGHT 948.00
+2020-04-10T11:10:00.185Z - normal: Simulator: FRAME SCALE = 0.50
+2020-04-10T11:10:00.762Z - normal: Simulator: Ready for GLSL
+2020-04-10T11:10:00.763Z - normal: Simulator: Ready for OpenGL 2.0
+2020-04-10T11:10:00.803Z - normal: Simulator: Project Config:
+2020-04-10T11:10:00.805Z - normal: Simulator:     project dir: D:\CocosCreator_2.3.1\resources\cocos2d-x\simulator\win32\
+2020-04-10T11:10:00.808Z - normal: Simulator:     writable path: $(PROJDIR)\
+2020-04-10T11:10:00.811Z - normal: Simulator:     script file: $(PROJDIR)\main.js
+2020-04-10T11:10:00.813Z - normal: Simulator:     frame size: 750 x 1334
+2020-04-10T11:10:00.816Z - normal: Simulator:     frame scale: 0.50
+2020-04-10T11:10:00.819Z - normal: Simulator:     show console: NO
+2020-04-10T11:10:00.822Z - normal: Simulator:     write debug log: NO ()
+2020-04-10T11:10:00.823Z - normal: Simulator:     listen: 
+2020-04-10T11:10:00.828Z - normal: Simulator:     debugger: none
+2020-04-10T11:10:00.830Z - normal: Simulator:     add searching path:
+2020-04-10T11:10:00.833Z - normal: Simulator: 
+2020-04-10T11:10:00.835Z - normal: Simulator: 
+2020-04-10T11:10:00.838Z - normal: Simulator: 
+2020-04-10T11:10:00.871Z - normal: Simulator: resetDesignResolution request
+2020-04-10T11:10:00.873Z - normal: Simulator: ------------------------------------------------
+2020-04-10T11:10:00.874Z - normal: Simulator: LOAD Js FILE: jsb-adapter/jsb-builtin.js
+2020-04-10T11:10:00.874Z - normal: Simulator: ------------------------------------------------
+2020-04-10T11:10:00.876Z - normal: Simulator: D/jswrapper (367): Initializing V8, version: 7.5.288.22
+2020-04-10T11:10:01.587Z - normal: Simulator: D/jswrapper (813): libuv version: 1.13.1
+2020-04-10T11:10:01.588Z - normal: Simulator: D/jswrapper (112): Debugger listening..., visit [ chrome-devtools://devtools/bundled/js_app.html?v8only=true&ws=0.0.0.0:5086/00010002-0003-4004-8005-000600070008 ] in chrome browser to debug!
+2020-04-10T11:10:01.589Z - normal: Simulator: D/jswrapper (115): For help see https://nodejs.org/en/docs/inspector
+2020-04-10T11:10:01.618Z - normal: Simulator: D/jswrapper (130): JS: Enable batch GL commands optimization!
+2020-04-10T11:10:01.622Z - normal: Simulator: resetDesignResolution request
+2020-04-10T11:10:01.622Z - normal: Simulator: ------------------------------------------------
+2020-04-10T11:10:01.622Z - normal: Simulator: LOAD Js FILE: main.js
+2020-04-10T11:10:01.622Z - normal: Simulator: ------------------------------------------------
+2020-04-10T11:10:01.983Z - normal: Simulator: D/renderer (616): Device caps: maxVextexTextures: 32, maxFragUniforms: 1024, maxTextureUints: 32, maxVertexAttributes: 16, maxDrawBuffers: 8, maxColorAttatchments: 8
+2020-04-10T11:10:01.983Z - normal: Simulator: iShow!
+2020-04-10T11:10:02.108Z - normal: Simulator: D/jswrapper (130): JS: Cocos Creator v2.3.1
+2020-04-10T11:10:02.173Z - normal: Simulator: D/jswrapper (130): JS: login init...
+2020-04-10T11:10:02.173Z - normal: Simulator: D/jswrapper (149): JS: addr:  ws://localhost:13001/ws true
+2020-04-10T11:10:02.174Z - normal: Simulator: D/jswrapper (149): JS: global ws init, state:  0
+2020-04-10T11:10:02.292Z - normal: Simulator: D/jswrapper (149): JS: ws open:  1
+2020-04-10T11:10:06.304Z - normal: Simulator: D/jswrapper (149): JS: edit name:  1
+2020-04-10T11:10:06.495Z - normal: Simulator: D/jswrapper (149): JS: edit name:  11
+2020-04-10T11:10:06.919Z - normal: Simulator: D/jswrapper (149): JS: edit pwd:  1
+2020-04-10T11:10:07.104Z - normal: Simulator: D/jswrapper (149): JS: edit pwd:  11
+2020-04-10T11:10:07.289Z - normal: Simulator: D/jswrapper (149): JS: edit pwd:  111
+2020-04-10T11:10:07.974Z - normal: Simulator: D/jswrapper (130): JS: click login...
+2020-04-10T11:10:07.992Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_login:  1 2
+2020-04-10T11:10:09.981Z - normal: Simulator: D/jswrapper (149): JS: LoginSucc:  1
+2020-04-10T11:10:09.981Z - normal: Simulator: D/jswrapper (149): JS: 玩家登陆成功, id： 2
+2020-04-10T11:10:10.006Z - normal: Simulator: D/jswrapper (130): JS: LoadScene 5dcd99cb-77a4-4c95-a7d8-4b5b45295ae5: 24.57499999999891ms
+2020-04-10T11:10:10.014Z - normal: Simulator: D/jswrapper (130): JS: game on load init...
+2020-04-10T11:10:10.014Z - normal: Simulator: In the constructor of HttpClient!
+2020-04-10T11:10:10.105Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_StarBorn:  2 72 2 88
+2020-04-10T11:10:16.462Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_Bump:  6 1 1 71 2 88 2
+2020-04-10T11:10:18.062Z - normal: Simulator: D/jswrapper (149): JS: ws message MID_Bump:  6 1 1 110 2 88 2
+2020-04-10T11:11:18.082Z - normal: Simulator: D/jswrapper (130): JS: send heart beat...
+2020-04-10T11:11:18.181Z - warn: Simulator: libpng warning: iCCP: known incorrect sRGB profile
+libpng warning: iCCP: known incorrect sRGB profile
+E/jswrapper (272): ERROR: Uncaught ReferenceError: msgid is not defined, location: dst/assets/scripts/wsNet.js:0:0
+STACK:
+[0]onHeartBeat@dst/assets/scripts/wsNet.js:169
+[1]ws.onmessage@dst/assets/scripts/wsNet.js:320
+E/jswrapper (562): [ERROR] (f:\jenkins\workspace\creator_2d\cocos2d-x-lite\windows\cocos2d-x-lite\cocos\scripting\js-bindings\jswrapper\v8\object.cpp, 562): Invoking function (197E8730) failed!
+2020-04-10T11:12:18.091Z - normal: Simulator: D/jswrapper (130): JS: close connection...
+2020-04-10T11:12:18.190Z - normal: Simulator: D/jswrapper (149): JS: ws close:  3

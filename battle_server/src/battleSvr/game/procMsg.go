@@ -101,7 +101,7 @@ func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	sess.SetId(moster.ID)
 	GetGlobalPurpleMonsters().Insert(moster.ID)
 	// 发送获取自身id
-	return loginSucc(sess, moster.ID, moster.Mypos)
+	return loginSucc(sess, moster)
 }
 
 func loginfail(sess *myWebSocket.WebSession) (error, bool) {
@@ -113,7 +113,7 @@ func loginfail(sess *myWebSocket.WebSession) (error, bool) {
 	return nil, true
 }
 
-func loginSucc(sess *myWebSocket.WebSession, id uint32, pos *Pos) (error, bool) {
+func loginSucc(sess *myWebSocket.WebSession, moster *PurpleMonster) (error, bool) {
 	var (
 		loginmsg = []uint32{}
 		monsterXflag = uint32(Pos_Right)
@@ -123,6 +123,9 @@ func loginSucc(sess *myWebSocket.WebSession, id uint32, pos *Pos) (error, bool) 
 		monsterY = uint32(0)
 	)
 
+	id := moster.ID
+	pos := moster.Mypos
+	score := moster.Score
 	loginmsg = append(loginmsg, 1)
 	loginmsg = append(loginmsg, id)
 	monsterX = uint32(pos.Nodex)
@@ -140,6 +143,8 @@ func loginSucc(sess *myWebSocket.WebSession, id uint32, pos *Pos) (error, bool) 
 	}
 	loginmsg = append(loginmsg, monsterYflag )
 	loginmsg = append(loginmsg, monsterY )
+	loginmsg = append(loginmsg, score )
+	fmt.Println("login message succ: ", id, monsterX, monsterY)
 	myWebSocket.SendMsg(sess, myWebSocket.MID_login, loginmsg)
 	return nil, true
 }
@@ -199,6 +204,7 @@ func SyncPos(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 */
 func Logout(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	fmt.Println("proc logout message ... ")
+	GetGlobalPurpleMonsters().Remove(data[0])
 	//broadcast data to others.
 	var (
 		msg = []uint32{}

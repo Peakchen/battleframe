@@ -78,7 +78,7 @@ var MessageStateFunc = {
             return
         }
 
-        cc.log("ws message MID_login: ", data[2], data[3], data[4], data[5], data[6], data[7])
+        cc.log("ws message MID_login: ", data[2], data[3], data[4], data[5], data[6], data[7], data[8])
         Global.LoginSucc = data[2]
         var nodex = data[5]
         var nodey = data[7]
@@ -90,6 +90,7 @@ var MessageStateFunc = {
         }
         Global.MosterPosX = nodex
         Global.MosterPosY = nodey
+        Global.MonsterScore = data[8]
     },
 
     onlogout: function(data) {

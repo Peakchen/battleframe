@@ -33,18 +33,9 @@ cc.Class({
     this.updateFrame = 0;
   },
   onPicked: function onPicked() {
-    //碰撞后发送一个消息
-    // var buff = new ArrayBuffer(12)
-    // var data = new Uint32Array(buff)
-    // data[0] = 4
-    // data[1] = 1 //单纯给服务器发消息
-    // for (var i = 2; i <= data.length-1; i++) {
-    //     data[i] = i + 1
-    // }
     if (Global.newStarPos.has(Global.newStarKey) == false && Global.BumpedPlayerId == null) {
       return;
-    } // this.getwsNetObj().sendwsmessage(data)
-    // 当星星被收集时，调用 Game 脚本中的接口，生成一个新的星星
+    } // 当星星被收集时，调用 Game 脚本中的接口，生成一个新的星星
 
 
     var data = Global.newStarPos.get(Global.newStarKey);
@@ -52,9 +43,7 @@ cc.Class({
     var nodex = data.nodex;
     var nodey = data.nodey; //cc.log("update star pos: ", data.nodex, data.nodey)
 
-    this.game.spawnNewStar(nodex, nodey); // 调用 Game 脚本的得分方法
-
-    if (Global.mySessionId == Global.BumpedPlayerId) this.game.gainScore(); // 然后销毁当前星星节点
+    this.game.spawnNewStar(nodex, nodey); // 然后销毁当前星星节点
 
     this.node.destroy();
     Global.Bumped = 1;

@@ -50,9 +50,10 @@ module.exports = {
     DoLoginAction: null,
     LoginSucc: null,
     maxDigital: 2100000000,
-    MonsterScore: 0,
+    MonsterScore: null,
     MosterPosX: 0,
     MosterPosY: 0,
+    EnterUpdateMoster: false,
 
     //测试
     test: null

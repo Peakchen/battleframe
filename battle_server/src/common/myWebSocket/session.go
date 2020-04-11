@@ -48,7 +48,7 @@ func (this *WebSession) Handle(){
 }
 
 func (this *WebSession) exit(){
-	this.sendOffline()
+	//this.sendOffline()
 	this.wsconn.Close()
 
 	this.offch <-this
@@ -121,7 +121,7 @@ func (this *WebSession) writeloop(){
 					return
 				}
 			case <-ticker.C:
-				if err := this.wsconn.WriteControl(websocket.PingMessage, nil, time.Now().Add(deadline)); err != nil {
+				if err := this.wsconn.WriteControl(websocket.PingMessage, []byte("ping"), time.Now().Add(deadline)); err != nil {
 					fmt.Println("send msg over time, err: ", err.Error(), time.Now().Unix())
 					return
 				}
@@ -130,6 +130,7 @@ func (this *WebSession) writeloop(){
 }
 
 func (this *WebSession) sendOffline(){
+	/* send message to close connetion... */
 	if err := this.wsconn.WriteControl(websocket.CloseMessage, websocket.FormatCloseMessage(websocket.CloseNormalClosure, "now closing..."), time.Now().Add(time.Second)); err != nil {
 		fmt.Println("send close fail, err: ", err)
 		return

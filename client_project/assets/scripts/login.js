@@ -128,7 +128,7 @@ cc.Class({
 
     //检查登陆结果
     checkLoginActionResult: function(){
-        if (Global.DoLoginAction == 1) {
+        if (Global.DoLoginAction == 1 && Global.mySessionId != null) {
             //等到回复消息正常取值
             this.scheduleOnce(function(){
                 cc.log("LoginSucc: ", Global.LoginSucc)
@@ -142,6 +142,9 @@ cc.Class({
                 }
                 Global.DoLoginAction = 0
              },2);
+        }else if (Global.LoginSucc == 0){
+            this.tip_info.string = "登陆失败"
+            this.onLogin(null)
         }
     },
 
@@ -153,10 +156,6 @@ cc.Class({
 
     //检查输入框内容是否可用
     checkInputContent: function(){
-        // if (Global.DoRegisterAction == 0 || Global.DoLoginAction == 0 ){
-        //     return
-        // }
-
         var disableShow = true
         if (Global.AccountName == "" || Global.AccountPwd == "") {
             this.tip_info.string = "用户名或者密码不能为空！！！"

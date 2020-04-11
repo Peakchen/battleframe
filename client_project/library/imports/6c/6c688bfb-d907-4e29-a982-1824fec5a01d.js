@@ -74,12 +74,8 @@ cc.Class({
     }
   },
   onLoad: function onLoad() {
-    cc.game.setFrameRate(10);
     Global.FirstLogin = null;
-    Global.newStarPos = new Map(); // 初始化跳跃动作
-    //this.jumpAction = this.setJumpAction();
-    //this.node.runAction(this.jumpAction);
-    // 加速度方向开关
+    Global.newStarPos = new Map(); // 加速度方向开关
 
     this.accLeft = false;
     this.accRight = false; // 主角当前水平方向速度
@@ -89,30 +85,18 @@ cc.Class({
     this.TickFrame = 0; // 初始化键盘输入监听
 
     cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
-    cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this); //初始化小球位置
-    //this.randPlayerPos()
-    //发送初始位置
-
-    if (this.getwsNetObj().CanSendMsg()) {
-      this.scheduleOnce(function () {
-        this.node.x = Global.MosterPosX;
-        this.node.y = Global.MosterPosY;
-        this.sendPlayerPos(Global.MID_SyncPos);
-      }, 1);
+    cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
+  },
+  checkHasUpdatedMonster: function checkHasUpdatedMonster() {
+    if (Global.EnterUpdateMoster == true) {
+      this.sendPlayerPos(Global.MID_SyncPos);
+      Global.EnterUpdateMoster = false;
     }
   },
   onDestroy: function onDestroy() {
     // 取消键盘输入监听
     cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
     cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
-  },
-  //初始化随机小球所在位置，然后广播给其他人
-  randPlayerPos: function randPlayerPos() {
-    this.node.x = this.xSpeed * (this.node.width / 2);
-    this.xSpeed = 0; //cc.log("randPlayerPos player pos: ", this.node.x, this.node.y)
-  },
-  stop: function stop() {
-    this.xSpeed = 0;
   },
   sendPlayerPos: function sendPlayerPos(msgid) {
     //cc.log("send player pos: ", msgid, this.TickFrame, this.node.x, this.node.y)
@@ -153,8 +137,23 @@ cc.Class({
     data[6] = Global.mySessionId;
     this.getwsNetObj().sendwsmessage(data);
   },
-  update: function update(dt) {
-    //cc.log("player dt: ", this.node.x, this.node.y)
+  checkUpdateMovePos: function checkUpdateMovePos(dt) {
+    if (Global.Bumped == 1) {
+      //this.xSpeed = 0
+      Global.Bumped = null; //移动广播所在位置，然后获取其他小球所在位置然后进行展示
+
+      this.sendPlayerPos(Global.MID_move);
+    }
+
+    this.TickFrame += dt;
+
+    if (this.TickFrame > 10.0) {
+      //更新帧数据
+      this.sendPlayerPos(Global.MID_move);
+      this.TickFrame = 0;
+    }
+  },
+  checkSpeedUpdate: function checkSpeedUpdate(dt) {
     //方向移动操作后没任何方向操作时，则慢慢减速直至停止
     if (this.accLeft == false && this.accRight == false) {
       this.xSpeed -= 0.1;
@@ -193,22 +192,15 @@ cc.Class({
     } else {
       this.node.x += this.xSpeed * dt;
     }
+  },
+  update: function update(dt) {
+    //cc.log("player dt: ", this.node.x, this.node.y)
+    //检查场景加载小球变化
+    this.checkHasUpdatedMonster(); //检查方向移动和速度变化关系
 
-    if (Global.Bumped == 1) {
-      //this.xSpeed = 0
-      Global.Bumped = null; //移动广播所在位置，然后获取其他小球所在位置然后进行展示
+    this.checkSpeedUpdate(dt); //检查碰撞和自身移动位置变化
 
-      this.sendPlayerPos(Global.MID_move);
-    }
-
-    this.TickFrame += dt;
-
-    if (this.TickFrame > 10.0) {
-      //更新帧数据
-      this.sendPlayerPos(Global.MID_move);
-      this.TickFrame = 0;
-    } //cc.log("player pos: ", this.node.x, this.node.y)
-
+    this.checkUpdateMovePos(dt); //cc.log("player pos: ", this.node.x, this.node.y)
   }
 });
 

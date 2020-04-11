@@ -51,7 +51,8 @@ cc.Class({
     return new wsNet();
   },
   onLoad: function onLoad() {
-    cc.log("game on load init..."); //this.getwsNetObj().sendwsmessage("hello")
+    cc.log("game on load init...");
+    cc.game.setFrameRate(10); //this.getwsNetObj().sendwsmessage("hello")
     //发起战斗开始请求
 
     this.getBattleObj().postBattleStartMsg(); // 获取地平面的 y 轴坐标
@@ -210,12 +211,37 @@ cc.Class({
 
     this.checkNewPlayer();
   },
+  checkupdateMosterPos: function checkupdateMosterPos() {
+    if (this.getwsNetObj().CanSendMsg() == false) {
+      return;
+    }
+
+    if (Global.MosterPosX == 0 && Global.MosterPosY == 0) {
+      return;
+    }
+
+    this.player.setPosition(cc.v2(Global.MosterPosX, Global.MosterPosY));
+    Global.MosterPosX = 0;
+    Global.MosterPosY = 0;
+    Global.EnterUpdateMoster = true;
+  },
+  checkEnterupdateScore: function checkEnterupdateScore() {
+    if (Global.MonsterScore != null) {
+      this.score = Global.MonsterScore;
+      this.scoreDisplay.string = 'Score: ' + this.score;
+      Global.MonsterScore = null;
+    }
+  },
   update: function update(dt) {
     //cc.log("game dt: ", dt)
     // 每帧更新计时器，超过限度还没有生成新的星星
     // 就会调用游戏失败逻辑
     //this.testcreateplayer()
-    //检查上线或者移动玩家小球
+    //检查进入场景更新分值
+    this.checkEnterupdateScore(); //检查更新小球位置
+
+    this.checkupdateMosterPos(); //检查上线或者移动玩家小球
+
     this.checkNewPlayer(); //检查下线小球
 
     this.checklogout(); // if (this.timer > this.starDuration) {

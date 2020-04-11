@@ -61,6 +61,7 @@ func NewMoster(name, pwd string)(this *PurpleMonster, newsucc bool){
 		Nodey: -120,
 	}
 	common.SetCache(strconv.Itoa(int(this.ID)), Identify)
+	this.StrIdentify = Identify
 	common.SetEncodeCache(this)
 	newsucc = true
 	return
@@ -91,7 +92,7 @@ func GetPurpleMonsterByID(id uint32)(this *PurpleMonster){
 	}
 
 	this = &PurpleMonster{}
-	this.StrIdentify = data.(string)
+	this.StrIdentify = string(data.([]uint8))
 	err, succ := common.GetDecodeCache(this)
 	if !succ || err != nil{
 		panic(err)

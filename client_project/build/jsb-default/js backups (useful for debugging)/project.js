@@ -265,7 +265,6 @@ this.getwsNetObj().sendwsmessage(n);
 }
 },
 checkUpdateMovePos: function(e) {
-if (s.syncStarPos && s.syncOnline4Other) {
 if (1 == s.Bumped) {
 s.Bumped = null;
 this.sendPlayerPos(s.MID_move);
@@ -274,7 +273,6 @@ this.TickFrame += e;
 if (this.TickFrame > 10) {
 this.sendPlayerPos(s.MID_move);
 this.TickFrame = 0;
-}
 }
 },
 checkSpeedUpdate: function(e) {
@@ -839,12 +837,13 @@ s.newStarPos.set(s.newStarKey, o);
 }, d = function(e) {
 cc.log("ws message MID_GM...");
 }, p = function(e) {
-cc.log("ws message MID_Online4Other: ", e[1], e[2], e[3], e[4], e[5], e[6]);
-var t = e[2].toString(), n = e[4], o = e[6];
-2 == e[3] && (n = 0 - n);
-2 == e[5] && (o = 0 - o);
+cc.log("ws message MID_Online4Other: ", e[2], e[3], e[4], e[5], e[6]);
+var t = e[6].toString(), n = e[3], o = e[5];
+2 == e[2] && (n = 0 - n);
+2 == e[4] && (o = 0 - o);
+cc.log("pos: ", n, o);
 var c = {
-sessionId: e[2],
+sessionId: e[6],
 nodex: n,
 nodey: o
 };

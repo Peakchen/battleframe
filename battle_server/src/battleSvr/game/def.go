@@ -15,3 +15,10 @@ type Pos struct {
 const (
 	maxWidth = 960
 )
+
+//游戏状态
+type MosterState int
+const (
+	MosterState_Online MosterState = 1 //在线
+	MosterState_Offline MosterState = 2 //下线
+)

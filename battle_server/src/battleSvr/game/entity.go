@@ -86,7 +86,11 @@ func (this *Entity) rand2(origin *Pos){
 			}
 		}
 
-		for _, id := range PurpleMonsters {
+		for id, state := range PurpleMonsters {
+			if state == MosterState_Offline {
+				continue
+			}
+			
 			moster := GetPurpleMonsterByID(id)
 			if moster.Mypos == nil {
 				continue

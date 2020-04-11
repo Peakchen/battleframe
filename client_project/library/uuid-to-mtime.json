@@ -634,19 +634,19 @@
     "meta": 1586591924017,
     "relativePath": "scripts\\common.js"
   },
-  "6c688bfb-d907-4e29-a982-1824fec5a01d": {
-    "asset": 1586591914018,
-    "meta": 1586591924096,
-    "relativePath": "scripts\\Player.js"
-  },
   "4644fd26-d96b-4005-8472-fa99fa74e686": {
     "asset": 1586591855516,
     "meta": 1586591924119,
     "relativePath": "scripts\\Star.js"
   },
+  "6c688bfb-d907-4e29-a982-1824fec5a01d": {
+    "asset": 1586597593794,
+    "meta": 1586597664802,
+    "relativePath": "scripts\\Player.js"
+  },
   "f5f0250b-b558-43e3-b3cd-1f4f25679b91": {
-    "asset": 1586591809633,
-    "meta": 1586591924185,
+    "asset": 1586598490631,
+    "meta": 1586598509834,
     "relativePath": "scripts\\wsNet.js"
   }
 }

@@ -99,7 +99,9 @@ func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	}
 
 	sess.SetId(moster.ID)
-	GetGlobalPurpleMonsters().Insert(moster.ID)
+	gmonsters := GetGlobalPurpleMonsters()
+	gmonsters.Online(moster.ID)
+	gmonsters.UpdateCache()
 	// 发送获取自身id
 	return loginSucc(sess, moster)
 }
@@ -164,7 +166,11 @@ func SyncPos(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	var (
 		dstmsg = []uint32{}
 	)
-	for _, id := range allplayers{
+	for id, state := range allplayers{
+		if state == MosterState_Offline {
+			continue
+		}
+		
 		moster := GetPurpleMonsterByID(id)
 		if moster.Mypos == nil {
 			continue
@@ -188,11 +194,13 @@ func SyncPos(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 			posY = 0 - posY
 		}
 		
-		dstmsg = append(dstmsg, uint32(id))
 		dstmsg = append(dstmsg, uint32(posXflag))
 		dstmsg = append(dstmsg, uint32(posX))
 		dstmsg = append(dstmsg, uint32(posYflag))
 		dstmsg = append(dstmsg, uint32(posY))
+		dstmsg = append(dstmsg, uint32(id))
+
+		fmt.Println("sync other pos: ", id, posXflag, posX, posYflag, posY)
 		myWebSocket.SendMsg(sess, myWebSocket.MID_Online4Other, dstmsg)
 		dstmsg = []uint32{}
 	}
@@ -204,7 +212,11 @@ func SyncPos(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 */
 func Logout(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	fmt.Println("proc logout message ... ")
-	GetGlobalPurpleMonsters().Remove(data[0])
+	
+	gmonsters := GetGlobalPurpleMonsters()
+	gmonsters.Offline(data[0])
+	gmonsters.UpdateCache()
+
 	//broadcast data to others.
 	var (
 		msg = []uint32{}

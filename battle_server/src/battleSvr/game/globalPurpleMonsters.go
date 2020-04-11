@@ -13,7 +13,7 @@ import (
 type GlobalPurpleMonsters struct {
 	common.IDBModule
 
-	Monsters []uint32
+	Monsters map[uint32]MosterState
 }
 
 const (
@@ -34,7 +34,7 @@ func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 
 	if err != nil {
 		this = &GlobalPurpleMonsters{
-			Monsters: []uint32{},
+			Monsters: map[uint32]MosterState{},
 		}
 
 		err := common.SetEncodeCache(this)
@@ -43,29 +43,34 @@ func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 		}
 	}
 
+	if this.Monsters == nil {
+		this.Monsters = map[uint32]MosterState{}
+	}
+
 	return
 }
 
-func (this *GlobalPurpleMonsters) GetAll()[]uint32{
+func (this *GlobalPurpleMonsters) UpdateCache(){
+	err := common.SetEncodeCache(this)
+	if err != nil {
+		panic(err)
+	}
+}
+
+func (this *GlobalPurpleMonsters) GetAll()map[uint32]MosterState{
 	return this.Monsters
 }
 
-func (this *GlobalPurpleMonsters) Insert(id uint32) {
+func (this *GlobalPurpleMonsters) Online(id uint32) {
 	AsyncLock.AddZKLock("global", module_GlobalPurpleMonsters)
 	defer AsyncLock.ReleaseZKLock("global", module_GlobalPurpleMonsters)
 
-	this.Monsters = append(this.Monsters, id)
+	this.Monsters[id] = MosterState_Online
 }
 
-func (this *GlobalPurpleMonsters) Remove(id uint32) {
+func (this *GlobalPurpleMonsters) Offline(id uint32) {
 	AsyncLock.AddZKLock("global", module_GlobalPurpleMonsters)
 	defer AsyncLock.ReleaseZKLock("global", module_GlobalPurpleMonsters)
 
-	for i:=0;i<len(this.Monsters);i++{
-		if this.Monsters[i] == id {
-			this.Monsters = append(this.Monsters[:i], this.Monsters[i+1:]...)
-			break
-		}
-	}
+	this.Monsters[id] = MosterState_Offline
 } 
-

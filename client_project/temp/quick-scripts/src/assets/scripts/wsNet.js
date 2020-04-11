@@ -205,21 +205,22 @@ var MessageStateFunc = {
     cc.log("ws message MID_GM...");
   },
   Online4Other: function Online4Other(data) {
-    cc.log("ws message MID_Online4Other: ", data[1], data[2], data[3], data[4], data[5], data[6]);
-    var key = data[2].toString();
-    var nodex = data[4];
-    var nodey = data[6];
+    cc.log("ws message MID_Online4Other: ", data[2], data[3], data[4], data[5], data[6]);
+    var key = data[6].toString();
+    var nodex = data[3];
+    var nodey = data[5];
 
-    if (data[3] == 2) {
+    if (data[2] == 2) {
       nodex = 0 - nodex;
     }
 
-    if (data[5] == 2) {
+    if (data[4] == 2) {
       nodey = 0 - nodey;
     }
 
+    cc.log("pos: ", nodex, nodey);
     var playerProp = {
-      sessionId: data[2],
+      sessionId: data[6],
       nodex: nodex,
       nodey: nodey
     };

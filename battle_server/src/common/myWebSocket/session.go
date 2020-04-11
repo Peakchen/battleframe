@@ -7,6 +7,7 @@ import (
 	//"encoding/binary"
 	//"io"
 	"strings"
+	"common"
 )
 
 type wsMessage struct {
@@ -49,8 +50,6 @@ func (this *WebSession) Handle(){
 
 func (this *WebSession) exit(){
 	//this.sendOffline()
-	this.wsconn.Close()
-
 	this.offch <-this
 
 	if _, noclosed := <-this.writeCh; !noclosed {
@@ -62,6 +61,8 @@ func (this *WebSession) exit(){
 		time.Sleep(1*time.Second)
 		close(this.readCh)
 	}
+
+	this.wsconn.Close()
 }
 
 func (this *WebSession) readloop(){
@@ -138,19 +139,10 @@ func (this *WebSession) sendOffline(){
 }
 
 func (this *WebSession) Write(msgtype int, data []byte) {
-	fmt.Println("session writed channel data len: ", len(this.writeCh), time.Now().Unix())
-	if len(this.writeCh) >= maxWriteMsgSize{
-		time.AfterFunc(time.Duration(5*time.Second), func (){
-			this.writeCh <- &wsMessage{
-				messageType: msgtype,
-				data: data,
-			}
-		})
-	}else{
-		this.writeCh <- &wsMessage{
-			messageType: msgtype,
-			data: data,
-		}
+	fmt.Println("session writed channel data len: ", len(this.writeCh), common.SizeVal(this.writeCh), time.Now().Unix())
+	this.writeCh <- &wsMessage{
+		messageType: msgtype,
+		data: data,
 	}
 }
 

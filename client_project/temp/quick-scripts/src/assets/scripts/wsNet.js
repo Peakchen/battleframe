@@ -11,7 +11,9 @@ var Global = require("common"); //心跳检测
 
 
 var HeartCheck = {
-  timeout: 60000,
+  timeout: 50000,
+  //50秒 稍微比服务器小一点，让服务器网络波动有个缓冲时间
+  svrtimeout: 60000,
   //60秒
   timeoutObj: null,
   serverTimeoutObj: null,
@@ -49,9 +51,8 @@ var HeartCheck = {
           return;
         }
 
-        Global.ws.close();
-        self.disconnectioned = true;
-      }, self.timeout);
+        Global.ws.close(); //self.disconnectioned = true
+      }, self.svrtimeout);
     }, this.timeout);
   },
   hasDisconnected: function hasDisconnected() {
@@ -170,7 +171,7 @@ var MessageStateFunc = {
     Global.newStarPos.set(Global.newStarKey, starProp);
   },
   onHeartBeat: function onHeartBeat(data) {
-    cc.log("ws message MID_HeartBeat: ", msgid);
+    cc.log("ws message MID_HeartBeat...");
   },
   onStarBorn: function onStarBorn(data) {
     cc.log("ws message MID_StarBorn: ", data[2], data[3], data[4], data[5]);

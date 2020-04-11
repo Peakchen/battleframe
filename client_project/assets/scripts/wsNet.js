@@ -6,7 +6,8 @@ let Global = require("common")
 
 //心跳检测
 var HeartCheck = {
-    timeout: 60000, //60秒
+    timeout: 50000, //50秒 稍微比服务器小一点，让服务器网络波动有个缓冲时间
+    svrtimeout: 60000, //60秒
     timeoutObj: null,
     serverTimeoutObj: null,
     disconnectioned: false,
@@ -41,8 +42,8 @@ var HeartCheck = {
                     return
                 } 
                 Global.ws.close();
-                self.disconnectioned = true
-            }, self.timeout)
+                //self.disconnectioned = true
+            }, self.svrtimeout)
         }, this.timeout)
     },
 
@@ -159,7 +160,7 @@ var MessageStateFunc = {
     },
 
     onHeartBeat: function(data){
-        cc.log("ws message MID_HeartBeat: ", msgid)
+        cc.log("ws message MID_HeartBeat...")
     },
 
     onStarBorn: function(data) {

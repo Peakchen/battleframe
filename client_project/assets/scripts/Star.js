@@ -41,7 +41,7 @@ cc.Class({
         var nodey = data.nodey
         //cc.log("update star pos: ", data.nodex, data.nodey)
         this.game.spawnNewStar(nodex, nodey);
-
+        Global.syncStarPos = true
         // 然后销毁当前星星节点
         this.node.destroy();
         Global.Bumped = 1

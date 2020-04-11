@@ -49,16 +49,14 @@ func (this *WebSession) Handle(){
 }
 
 func (this *WebSession) exit(){
-	//this.sendOffline()
-	this.offch <-this
 
+	this.offch <-this	
+	
 	if _, noclosed := <-this.writeCh; !noclosed {
-		time.Sleep(1*time.Second)
 		close(this.writeCh)
 	} 
 	
 	if _, noclosed := <-this.readCh; !noclosed {
-		time.Sleep(1*time.Second)
 		close(this.readCh)
 	}
 

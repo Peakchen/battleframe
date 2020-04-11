@@ -56,10 +56,6 @@ func (this *WebSocketSvr) disconnloop(){
 		if proc := GetGameLogicProcMsg(MID_logout); proc != nil {
 			proc(sess, []uint32{mosterid})
 		}
-
-		if mosterid != 0 {
-			BroadCastMsg(sess, false, MID_logout, []uint32{mosterid})
-		}
 	}
 }
 

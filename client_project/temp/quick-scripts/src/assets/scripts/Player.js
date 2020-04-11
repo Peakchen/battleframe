@@ -138,6 +138,10 @@ cc.Class({
     this.getwsNetObj().sendwsmessage(data);
   },
   checkUpdateMovePos: function checkUpdateMovePos(dt) {
+    if (!Global.syncStarPos || !Global.syncOnline4Other) {
+      return;
+    }
+
     if (Global.Bumped == 1) {
       //this.xSpeed = 0
       Global.Bumped = null; //移动广播所在位置，然后获取其他小球所在位置然后进行展示

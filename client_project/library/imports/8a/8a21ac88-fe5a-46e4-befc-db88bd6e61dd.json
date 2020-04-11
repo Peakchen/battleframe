@@ -107,6 +107,9 @@
       },
       {
         "__id__": 51
+      },
+      {
+        "__id__": 52
       }
     ],
     "_prefab": null,
@@ -196,7 +199,7 @@
       "array": [
         0,
         0,
-        355.0704155516199,
+        354.1985335937655,
         0,
         0,
         0,
@@ -2385,5 +2388,18 @@
       "__id__": 48
     },
     "_id": "06l5hFwthGb6G00uJgKYFq"
+  },
+  {
+    "__type__": "cc.Animation",
+    "_name": "",
+    "_objFlags": 0,
+    "node": {
+      "__id__": 2
+    },
+    "_enabled": true,
+    "_defaultClip": null,
+    "_clips": [],
+    "playOnLoad": false,
+    "_id": "a5hcchFw1JEpPJqTLQivYt"
   }
 ]

@@ -63,6 +63,7 @@ return new c();
 },
 onLoad: function() {
 cc.log("game on load init...");
+cc.game.setFrameRate(10);
 this.getBattleObj().postBattleStartMsg();
 this.groundY = this.ground.y + this.ground.height / 2;
 this.timer = 0;
@@ -135,7 +136,24 @@ o.NewplayerMap.set(1122, e);
 this.checkNewPlayer();
 }
 },
+checkupdateMosterPos: function() {
+if (0 != this.getwsNetObj().CanSendMsg() && (0 != o.MosterPosX || 0 != o.MosterPosY)) {
+this.player.setPosition(cc.v2(o.MosterPosX, o.MosterPosY));
+o.MosterPosX = 0;
+o.MosterPosY = 0;
+o.EnterUpdateMoster = !0;
+}
+},
+checkEnterupdateScore: function() {
+if (null != o.MonsterScore) {
+this.score = o.MonsterScore;
+this.scoreDisplay.string = "Score: " + this.score;
+o.MonsterScore = null;
+}
+},
 update: function(e) {
+this.checkEnterupdateScore();
+this.checkupdateMosterPos();
 this.checkNewPlayer();
 this.checklogout();
 this.timer += e;
@@ -204,28 +222,24 @@ this.accRight = !1;
 }
 },
 onLoad: function() {
-cc.game.setFrameRate(10);
 s.FirstLogin = null;
 s.newStarPos = new Map();
 this.accLeft = !1;
 this.accRight = !1;
-this.xSpeed = 2 * (Math.random() - .5) * 10;
+this.xSpeed = 0;
 this.TickFrame = 0;
 cc.systemEvent.on(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
 cc.systemEvent.on(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
-this.randPlayerPos();
-this.getwsNetObj().CanSendMsg() && this.sendPlayerPos(s.MID_SyncPos);
+},
+checkHasUpdatedMonster: function() {
+if (1 == s.EnterUpdateMoster) {
+this.sendPlayerPos(s.MID_SyncPos);
+s.EnterUpdateMoster = !1;
+}
 },
 onDestroy: function() {
 cc.systemEvent.off(cc.SystemEvent.EventType.KEY_DOWN, this.onKeyDown, this);
 cc.systemEvent.off(cc.SystemEvent.EventType.KEY_UP, this.onKeyUp, this);
-},
-randPlayerPos: function() {
-this.node.x = this.xSpeed * (this.node.width / 2);
-this.xSpeed = 0;
-},
-stop: function() {
-this.xSpeed = 0;
 },
 sendPlayerPos: function(e) {
 if (null != s.mySessionId) {
@@ -239,7 +253,7 @@ c = 0 - c;
 }
 n[2] = o;
 n[3] = parseInt(c);
-var i = 1, a = -88;
+var i = 1, a = this.node.y;
 if (a < 0) {
 i = 2;
 a = 0 - a;
@@ -250,7 +264,20 @@ n[6] = s.mySessionId;
 this.getwsNetObj().sendwsmessage(n);
 }
 },
-update: function(e) {
+checkUpdateMovePos: function(e) {
+if (s.syncStarPos && s.syncOnline4Other) {
+if (1 == s.Bumped) {
+s.Bumped = null;
+this.sendPlayerPos(s.MID_move);
+}
+this.TickFrame += e;
+if (this.TickFrame > 10) {
+this.sendPlayerPos(s.MID_move);
+this.TickFrame = 0;
+}
+}
+},
+checkSpeedUpdate: function(e) {
 if (0 == this.accLeft && 0 == this.accRight) {
 this.xSpeed -= .1;
 this.xSpeed < 0 && (this.xSpeed = 0);
@@ -264,15 +291,11 @@ this.node.x = -575;
 this.node.x = 575;
 this.xSpeed = 0;
 } else this.node.x += this.xSpeed * e;
-if (1 == s.Bumped) {
-s.Bumped = null;
-this.sendPlayerPos(s.MID_move);
-}
-this.TickFrame += e;
-if (this.TickFrame > 5) {
-this.sendPlayerPos(s.MID_move);
-this.TickFrame = 0;
-}
+},
+update: function(e) {
+this.checkHasUpdatedMonster();
+this.checkSpeedUpdate(e);
+this.checkUpdateMovePos(e);
 }
 });
 cc._RF.pop();
@@ -309,7 +332,7 @@ var e = c.newStarPos.get(c.newStarKey);
 c.newStarPos.delete(c.newStarKey);
 var t = e.nodex, n = e.nodey;
 this.game.spawnNewStar(t, n);
-c.mySessionId == c.BumpedPlayerId && this.game.gainScore();
+c.syncStarPos = !0;
 this.node.destroy();
 c.Bumped = 1;
 }
@@ -471,10 +494,13 @@ MID_GM: 7,
 MID_Online4Other: 8,
 MID_Register: 9,
 MID_SyncPos: 10,
+MID_MonsterInfo: 11,
 Bumped: null,
 BumpedPlayerId: null,
 newStarKey: "Star",
 newStarPos: null,
+syncStarPos: !1,
+syncOnline4Other: !1,
 AccountName: null,
 AccountPwd: null,
 DoRegisterAction: null,
@@ -482,6 +508,10 @@ RegisterSucc: null,
 DoLoginAction: null,
 LoginSucc: null,
 maxDigital: 21e8,
+MonsterScore: null,
+MosterPosX: 0,
+MosterPosY: 0,
+EnterUpdateMoster: !1,
 test: null
 };
 cc._RF.pop();
@@ -654,7 +684,7 @@ o.DoRegisterAction = 0;
 }
 },
 checkLoginActionResult: function() {
-1 == o.DoLoginAction && this.scheduleOnce(function() {
+if (1 == o.DoLoginAction && null != o.mySessionId) this.scheduleOnce(function() {
 cc.log("LoginSucc: ", o.LoginSucc);
 if (0 == o.LoginSucc) this.tip_info.string = "用户名和密码重复或者错误"; else {
 this.tip_info.string = "登陆成功";
@@ -662,7 +692,10 @@ cc.log("玩家登陆成功, id：", o.mySessionId);
 this.change2GameMain();
 }
 o.DoLoginAction = 0;
-}, 2);
+}, 2); else if (0 == o.LoginSucc) {
+this.tip_info.string = "登陆失败";
+this.onLogin(null);
+}
 },
 containDigital: function(e) {
 return new RegExp("^[0-9]*$").test(e);
@@ -714,7 +747,8 @@ wsNet: [ function(e, t, n) {
 "use strict";
 cc._RF.push(t, "f5f02ULtVhD47PNH08lZ5uR", "wsNet");
 var s = e("common"), o = {
-timeout: 6e4,
+timeout: 5e4,
+svrtimeout: 6e4,
 timeoutObj: null,
 serverTimeoutObj: null,
 disconnectioned: !1,
@@ -736,11 +770,8 @@ n[2] = 0;
 s.ws.send(n);
 e.serverTimeoutObj = setTimeout(function() {
 cc.log("close connection...");
-if (null != s.ws) {
-s.ws.close();
-e.disconnectioned = !0;
-}
-}, e.timeout);
+null != s.ws && s.ws.close();
+}, e.svrtimeout);
 }
 }, this.timeout);
 },
@@ -751,9 +782,17 @@ stopReconnectTimer: function() {
 clearTimeout(this.reconnectTimeoutobj);
 }
 }, c = function(e) {
-cc.log("ws message MID_login: ", e[2], e[3]);
-1 == e[2] && (s.mySessionId = e[3]);
+if (1 == e[2]) {
+s.mySessionId = e[3];
+cc.log("ws message MID_login: ", e[2], e[3], e[4], e[5], e[6], e[7], e[8]);
 s.LoginSucc = e[2];
+var t = e[5], n = e[7];
+2 == e[4] && (t = 0 - t);
+2 == e[6] && (n = 0 - n);
+s.MosterPosX = t;
+s.MosterPosY = n;
+s.MonsterScore = e[8];
+}
 }, i = function(e) {
 var t = e[2].toString();
 cc.log("ws message MID_logout, sessionid: ", t);
@@ -786,7 +825,7 @@ nodey: n
 s.newStarPos.set(s.newStarKey, o);
 } else cc.log("ws message MID_Bump fail ... ");
 }, u = function(e) {
-cc.log("ws message MID_HeartBeat: ", msgid);
+cc.log("ws message MID_HeartBeat...");
 }, l = function(e) {
 cc.log("ws message MID_StarBorn: ", e[2], e[3], e[4], e[5]);
 var t = e[3], n = e[5];
@@ -812,22 +851,15 @@ nodey: o
 0 == s.PlayerSessionMap.has(t) && s.PlayerSessionMap.set(t, c);
 s.NewplayerMap.set(t, c);
 s.newPlayerIds.push(t);
-}, g = function(e) {
+s.syncOnline4Other = !0;
+}, h = function(e) {
 cc.log("ws message MID_Register: ", e[2]);
 s.RegisterSucc = e[2];
-}, h = function(e) {
-cc.log("ws message MID_SyncPos: ", e[1], e[2], e[3], e[4], e[5], e[6]);
-var t = e[6].toString(), n = e[3], o = e[5];
-2 == e[2] && (n = 0 - n);
-2 == e[4] && (o = 0 - o);
-var c = {
-sessionId: e[6],
-nodex: n,
-nodey: o
-};
-0 == s.PlayerSessionMap.has(t) && s.PlayerSessionMap.set(t, c);
-s.NewplayerMap.set(t, c);
-s.newPlayerIds.push(t);
+}, g = function(e) {
+cc.log("ws message MID_SyncPos...");
+}, m = function(e) {
+cc.log("ws message MID_MonsterInfo: ", e[2], e[3]);
+s.MonsterScore = e[3];
 };
 cc.Class({
 CanSendMsg: function() {
@@ -878,11 +910,15 @@ p(t);
 break;
 
 case s.MID_Register:
-g(t);
+h(t);
 break;
 
 case s.MID_SyncPos:
-h(t);
+g(t);
+break;
+
+case s.MID_MonsterInfo:
+m(t);
 break;
 
 default:

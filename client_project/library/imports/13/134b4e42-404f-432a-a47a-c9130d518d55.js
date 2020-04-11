@@ -46,6 +46,8 @@ module.exports = {
   //星星数据
   newStarKey: "Star",
   newStarPos: null,
+  syncStarPos: false,
+  syncOnline4Other: false,
   //用户数据
   AccountName: null,
   AccountPwd: null,

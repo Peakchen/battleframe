@@ -213,6 +213,7 @@ var MessageStateFunc = {
         }
         Global.NewplayerMap.set(key, playerProp)
         Global.newPlayerIds.push(key)
+        Global.syncOnline4Other = true
     },
 
     onRegister: function(data){
@@ -220,27 +221,12 @@ var MessageStateFunc = {
         Global.RegisterSucc = data[2]
     },
 
+    /**
+     * 
+     * @param {*} data only request, not response...
+     */
     onSyncPos: function(data) {
-        cc.log("ws message MID_SyncPos: ", data[1], data[2], data[3], data[4], data[5], data[6])
-        var key = data[6].toString()
-        var nodex = data[3]
-        var nodey = data[5]
-        if (data[2] == 2){
-            nodex = 0 - nodex
-        }
-        if (data[4] == 2){
-            nodey = 0 - nodey
-        }
-        var playerProp = {
-            sessionId: data[6],
-            nodex: nodex,
-            nodey: nodey
-        }
-        if (Global.PlayerSessionMap.has(key) == false) {
-            Global.PlayerSessionMap.set(key, playerProp)
-        }
-        Global.NewplayerMap.set(key, playerProp)
-        Global.newPlayerIds.push(key)
+        cc.log("ws message MID_SyncPos...")
     },
 
     onMonsterInfo: function(data) {

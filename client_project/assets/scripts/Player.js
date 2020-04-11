@@ -140,6 +140,11 @@ cc.Class({
     },
 
     checkUpdateMovePos: function(dt){
+
+        if (!Global.syncStarPos || !Global.syncOnline4Other) {
+            return
+        }
+
         if (Global.Bumped == 1){
             //this.xSpeed = 0
             Global.Bumped = null

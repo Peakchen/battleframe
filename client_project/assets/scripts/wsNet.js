@@ -234,6 +234,10 @@ var MessageStateFunc = {
     onMonsterInfo: function(data) {
         cc.log("ws message MID_MonsterInfo: ", data[2], data[3])
         Global.MonsterScore = data[3]
+    },
+
+    onLogicFrameSync: function(data) {
+        cc.log("ws message MID_LogicFrameSync: ", data[2], data[3])
     }
 }
 
@@ -310,6 +314,9 @@ cc.Class({
                     break
                 case Global.MID_MonsterInfo:
                     MessageStateFunc.onMonsterInfo(data)
+                    break
+                case Global.MID_LogicFrameSync:
+                    MessageStateFunc.onLogicFrameSync(data)
                     break
                 default:
                     cc.log("未知 消息id: ", msgid)

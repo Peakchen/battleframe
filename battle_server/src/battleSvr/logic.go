@@ -28,7 +28,7 @@ func init(){
 
 func BeginBattleHandler(rsp http.ResponseWriter, req *http.Request){
 	_RandN = int(time.Now().Unix())
-	//SetCache(cstRandNumber, _RandN)
+	//SetRedisCache(cstRandNumber, _RandN)
 	sranN := strconv.Itoa(_RandN)
 	//sranN := strconv.FormatInt(_RandN, 10)
 	//fmt.Println("rand number: ", sranN)
@@ -64,7 +64,7 @@ func AttackHandler(rsp http.ResponseWriter, req *http.Request){
 		return
 	}
 	
-	// _RandN, err = redis.Int(GetCache(cstRandNumber))
+	// _RandN, err = redis.Int(GetRedisCache(cstRandNumber))
 	// if err != nil {
 	// 	fmt.Println("redis get fail, err: ", err)
 	// 	return

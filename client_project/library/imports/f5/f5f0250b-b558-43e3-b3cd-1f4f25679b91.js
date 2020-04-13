@@ -248,6 +248,9 @@ var MessageStateFunc = {
   onMonsterInfo: function onMonsterInfo(data) {
     cc.log("ws message MID_MonsterInfo: ", data[2], data[3]);
     Global.MonsterScore = data[3];
+  },
+  onLogicFrameSync: function onLogicFrameSync(data) {
+    cc.log("ws message MID_LogicFrameSync: ", data[2], data[3]);
   }
 };
 cc.Class({
@@ -334,6 +337,10 @@ cc.Class({
 
         case Global.MID_MonsterInfo:
           MessageStateFunc.onMonsterInfo(data);
+          break;
+
+        case Global.MID_LogicFrameSync:
+          MessageStateFunc.onLogicFrameSync(data);
           break;
 
         default:

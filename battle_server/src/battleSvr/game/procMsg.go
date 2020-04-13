@@ -46,7 +46,7 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, msgid int, data []uint32) (e
 		dstmsg = []uint32{}
 	)
 	dstmsg = append(dstmsg, data...)
-	myWebSocket.BroadCastMsg(data[4], false, msgid, dstmsg)
+	myWebSocket.BroadCastMsgExceptSession(sess, false, msgid, dstmsg)
 	return nil, true
 }
 
@@ -55,6 +55,7 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, msgid int, data []uint32) (e
 */
 
 func Register(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
+	fmt.Println("proc Register message ... ")
 	sname := strconv.Itoa(int(data[0]))
 	spwd := strconv.Itoa(int(data[1]))
 	moster, succ := NewMoster(sname, spwd) 
@@ -182,7 +183,7 @@ func Logout(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	)
 
 	msg = append(msg, data[0])
-	myWebSocket.BroadCastMsg(data[0], false, myWebSocket.MID_logout, msg)
+	myWebSocket.BroadCastMsgExceptSession(sess, false, myWebSocket.MID_logout, msg)
 	return nil, true
 }
 
@@ -310,7 +311,7 @@ func bumpsucc(sess *myWebSocket.WebSession, newpos *Pos, monsterId uint32)(error
 	succmsg = append(succmsg, starYflag )
 	succmsg = append(succmsg, starY )
 	succmsg = append(succmsg, monsterId)
-	myWebSocket.BroadCastMsg(monsterId, true, myWebSocket.MID_Bump, succmsg)
+	myWebSocket.BroadCastMsgExceptSession(sess, true, myWebSocket.MID_Bump, succmsg)
 	return nil, true
 }
 

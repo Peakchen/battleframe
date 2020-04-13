@@ -600,8 +600,8 @@
     "relativePath": "scene"
   },
   "8a21ac88-fe5a-46e4-befc-db88bd6e61dd": {
-    "asset": 1586589143784,
-    "meta": 1586589143791,
+    "asset": 1586768903108,
+    "meta": 1586768903118,
     "relativePath": "scene\\login.fire"
   },
   "0db780d9-7701-4874-a9b3-5f2c8d88659b": {
@@ -629,24 +629,24 @@
     "meta": 1586585060177,
     "relativePath": "scripts\\login.js"
   },
-  "134b4e42-404f-432a-a47a-c9130d518d55": {
-    "asset": 1586591761873,
-    "meta": 1586591924017,
-    "relativePath": "scripts\\common.js"
-  },
-  "4644fd26-d96b-4005-8472-fa99fa74e686": {
-    "asset": 1586591855516,
-    "meta": 1586591924119,
-    "relativePath": "scripts\\Star.js"
-  },
   "6c688bfb-d907-4e29-a982-1824fec5a01d": {
     "asset": 1586597593794,
     "meta": 1586597664802,
     "relativePath": "scripts\\Player.js"
   },
+  "4644fd26-d96b-4005-8472-fa99fa74e686": {
+    "asset": 1586768896928,
+    "meta": 1586768902668,
+    "relativePath": "scripts\\Star.js"
+  },
+  "134b4e42-404f-432a-a47a-c9130d518d55": {
+    "asset": 1586769027001,
+    "meta": 1586769127846,
+    "relativePath": "scripts\\common.js"
+  },
   "f5f0250b-b558-43e3-b3cd-1f4f25679b91": {
-    "asset": 1586598490631,
-    "meta": 1586598509834,
+    "asset": 1586769110375,
+    "meta": 1586769127942,
     "relativePath": "scripts\\wsNet.js"
   }
 }

@@ -20,23 +20,12 @@ func GetGameLogicProcMsg(id int) WsCallback{
 	return msgs[id]
 }
 
-//广播消息
-/*
-	@param 1: 自身会话
-	@param 2：是否不给自己广播
-	@param 3：消息ID
-	@param 4：消息参数 
-*/
-func BroadCastMsg(myId uint32, bMsg2Me bool, msgid int, msgparams []uint32) {
-
+func packBroadCastMsg(msgid int, msgparams []uint32)(msg []byte){
 	if len(msgparams) == 0 {
 		panic("invalid  broadcast msg content.")
 	}
 
-	var (
-		msg = make([]byte, 4*(len(msgparams)+2))
-	)
-
+	msg = make([]byte, 4*(len(msgparams)+2))
 	//消息ID
 	var pos int
 	binary.LittleEndian.PutUint32(msg[pos:], uint32(msgid))
@@ -51,13 +40,39 @@ func BroadCastMsg(myId uint32, bMsg2Me bool, msgid int, msgparams []uint32) {
 		binary.LittleEndian.PutUint32(msg[pos:], msgparams[i])
 		pos+=4
 	}
+	return
+}
 
+//广播消息
+/*
+	@param 1: 自身会话
+	@param 2：是否不给自己广播
+	@param 3：消息ID
+	@param 4：消息参数 
+*/
+func BroadCastMsgExceptSession(selfsess *WebSession, bMsg2Me bool, msgid int, msgparams []uint32) {
+	msg := packBroadCastMsg(msgid, msgparams)
 	sesses := GwebSessionMgr.GetSessions()
 	sesses.Range(func (k, v interface{}) bool{
 		if v != nil {
 			sess := v.(*WebSession)
-			id := sess.GetId()
-			if !bMsg2Me && myId == id {
+			if !bMsg2Me && sess.RemoteAddr == selfsess.RemoteAddr{
+				return true
+			}
+			sess.Write(websocket.BinaryMessage, msg)
+		}
+		
+		return true
+	})
+}
+
+func BroadCastMsgExceptID(id uint32, bMsg2Me bool, msgid int, msgparams []uint32) {
+	msg := packBroadCastMsg(msgid, msgparams)
+	sesses := GwebSessionMgr.GetSessions()
+	sesses.Range(func (k, v interface{}) bool{
+		if v != nil {
+			sess := v.(*WebSession)
+			if !bMsg2Me && id != 0{
 				return true
 			}
 			sess.Write(websocket.BinaryMessage, msg)

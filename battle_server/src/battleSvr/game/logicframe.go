@@ -4,6 +4,7 @@ package game
 	快读、慢写
 
 	服务器主动同步客户端操作状态，则不会因为单个客户端而断开影响。
+	帧同步服务器，是以固定间隔把frame进行广播，某一个玩家卡了或者挂了，对于其他玩家是完全不可见，也是无影响的
 */
 
 import (
@@ -28,7 +29,7 @@ func (this *LogicFrame) Run(){
 	取得全服玩家数据进行广播（带上帧数）
 */
 func (this *LogicFrame) loopFrame(){
-	tick := time.NewTicker( time.Duration( 100*time.Millisecond ))
+	tick := time.NewTicker( time.Duration( 70*time.Millisecond ))
 	for {
 		<-tick.C
 		BroadcastAllMosterInfo()
@@ -75,8 +76,8 @@ func BroadcastAllMosterInfo(){
 		dstmsg = append(dstmsg, uint32(posYflag))
 		dstmsg = append(dstmsg, uint32(posY))
 		dstmsg = append(dstmsg, uint32(id))
-
-		myWebSocket.BroadCastMsg(id, false, myWebSocket.MID_LogicFrameSync, dstmsg)
+		
+		myWebSocket.BroadCastMsgExceptID(id, false, myWebSocket.MID_LogicFrameSync, dstmsg)
 		dstmsg = []uint32{}
 	}
 }

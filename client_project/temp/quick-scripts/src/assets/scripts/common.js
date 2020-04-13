@@ -40,6 +40,8 @@ module.exports = {
   MID_Register: 9,
   MID_SyncPos: 10,
   MID_MonsterInfo: 11,
+  MID_LogicFrameSync: 12,
+  //逻辑帧同步其他客户端moster信息
   //是否碰撞 
   Bumped: null,
   BumpedPlayerId: null,

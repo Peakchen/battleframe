@@ -26,14 +26,14 @@ func GetGlobalMonsterIdx()uint32{
 
 	this := &GlobalMonsterIdx{}
 	this.StrIdentify = module_GlobalMonsterIdx
-	err, succ := common.GetDecodeCache(this)
+	err, succ := common.GetRedisDecodeCache(this)
 	if !succ {
 		panic(err)
 	}
 
 	this.StrIdentify = module_GlobalMonsterIdx
 	this.MonsterIdx++
-	err = common.SetEncodeCache(this)
+	err = common.SetRedisEncodeCache(this)
 	if err != nil {
 		panic(err)
 	}

@@ -1,91 +1,88 @@
 package common
 
 import (
-	"github.com/gomodule/redigo/redis"
-	"fmt"
+	"sync"
 	"time"
-	"github.com/globalsign/mgo/bson"
 )
 
 const (
-	Addr string = ":6379"
+	deadlineDur = time.Duration( 5*60*time.Second )
+	freshRedisDur = time.Duration( 1*60*time.Second )
 )
 
-type IDBModule struct {
-	StrIdentify string `bson:"_id" json:"_id"`
+//key + 
+type DetailData struct {
+	t int64
+	IsEncode bool
+	val interface{}
 }
 
-type IDBCache interface{
-	Identify() string
+type MemCache struct {
+	data sync.Map
 }
 
-func DialDefaultServer() (redis.Conn, error) {
-	c, err := redis.Dial("tcp", Addr, redis.DialReadTimeout(1*time.Second), redis.DialWriteTimeout(1*time.Second))
-	if err != nil {
-		return nil, err
+var (
+	GMemCache *MemCache = &MemCache{}
+) 
+
+func (this *MemCache) Run(){
+	go this.loopcheck()
+}
+
+func (this *MemCache) Set(key string, isEncode bool, v interface{}){
+	this.data.Store(key, &DetailData{
+		val: v,
+		IsEncode: isEncode,
+		t: time.Now().Unix(),
+	})
+}
+
+func (this *MemCache) Get(key string)(v interface{}){
+	valInterface, existed := this.data.Load(key)
+	if !existed {
+		v = nil
+	}else{
+		origin := valInterface.(*DetailData)
+		v = origin.val
 	}
-	//c.Do("FLUSHDB")
-	return c, nil
-}
 
-func SetEncodeCache(src IDBCache)(err error){
-	var data []byte = nil
-	data, err = bson.Marshal(src)
-	if err != nil {
-		return
-	}
-
-	SetCache(src.Identify(), data)
 	return
 }
 
-func GetDecodeCache(out IDBCache)(err error, succ bool){
-	var data interface{} = nil
-	data, err = GetCache(out.Identify())
-	if err != nil {
-		return
-	}
+/*
+	数据过期时间比刷新缓存时间要长，使得数据在及时更新时能够保持redis内数据是最新的
+*/
+func (this *MemCache) loopcheck(){
+	deadlineTick := time.NewTicker( deadlineDur )
+	freshRedisTick := time.NewTicker( freshRedisDur )
 
-	if data == nil {
-		err = fmt.Errorf("data is empty.")
-		succ = true
-		return
+	for {
+		select {
+		case <-deadlineTick.C:
+			// 到期时间清理数据
+			nowt := time.Now().Unix()
+			this.data.Range(func (k, v interface{}) bool{
+				origin := v.(*DetailData)
+				if nowt - origin.t >= 60 {
+					this.data.Delete(k)
+				}
+				return true
+			})
+		
+		case <-freshRedisTick.C:
+			// 定时更新redis 数据
+			this.data.Range(func (k, v interface{}) bool{
+				origin := v.(*DetailData)
+				if origin.IsEncode {
+					err := SetRedisEncodeCache(origin.val.(IDBCache))
+					if err != nil {
+						panic(err)
+					}
+				}else{
+					SetRedisCache(k.(string), origin.val)
+				}
+				return true
+			})
+		}
 	}
-
-	err = bson.Unmarshal(data.([]byte), out)
-	succ = true
-	return
 }
-
-func SetCache(key string, val interface{})(succ bool){
-	c, err := DialDefaultServer()
-	if err != nil {
-		fmt.Println("connect database err: %v.", err)
-		return
-	}
-
-	defer c.Close()
-	_, err = c.Do("SET", key, val)
-	if err != nil {
-		fmt.Println("Do(SET, key, test003) returned errror %v, expected nil.", err)
-		return
-	}
-
-	succ = true
-	return
-}
-
-func GetCache(key string) (val interface{}, err error){
-	val = nil
-
-	c, err := DialDefaultServer()
-	if err != nil {
-		fmt.Println("connect database err: %v.", err)
-		return
-	}
-
-	return c.Do("GET", key)
-}
-
-
-

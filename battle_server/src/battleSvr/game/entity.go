@@ -32,7 +32,7 @@ func (this *Entity) Identify() string{
 func GetEntity()(this *Entity, new bool){
 	this = &Entity{}
 	this.StrIdentify = module_entity
-	err, succ := common.GetDecodeCache(this)
+	err, succ := common.GetRedisDecodeCache(this)
 	if !succ {
 		panic(err)
 	}
@@ -45,7 +45,7 @@ func GetEntity()(this *Entity, new bool){
 			},
 		}
 
-		err := common.SetEncodeCache(this)
+		err := common.SetRedisEncodeCache(this)
 		if err != nil {
 			panic(err)
 		}
@@ -90,7 +90,7 @@ func (this *Entity) rand2(origin *Pos){
 			if state == MosterState_Offline {
 				continue
 			}
-			
+
 			moster := GetPurpleMonsterByID(id)
 			if moster.Mypos == nil {
 				continue
@@ -139,7 +139,7 @@ func (this *Entity) RandEntityPos(origin *Pos)*Pos{
 	}
 
 	this.rand1(int(time.Now().Unix()))
-	err := common.SetEncodeCache(this)
+	err := common.SetRedisEncodeCache(this)
 	if err != nil {
 		panic(err)
 	}
@@ -152,7 +152,7 @@ func (this *Entity) IsFirstCreate()bool{
 
 func (this *Entity) SetPos(newpos *Pos){
 	this.Epos = newpos
-	err := common.SetEncodeCache(this)
+	err := common.SetRedisEncodeCache(this)
 	if err != nil {
 		panic(err)
 	}

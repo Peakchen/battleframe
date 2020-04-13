@@ -46,7 +46,7 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, msgid int, data []uint32) (e
 		dstmsg = []uint32{}
 	)
 	dstmsg = append(dstmsg, data...)
-	myWebSocket.BroadCastMsg(sess, false, msgid, dstmsg)
+	myWebSocket.BroadCastMsg(data[4], false, msgid, dstmsg)
 	return nil, true
 }
 
@@ -162,48 +162,7 @@ func SyncPos(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	//广播我的位置给其他人
 	saveAndupdatePos(sess, myWebSocket.MID_Online4Other, data)
 	//广播其他人的位置给我
-	allplayers := GetGlobalPurpleMonsters().GetAll()
-	var (
-		dstmsg = []uint32{}
-	)
-	for id, state := range allplayers{
-		if state == MosterState_Offline {
-			continue
-		}
-		
-		moster := GetPurpleMonsterByID(id)
-		if moster.Mypos == nil {
-			continue
-		}
-
-		//不把自己的信息发给自己
-		if id == data[4]{
-			continue
-		}
-
-		posXflag := Pos_Right
-		posX := moster.Mypos.Nodex
-		if moster.Mypos.Nodex < 0 {
-			posXflag = Pos_Left
-			posX = 0 - posX
-		}
-		posYflag := Pos_Right
-		posY := moster.Mypos.Nodey
-		if moster.Mypos.Nodey < 0 {
-			posYflag = Pos_Left
-			posY = 0 - posY
-		}
-		
-		dstmsg = append(dstmsg, uint32(posXflag))
-		dstmsg = append(dstmsg, uint32(posX))
-		dstmsg = append(dstmsg, uint32(posYflag))
-		dstmsg = append(dstmsg, uint32(posY))
-		dstmsg = append(dstmsg, uint32(id))
-
-		fmt.Println("sync other pos: ", id, posXflag, posX, posYflag, posY)
-		myWebSocket.SendMsg(sess, myWebSocket.MID_Online4Other, dstmsg)
-		dstmsg = []uint32{}
-	}
+	BroadcastOtherMosterInfo2Me(sess, data[4], myWebSocket.MID_Online4Other)
 	return nil, true
 }
 
@@ -223,7 +182,7 @@ func Logout(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	)
 
 	msg = append(msg, data[0])
-	myWebSocket.BroadCastMsg(sess, false, myWebSocket.MID_logout, msg)
+	myWebSocket.BroadCastMsg(data[0], false, myWebSocket.MID_logout, msg)
 	return nil, true
 }
 
@@ -351,7 +310,7 @@ func bumpsucc(sess *myWebSocket.WebSession, newpos *Pos, monsterId uint32)(error
 	succmsg = append(succmsg, starYflag )
 	succmsg = append(succmsg, starY )
 	succmsg = append(succmsg, monsterId)
-	myWebSocket.BroadCastMsg(sess, true, myWebSocket.MID_Bump, succmsg)
+	myWebSocket.BroadCastMsg(monsterId, true, myWebSocket.MID_Bump, succmsg)
 	return nil, true
 }
 

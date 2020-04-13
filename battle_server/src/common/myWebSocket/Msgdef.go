@@ -13,4 +13,5 @@ const (
 	MID_Register = 9 	 //注册
 	MID_SyncPos = 10     //同步位置
 	MID_MonsterInfo = 11   //同步moster信息
+	MID_LogicFrameSync = 12  //逻辑帧同步其他客户端moster信息
 )

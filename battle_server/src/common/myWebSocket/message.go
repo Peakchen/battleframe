@@ -27,7 +27,7 @@ func GetGameLogicProcMsg(id int) WsCallback{
 	@param 3：消息ID
 	@param 4：消息参数 
 */
-func BroadCastMsg(selfsess *WebSession, bMsg2Me bool, msgid int, msgparams []uint32) {
+func BroadCastMsg(myId uint32, bMsg2Me bool, msgid int, msgparams []uint32) {
 
 	if len(msgparams) == 0 {
 		panic("invalid  broadcast msg content.")
@@ -56,7 +56,8 @@ func BroadCastMsg(selfsess *WebSession, bMsg2Me bool, msgid int, msgparams []uin
 	sesses.Range(func (k, v interface{}) bool{
 		if v != nil {
 			sess := v.(*WebSession)
-			if !bMsg2Me && sess.RemoteAddr == selfsess.RemoteAddr {
+			id := sess.GetId()
+			if !bMsg2Me && myId == id {
 				return true
 			}
 			sess.Write(websocket.BinaryMessage, msg)

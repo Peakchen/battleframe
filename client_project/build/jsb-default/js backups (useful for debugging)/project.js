@@ -368,6 +368,7 @@ t[7] = parseInt(u);
 t[8] = p;
 t[9] = parseInt(d);
 t[10] = c.mySessionId;
+cc.log("send bump star: ", t[2], t[3], t[4], t[5], t[6], t[7], t[8], t[9]);
 this.getwsNetObj().sendwsmessage(t);
 },
 update: function(e) {
@@ -493,6 +494,7 @@ MID_Online4Other: 8,
 MID_Register: 9,
 MID_SyncPos: 10,
 MID_MonsterInfo: 11,
+MID_LogicFrameSync: 12,
 Bumped: null,
 BumpedPlayerId: null,
 newStarKey: "Star",
@@ -859,6 +861,8 @@ cc.log("ws message MID_SyncPos...");
 }, m = function(e) {
 cc.log("ws message MID_MonsterInfo: ", e[2], e[3]);
 s.MonsterScore = e[3];
+}, f = function(e) {
+cc.log("ws message MID_LogicFrameSync: ", e[2], e[3], e[4], e[5], e[6]);
 };
 cc.Class({
 CanSendMsg: function() {
@@ -918,6 +922,10 @@ break;
 
 case s.MID_MonsterInfo:
 m(t);
+break;
+
+case s.MID_LogicFrameSync:
+f(t);
 break;
 
 default:

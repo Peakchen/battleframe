@@ -53,7 +53,7 @@ func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 }
 
 func (this *GlobalPurpleMonsters) UpdateCache(){
-	err := rediscache.SetEncodeCache(this.Identify(), this)
+	err := cache.SetEncodeCache(this.Identify(), this)
 	if err != nil {
 		panic(err)
 	}

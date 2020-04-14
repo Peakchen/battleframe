@@ -78,7 +78,6 @@ func (this *WebSession) exit(){
 			close(this.readCh)
 		}
 	
-		fmt.Println("begin exit end...")
 		this.wsconn.Close()
 	})
 }

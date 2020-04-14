@@ -9,6 +9,7 @@ import (
 	//"sync"
 	"common/AsyncLock"
 	"common/rediscache"
+	"common/cache"
 )
 
 type GlobalPurpleMonsters struct {
@@ -28,7 +29,7 @@ func (this *GlobalPurpleMonsters) Identify() string{
 func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 	this = &GlobalPurpleMonsters{}
 	this.StrIdentify = module_GlobalPurpleMonsters
-	err, succ := rediscache.GetDecodeCache(this)
+	err, succ := cache.GetDecodeCache(this.Identify(), this)
 	if !succ {
 		panic(err)
 	}
@@ -38,7 +39,7 @@ func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 			Monsters: map[uint32]MosterState{},
 		}
 
-		err := rediscache.SetEncodeCache(this)
+		err := cache.SetEncodeCache(this.Identify(), this)
 		if err != nil {
 			panic(err)
 		}
@@ -52,7 +53,7 @@ func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 }
 
 func (this *GlobalPurpleMonsters) UpdateCache(){
-	err := rediscache.SetEncodeCache(this)
+	err := rediscache.SetEncodeCache(this.Identify(), this)
 	if err != nil {
 		panic(err)
 	}

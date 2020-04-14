@@ -13,6 +13,7 @@ import (
 	"fmt"
 	"common/AsyncLock"
 	"common/rediscache"
+	"common/cache"
 	//"github.com/globalsign/mgo/bson"
 )
 
@@ -33,7 +34,7 @@ func (this *Entity) Identify() string{
 func GetEntity()(this *Entity, new bool){
 	this = &Entity{}
 	this.StrIdentify = module_entity
-	err, succ := rediscache.GetDecodeCache(this)
+	err, succ := cache.GetDecodeCache(this.Identify(), this)
 	if !succ {
 		panic(err)
 	}
@@ -46,7 +47,7 @@ func GetEntity()(this *Entity, new bool){
 			},
 		}
 
-		err := rediscache.SetEncodeCache(this)
+		err := cache.SetEncodeCache(this.Identify(),this)
 		if err != nil {
 			panic(err)
 		}
@@ -57,7 +58,7 @@ func GetEntity()(this *Entity, new bool){
 
 
 func (this *Entity) UpdateCache(){
-	err := rediscache.SetEncodeCache(this)
+	err := cache.SetEncodeCache(this.Identify(), this)
 	if err != nil {
 		panic(err)
 	}
@@ -148,7 +149,7 @@ func (this *Entity) RandEntityPos(origin *Pos)*Pos{
 	}
 
 	this.rand1(int(time.Now().Unix()))
-	err := rediscache.SetEncodeCache(this)
+	err := cache.SetEncodeCache(this.Identify(), this)
 	if err != nil {
 		panic(err)
 	}

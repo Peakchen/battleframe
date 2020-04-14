@@ -28,20 +28,20 @@ func DialDefaultServer() (redis.Conn, error) {
 	return c, nil
 }
 
-func SetEncodeCache(src IDBCache)(err error){
+func SetEncodeCache(identify string, src IDBCache)(err error){
 	var data []byte = nil
 	data, err = bson.Marshal(src)
 	if err != nil {
 		return
 	}
 
-	SetCache(src.Identify(), data)
+	SetCache(identify, data)
 	return
 }
 
-func GetDecodeCache(out IDBCache)(err error, succ bool){
+func GetDecodeCache(identify string, out IDBCache)(err error, succ bool){
 	var data interface{} = nil
-	data, err = GetCache(out.Identify())
+	data, err = GetCache(identify)
 	if err != nil {
 		return
 	}

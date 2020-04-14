@@ -14,7 +14,6 @@ const (
 //key + 
 type DetailData struct {
 	t int64
-	IsEncode bool
 	val interface{}
 }
 
@@ -30,10 +29,9 @@ func (this *MemCache) Run(){
 	go this.loopcheck()
 }
 
-func (this *MemCache) Set(key string, isEncode bool, v interface{}){
+func (this *MemCache) Set(key string, v interface{}){
 	this.data.Store(key, &DetailData{
 		val: v,
-		IsEncode: isEncode,
 		t: time.Now().Unix(),
 	})
 }
@@ -74,14 +72,8 @@ func (this *MemCache) loopcheck(){
 			// 定时更新redis 数据
 			this.data.Range(func (k, v interface{}) bool{
 				origin := v.(*DetailData)
-				if origin.IsEncode {
-					err := rediscache.SetEncodeCache(origin.val.(rediscache.IDBCache))
-					if err != nil {
-						panic(err)
-					}
-				}else{
-					rediscache.SetCache(k.(string), origin.val)
-				}
+				key := k.(string)
+				rediscache.SetCache(key, origin.val)
 				return true
 			})
 		}

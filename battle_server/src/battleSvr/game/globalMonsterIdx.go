@@ -5,6 +5,7 @@ import (
 	//"sync"
 	"common/AsyncLock"
 	"common/rediscache"
+	"common/cache"
 )
 
 type GlobalMonsterIdx struct {
@@ -27,14 +28,14 @@ func GetGlobalMonsterIdx()uint32{
 
 	this := &GlobalMonsterIdx{}
 	this.StrIdentify = module_GlobalMonsterIdx
-	err, succ := rediscache.GetDecodeCache(this)
+	err, succ := cache.GetDecodeCache(this.Identify(),this)
 	if !succ {
 		panic(err)
 	}
 
 	this.StrIdentify = module_GlobalMonsterIdx
 	this.MonsterIdx++
-	err = rediscache.SetEncodeCache(this)
+	err = cache.SetEncodeCache(this.Identify(),this)
 	if err != nil {
 		panic(err)
 	}

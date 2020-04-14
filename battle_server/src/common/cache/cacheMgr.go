@@ -4,19 +4,21 @@ import (
 	//"reflect"
 	"fmt"
 	"github.com/globalsign/mgo/bson"
+	"common/rediscache"
 )
 
 /*
 	--------------------加密数据部分缓存----------------------
 */
-func GetDecodeCache(identify string, v interface{}) (err error) {
+func GetDecodeCache(identify string, v interface{}) (err error, succ bool) {
 	data := GMemCache.Get(identify)
 	if data == nil {
-		err = fmt.Errorf("mem cache not data.")
+		err, succ = rediscache.GetDecodeCache(identify, v.(rediscache.IDBCache))
 		return
 	}
 
 	err = bson.Unmarshal(data.([]byte), v)
+	succ = true
 	return
 }	
 
@@ -27,7 +29,7 @@ func SetEncodeCache(identify string, v interface{})(err error){
 		return
 	}
 
-	GMemCache.Set(identify, true, data)
+	GMemCache.Set(identify, data)
 	err = nil
 	return
 }
@@ -35,11 +37,16 @@ func SetEncodeCache(identify string, v interface{})(err error){
 /* 
 	---------------------非数据加密部分-----------------
 */
-func GetCache(identify string) (v interface{}){
+func GetCache(identify string) (v interface{}, err error){
 	v = GMemCache.Get(identify)
+	if v == nil {
+		v, err = rediscache.GetCache(identify)
+	}else{
+		err = nil
+	}
 	return
 }
 
 func SetCache(identify string, v interface{}) {
-	GMemCache.Set(identify, false, v)
+	GMemCache.Set(identify, v)
 }

@@ -66,15 +66,12 @@ func BroadCastMsgExceptSession(selfsess *WebSession, bMsg2Me bool, msgid int, ms
 	})
 }
 
-func BroadCastMsgExceptID(id uint32, bMsg2Me bool, msgid int, msgparams []uint32) {
+func BroadCastMsgExceptID(msgid int, msgparams []uint32) {
 	msg := packBroadCastMsg(msgid, msgparams)
 	sesses := GwebSessionMgr.GetSessions()
 	sesses.Range(func (k, v interface{}) bool{
 		if v != nil {
 			sess := v.(*WebSession)
-			if !bMsg2Me && id != 0{
-				return true
-			}
 			sess.Write(websocket.BinaryMessage, msg)
 		}
 		

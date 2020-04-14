@@ -42,6 +42,8 @@ func (this *LogicFrame) loopFrame(){
 	服务器逻辑帧驱动广播
 */
 func BroadcastAllMosterInfo(){
+	return
+	
 	allplayers := GetGlobalPurpleMonsters().GetAll()
 	if len(allplayers) == 0 {
 		return
@@ -56,6 +58,10 @@ func BroadcastAllMosterInfo(){
 		}
 		
 		moster := GetPurpleMonsterByID(id)
+		if moster == nil {
+			continue
+		}
+
 		if moster.Mypos == nil {
 			continue
 		}
@@ -79,7 +85,7 @@ func BroadcastAllMosterInfo(){
 		dstmsg = append(dstmsg, uint32(posY))
 		dstmsg = append(dstmsg, uint32(id))
 		
-		myWebSocket.BroadCastMsgExceptID(id, false, myWebSocket.MID_LogicFrameSync, dstmsg)
+		myWebSocket.BroadCastMsgExceptID(myWebSocket.MID_LogicFrameSync, dstmsg)
 		dstmsg = []uint32{}
 	}
 }
@@ -99,6 +105,10 @@ func BroadcastOtherMosterInfo2Me(sess *myWebSocket.WebSession, myId uint32, msgi
 		}
 		
 		moster := GetPurpleMonsterByID(id)
+		if moster == nil {
+			continue
+		}
+
 		if moster.Mypos == nil {
 			continue
 		}

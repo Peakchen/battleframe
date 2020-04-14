@@ -11,6 +11,7 @@ import (
 	"time"
 	"common/rediscache"
 	"common/cache"
+	"reflect"
 )
 
 type PurpleMonster struct {
@@ -96,7 +97,13 @@ func GetPurpleMonsterByID(id uint32)(this *PurpleMonster){
 	}
 
 	this = &PurpleMonster{}
-	this.StrIdentify = string(data.([]uint8))
+	if reflect.ValueOf(data).Kind() == reflect.String {
+		this.StrIdentify = data.(string)
+	}else {
+		this.StrIdentify = string(data.([]uint8))
+		cache.SetCache(strconv.Itoa(int(id)), this.StrIdentify)
+	}
+
 	err, succ := cache.GetDecodeCache(this.Identify(), this)
 	if !succ || err != nil{
 		panic(err)

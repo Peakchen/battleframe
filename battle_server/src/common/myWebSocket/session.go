@@ -6,8 +6,9 @@ import (
 	"fmt"
 	//"encoding/binary"
 	//"io"
-	"strings"
+	//"strings"
 	"common"
+	"sync"
 )
 
 type wsMessage struct {
@@ -22,6 +23,10 @@ type WebSession struct {
 	writeCh chan *wsMessage //写通道
 	readCh  chan *wsMessage //读通道
 	IdCh    chan uint32
+	stopWrite bool
+	stopRead  bool
+
+	one 	sync.Once
 }
 
 func NewWebSession(conn *websocket.Conn, off chan *WebSession) *WebSession{
@@ -48,19 +53,34 @@ func (this *WebSession) Handle(){
 	go this.writeloop()
 }
 
-func (this *WebSession) exit(){
-
-	this.offch <-this	
-	
-	if _, noclosed := <-this.writeCh; !noclosed {
-		close(this.writeCh)
-	} 
-	
-	if _, noclosed := <-this.readCh; !noclosed {
-		close(this.readCh)
+func (this *WebSession) offline(){
+	mosterid := this.GetId()
+	fmt.Println("exit ws socket: ", this.RemoteAddr, mosterid, time.Now().Unix())
+	GwebSessionMgr.RemoveSession(this.RemoteAddr)
+	if proc := GetGameLogicProcMsg(MID_logout); proc != nil {
+		proc(this, []uint32{mosterid})
 	}
+}
 
-	this.wsconn.Close()
+func (this *WebSession) exit(){
+	//conn close 只执行一次
+	this.one.Do(func(){
+		this.offline()
+		//this.offch <-this	
+
+		if _, noclosed := <-this.writeCh; noclosed {
+			this.stopWrite = true
+			close(this.writeCh)
+		} 
+		
+		if _, noclosed := <-this.readCh; noclosed {
+			this.stopRead = true
+			close(this.readCh)
+		}
+	
+		fmt.Println("begin exit end...")
+		this.wsconn.Close()
+	})
 }
 
 func (this *WebSession) readloop(){
@@ -75,26 +95,25 @@ func (this *WebSession) readloop(){
         msgType, data, err := this.wsconn.ReadMessage()
         if err != nil {
             websocket.IsUnexpectedCloseError(err, websocket.CloseGoingAway, websocket.CloseAbnormalClosure)
-			if strings.EqualFold(err.Error(), "unexpected EOF") {
-				fmt.Println("client close connection, err: ", err.Error(), time.Now().Unix())
-			}else if strings.EqualFold(err.Error(), "use of closed network connection") {
-				fmt.Println("server close connection, err: ", err.Error(), time.Now().Unix())
-			}else{
-				fmt.Println("other info msg read fail, err: ", err.Error(), time.Now().Unix())
-			}
+			fmt.Println("msg read fail, err: ", err.Error(), time.Now().Unix())
             return
 		}
+
+		if this.stopRead {
+			return
+		}
 		
-        msg := &wsMessage{
+        this.readCh <- &wsMessage{
             messageType: msgType,
             data: data,
 		}
 		
-		this.read(msg)
+		go this.read()
 	}
 }
 
-func (this *WebSession) read(msg *wsMessage){
+func (this *WebSession) read(){
+	msg := <- this.readCh
 	fmt.Println("read messageType: ", msg.messageType, len(msg.data), time.Now().Unix())
 	if handler := GetMessageHandler(msg.messageType); handler != nil {
 		handler(this, msg)
@@ -137,6 +156,10 @@ func (this *WebSession) sendOffline(){
 }
 
 func (this *WebSession) Write(msgtype int, data []byte) {
+	if this.stopWrite {
+		return
+	}
+
 	fmt.Println("session writed channel data len: ", len(this.writeCh), common.SizeVal(this.writeCh), time.Now().Unix())
 	this.writeCh <- &wsMessage{
 		messageType: msgtype,

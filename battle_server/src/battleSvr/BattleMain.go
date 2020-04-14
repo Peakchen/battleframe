@@ -7,6 +7,7 @@ import (
 	"battleSvr/game"
 	"common/AsyncLock"
 	"common/cache"
+	"os"
 )
 
 func init(){
@@ -16,10 +17,11 @@ func init(){
 }
 
 func main(){
+	os.Setenv("GOTRACEBACK", "crash")
 	game.Reg()
 	AsyncLock.NewZKLock([]string{"127.0.0.1:2181"})
 	cache.GMemCache.Run()
-	//game.GLogicFrame.Run()
+	game.GLogicFrame.Run()
 	ws := myWebSocket.NewWebsocketSvr(":13001")
 	ws.Run()
 	http.ListenAndServe(":13001", nil)	

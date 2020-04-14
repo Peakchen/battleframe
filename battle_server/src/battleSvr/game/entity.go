@@ -102,6 +102,10 @@ func (this *Entity) rand2(origin *Pos){
 			}
 
 			moster := GetPurpleMonsterByID(id)
+			if moster == nil {
+				continue
+			}
+
 			if moster.Mypos == nil {
 				continue
 			}

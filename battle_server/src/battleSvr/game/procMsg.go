@@ -38,8 +38,12 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, msgid int, data []uint32) (e
 	fmt.Printf("update pos, RemoteAddr: %v, Nodex: %v, Nodey: %v.\n", sess.RemoteAddr, pos.Nodex, pos.Nodey)
 	//保存个体怪物数据
 	moster := GetPurpleMonsterByID(data[4])
-	moster.SetPos(pos)
-	moster.UpdateCache()
+	if moster != nil {
+		moster.SetPos(pos)
+		moster.UpdateCache()
+	}else{
+		fmt.Println("can not get moster info, id: ", data[4])
+	}
 
 	//broadcast data to others.
 	var (
@@ -252,15 +256,19 @@ func Bump(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 
 	//分值记录
 	moster := GetPurpleMonsterByID(data[8])
-	moster.SetPos(&Pos{
-		Nodex: int(PurpleMonsterPosX),
-		Nodey: int(PurpleMonsterPosY),
-	})
-	score := moster.AddScore()
-	moster.UpdateCache()
-	//同步信息
-	syncMonsterInfo(sess, data[8], score)
-
+	if moster != nil {
+		moster.SetPos(&Pos{
+			Nodex: int(PurpleMonsterPosX),
+			Nodey: int(PurpleMonsterPosY),
+		})
+		score := moster.AddScore()
+		moster.UpdateCache()
+		//同步信息
+		syncMonsterInfo(sess, data[8], score)
+	}else{
+		fmt.Println("can not get moster info, id: ", data[4])
+	}
+	
 	originPos := &Pos{
 		Nodex: int(data[5]),
 		Nodey: int(data[7]),

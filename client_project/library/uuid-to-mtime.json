@@ -600,8 +600,8 @@
     "relativePath": "scene"
   },
   "8a21ac88-fe5a-46e4-befc-db88bd6e61dd": {
-    "asset": 1586768903108,
-    "meta": 1586768903118,
+    "asset": 1586844378920,
+    "meta": 1586844378937,
     "relativePath": "scene\\login.fire"
   },
   "0db780d9-7701-4874-a9b3-5f2c8d88659b": {
@@ -645,8 +645,8 @@
     "relativePath": "scripts\\common.js"
   },
   "f5f0250b-b558-43e3-b3cd-1f4f25679b91": {
-    "asset": 1586769110375,
-    "meta": 1586769127942,
+    "asset": 1586843836691,
+    "meta": 1586844365475,
     "relativePath": "scripts\\wsNet.js"
   }
 }

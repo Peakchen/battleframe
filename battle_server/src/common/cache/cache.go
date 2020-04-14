@@ -4,6 +4,7 @@ import (
 	"sync"
 	"time"
 	"common/rediscache"
+	"fmt"
 )
 
 const (
@@ -59,10 +60,11 @@ func (this *MemCache) loopcheck(){
 		select {
 		case <-deadlineTick.C:
 			// 到期时间清理数据
+			fmt.Println("clean mem cache data ... ")
 			nowt := time.Now().Unix()
 			this.data.Range(func (k, v interface{}) bool{
 				origin := v.(*DetailData)
-				if nowt - origin.t >= 60 {
+				if nowt - origin.t >= 5*60 {
 					this.data.Delete(k)
 				}
 				return true
@@ -70,6 +72,7 @@ func (this *MemCache) loopcheck(){
 		
 		case <-freshRedisTick.C:
 			// 定时更新redis 数据
+			//fmt.Println("refresh redis cache data ... ")
 			this.data.Range(func (k, v interface{}) bool{
 				origin := v.(*DetailData)
 				key := k.(string)

@@ -250,7 +250,7 @@ var MessageStateFunc = {
     Global.MonsterScore = data[3];
   },
   onLogicFrameSync: function onLogicFrameSync(data) {
-    cc.log("ws message MID_LogicFrameSync: ", data[2], data[3]);
+    cc.log("ws message MID_LogicFrameSync: ", data[2], data[3], data[4], data[5], data[6]);
   }
 };
 cc.Class({

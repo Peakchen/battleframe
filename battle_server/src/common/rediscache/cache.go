@@ -28,20 +28,20 @@ func DialDefaultServer() (redis.Conn, error) {
 	return c, nil
 }
 
-func SetRedisEncodeCache(src IDBCache)(err error){
+func SetEncodeCache(src IDBCache)(err error){
 	var data []byte = nil
 	data, err = bson.Marshal(src)
 	if err != nil {
 		return
 	}
 
-	SetRedisCache(src.Identify(), data)
+	SetCache(src.Identify(), data)
 	return
 }
 
-func GetRedisDecodeCache(out IDBCache)(err error, succ bool){
+func GetDecodeCache(out IDBCache)(err error, succ bool){
 	var data interface{} = nil
-	data, err = GetRedisCache(out.Identify())
+	data, err = GetCache(out.Identify())
 	if err != nil {
 		return
 	}
@@ -57,7 +57,7 @@ func GetRedisDecodeCache(out IDBCache)(err error, succ bool){
 	return
 }
 
-func SetRedisCache(key string, val interface{})(succ bool){
+func SetCache(key string, val interface{})(succ bool){
 	c, err := DialDefaultServer()
 	if err != nil {
 		fmt.Println("connect database err: %v.", err)
@@ -75,7 +75,7 @@ func SetRedisCache(key string, val interface{})(succ bool){
 	return
 }
 
-func GetRedisCache(key string) (val interface{}, err error){
+func GetCache(key string) (val interface{}, err error){
 	val = nil
 
 	c, err := DialDefaultServer()

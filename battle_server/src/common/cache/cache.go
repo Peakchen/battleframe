@@ -75,12 +75,12 @@ func (this *MemCache) loopcheck(){
 			this.data.Range(func (k, v interface{}) bool{
 				origin := v.(*DetailData)
 				if origin.IsEncode {
-					err := rediscache.SetRedisEncodeCache(origin.val.(rediscache.IDBCache))
+					err := rediscache.SetEncodeCache(origin.val.(rediscache.IDBCache))
 					if err != nil {
 						panic(err)
 					}
 				}else{
-					rediscache.SetRedisCache(k.(string), origin.val)
+					rediscache.SetCache(k.(string), origin.val)
 				}
 				return true
 			})

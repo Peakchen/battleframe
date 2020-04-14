@@ -28,7 +28,7 @@ func (this *GlobalPurpleMonsters) Identify() string{
 func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 	this = &GlobalPurpleMonsters{}
 	this.StrIdentify = module_GlobalPurpleMonsters
-	err, succ := rediscache.GetRedisDecodeCache(this)
+	err, succ := rediscache.GetDecodeCache(this)
 	if !succ {
 		panic(err)
 	}
@@ -38,7 +38,7 @@ func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 			Monsters: map[uint32]MosterState{},
 		}
 
-		err := rediscache.SetRedisEncodeCache(this)
+		err := rediscache.SetEncodeCache(this)
 		if err != nil {
 			panic(err)
 		}
@@ -52,7 +52,7 @@ func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 }
 
 func (this *GlobalPurpleMonsters) UpdateCache(){
-	err := rediscache.SetRedisEncodeCache(this)
+	err := rediscache.SetEncodeCache(this)
 	if err != nil {
 		panic(err)
 	}

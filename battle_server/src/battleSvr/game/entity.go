@@ -33,7 +33,7 @@ func (this *Entity) Identify() string{
 func GetEntity()(this *Entity, new bool){
 	this = &Entity{}
 	this.StrIdentify = module_entity
-	err, succ := rediscache.GetRedisDecodeCache(this)
+	err, succ := rediscache.GetDecodeCache(this)
 	if !succ {
 		panic(err)
 	}
@@ -46,7 +46,7 @@ func GetEntity()(this *Entity, new bool){
 			},
 		}
 
-		err := rediscache.SetRedisEncodeCache(this)
+		err := rediscache.SetEncodeCache(this)
 		if err != nil {
 			panic(err)
 		}
@@ -57,7 +57,7 @@ func GetEntity()(this *Entity, new bool){
 
 
 func (this *Entity) UpdateCache(){
-	err := rediscache.SetRedisEncodeCache(this)
+	err := rediscache.SetEncodeCache(this)
 	if err != nil {
 		panic(err)
 	}
@@ -148,7 +148,7 @@ func (this *Entity) RandEntityPos(origin *Pos)*Pos{
 	}
 
 	this.rand1(int(time.Now().Unix()))
-	err := rediscache.SetRedisEncodeCache(this)
+	err := rediscache.SetEncodeCache(this)
 	if err != nil {
 		panic(err)
 	}

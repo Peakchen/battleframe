@@ -1,4 +1,4 @@
-package common
+package rediscache
 
 import (
 	"github.com/gomodule/redigo/redis"

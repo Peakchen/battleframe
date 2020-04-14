@@ -5,13 +5,14 @@ package game
 */
 
 import (
-	"common"
+	//"common"
 	//"sync"
 	"common/AsyncLock"
+	"common/rediscache"
 )
 
 type GlobalPurpleMonsters struct {
-	common.IDBModule
+	rediscache.IDBModule
 
 	Monsters map[uint32]MosterState
 }
@@ -27,7 +28,7 @@ func (this *GlobalPurpleMonsters) Identify() string{
 func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 	this = &GlobalPurpleMonsters{}
 	this.StrIdentify = module_GlobalPurpleMonsters
-	err, succ := common.GetRedisDecodeCache(this)
+	err, succ := rediscache.GetRedisDecodeCache(this)
 	if !succ {
 		panic(err)
 	}
@@ -37,7 +38,7 @@ func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 			Monsters: map[uint32]MosterState{},
 		}
 
-		err := common.SetRedisEncodeCache(this)
+		err := rediscache.SetRedisEncodeCache(this)
 		if err != nil {
 			panic(err)
 		}
@@ -51,7 +52,7 @@ func GetGlobalPurpleMonsters()(this *GlobalPurpleMonsters){
 }
 
 func (this *GlobalPurpleMonsters) UpdateCache(){
-	err := common.SetRedisEncodeCache(this)
+	err := rediscache.SetRedisEncodeCache(this)
 	if err != nil {
 		panic(err)
 	}

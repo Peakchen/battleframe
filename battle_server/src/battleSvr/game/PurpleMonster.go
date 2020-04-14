@@ -9,10 +9,11 @@ import (
 	"strconv"
 	"fmt"
 	"time"
+	"common/rediscache"
 )
 
 type PurpleMonster struct {
-	common.IDBModule
+	rediscache.IDBModule
 
 	Mypos *Pos
 	ID 	  uint32
@@ -33,7 +34,7 @@ func (this *PurpleMonster) AddScore()uint32{
 }
 
 func (this *PurpleMonster) UpdateCache(){
-	err := common.SetRedisEncodeCache(this)
+	err := rediscache.SetRedisEncodeCache(this)
 	if err != nil {
 		panic(err)
 	}
@@ -44,7 +45,7 @@ func NewMoster(name, pwd string)(this *PurpleMonster, newsucc bool){
 	Identify := common.GetMd5String(src)
 	this = &PurpleMonster{}
 	this.StrIdentify = Identify
-	err, succ := common.GetRedisDecodeCache(this)
+	err, succ := rediscache.GetRedisDecodeCache(this)
 	if !succ {
 		panic(err)
 	}
@@ -60,9 +61,9 @@ func NewMoster(name, pwd string)(this *PurpleMonster, newsucc bool){
 		Nodex: int(float64(randX - 0.2)*float64(maxWidth)),
 		Nodey: -120,
 	}
-	common.SetRedisCache(strconv.Itoa(int(this.ID)), Identify)
+	rediscache.SetRedisCache(strconv.Itoa(int(this.ID)), Identify)
 	this.StrIdentify = Identify
-	common.SetRedisEncodeCache(this)
+	rediscache.SetRedisEncodeCache(this)
 	newsucc = true
 	return
 }
@@ -73,7 +74,7 @@ func GetExistMonster(name, pwd string) (this *PurpleMonster, err error){
 	this = &PurpleMonster{}
 	this.StrIdentify = Identify
 	var succ bool
-	err, succ = common.GetRedisDecodeCache(this)
+	err, succ = rediscache.GetRedisDecodeCache(this)
 	if !succ {
 		panic(err)
 	}
@@ -82,7 +83,7 @@ func GetExistMonster(name, pwd string) (this *PurpleMonster, err error){
 }
 
 func GetPurpleMonsterByID(id uint32)(this *PurpleMonster){
-	data, err := common.GetRedisCache(strconv.Itoa(int(id)))
+	data, err := rediscache.GetRedisCache(strconv.Itoa(int(id)))
 	if err != nil {
 		panic(err)
 		return
@@ -93,7 +94,7 @@ func GetPurpleMonsterByID(id uint32)(this *PurpleMonster){
 
 	this = &PurpleMonster{}
 	this.StrIdentify = string(data.([]uint8))
-	err, succ := common.GetRedisDecodeCache(this)
+	err, succ := rediscache.GetRedisDecodeCache(this)
 	if !succ || err != nil{
 		panic(err)
 	}

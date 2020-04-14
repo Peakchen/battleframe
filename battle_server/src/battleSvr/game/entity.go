@@ -12,11 +12,12 @@ import (
 	//"sync"
 	"fmt"
 	"common/AsyncLock"
+	"common/rediscache"
 	//"github.com/globalsign/mgo/bson"
 )
 
 type Entity struct {
-	common.IDBModule
+	rediscache.IDBModule
 
 	Epos *Pos
 }
@@ -32,7 +33,7 @@ func (this *Entity) Identify() string{
 func GetEntity()(this *Entity, new bool){
 	this = &Entity{}
 	this.StrIdentify = module_entity
-	err, succ := common.GetRedisDecodeCache(this)
+	err, succ := rediscache.GetRedisDecodeCache(this)
 	if !succ {
 		panic(err)
 	}
@@ -45,13 +46,21 @@ func GetEntity()(this *Entity, new bool){
 			},
 		}
 
-		err := common.SetRedisEncodeCache(this)
+		err := rediscache.SetRedisEncodeCache(this)
 		if err != nil {
 			panic(err)
 		}
 		new = true
 	}
 	return
+}
+
+
+func (this *Entity) UpdateCache(){
+	err := rediscache.SetRedisEncodeCache(this)
+	if err != nil {
+		panic(err)
+	}
 }
 
 func (this *Entity) rand1(timeRandSeed int){
@@ -139,7 +148,7 @@ func (this *Entity) RandEntityPos(origin *Pos)*Pos{
 	}
 
 	this.rand1(int(time.Now().Unix()))
-	err := common.SetRedisEncodeCache(this)
+	err := rediscache.SetRedisEncodeCache(this)
 	if err != nil {
 		panic(err)
 	}
@@ -152,10 +161,6 @@ func (this *Entity) IsFirstCreate()bool{
 
 func (this *Entity) SetPos(newpos *Pos){
 	this.Epos = newpos
-	err := common.SetRedisEncodeCache(this)
-	if err != nil {
-		panic(err)
-	}
 }
 
 func SyncStarPos(sess *myWebSocket.WebSession){

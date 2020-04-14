@@ -1,8 +1,9 @@
-package common
+package cache
 
 import (
 	"sync"
 	"time"
+	"common/rediscache"
 )
 
 const (
@@ -74,12 +75,12 @@ func (this *MemCache) loopcheck(){
 			this.data.Range(func (k, v interface{}) bool{
 				origin := v.(*DetailData)
 				if origin.IsEncode {
-					err := SetRedisEncodeCache(origin.val.(IDBCache))
+					err := rediscache.SetRedisEncodeCache(origin.val.(rediscache.IDBCache))
 					if err != nil {
 						panic(err)
 					}
 				}else{
-					SetRedisCache(k.(string), origin.val)
+					rediscache.SetRedisCache(k.(string), origin.val)
 				}
 				return true
 			})

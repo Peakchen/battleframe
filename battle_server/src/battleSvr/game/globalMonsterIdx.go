@@ -1,13 +1,14 @@
 package game
 
 import (
-	"common"
+	//"common"
 	//"sync"
 	"common/AsyncLock"
+	"common/rediscache"
 )
 
 type GlobalMonsterIdx struct {
-	common.IDBModule
+	rediscache.IDBModule
 
 	MonsterIdx uint32
 }
@@ -26,14 +27,14 @@ func GetGlobalMonsterIdx()uint32{
 
 	this := &GlobalMonsterIdx{}
 	this.StrIdentify = module_GlobalMonsterIdx
-	err, succ := common.GetRedisDecodeCache(this)
+	err, succ := rediscache.GetRedisDecodeCache(this)
 	if !succ {
 		panic(err)
 	}
 
 	this.StrIdentify = module_GlobalMonsterIdx
 	this.MonsterIdx++
-	err = common.SetRedisEncodeCache(this)
+	err = rediscache.SetRedisEncodeCache(this)
 	if err != nil {
 		panic(err)
 	}

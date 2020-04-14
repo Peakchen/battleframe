@@ -37,6 +37,7 @@ func resetStarPos(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 		pos.Nodey = int(data[3])
 	}
 	entityptr.SetPos(pos)
+	entityptr.UpdateCache()
 	SyncStarPos(sess)
 	return nil, true
 }

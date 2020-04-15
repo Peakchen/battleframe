@@ -6,6 +6,8 @@ import (
 	//"strings"
 	"strconv"
 	"math"
+	"time"
+	"common"
 )
 
  /**
@@ -59,7 +61,9 @@ func saveAndupdatePos(sess *myWebSocket.WebSession, msgid int, data []uint32) (e
 */
 
 func Register(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
-	fmt.Println("proc Register message ... ")
+	fmt.Println("proc Register message ... ", time.Now().Unix())
+	defer common.ExceptionStack()
+	
 	sname := strconv.Itoa(int(data[0]))
 	spwd := strconv.Itoa(int(data[1]))
 	moster, succ := NewMoster(sname, spwd) 
@@ -93,7 +97,9 @@ func registerSucc(sess *myWebSocket.WebSession)(error, bool) {
 	上线响应
 */
 func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
-	fmt.Println("proc login message ... ")
+	fmt.Println("proc login message ... ", time.Now().Unix())
+	defer common.ExceptionStack()
+
 	sname := strconv.Itoa(int(data[0]))
 	spwd := strconv.Itoa(int(data[1]))
 
@@ -112,6 +118,7 @@ func Login(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 }
 
 func loginfail(sess *myWebSocket.WebSession) (error, bool) {
+	fmt.Println("login fail ... ", time.Now().Unix())
 	var (
 		loginmsg = []uint32{}
 	)
@@ -151,7 +158,7 @@ func loginSucc(sess *myWebSocket.WebSession, moster *PurpleMonster) (error, bool
 	loginmsg = append(loginmsg, monsterYflag )
 	loginmsg = append(loginmsg, monsterY )
 	loginmsg = append(loginmsg, score )
-	fmt.Println("login message succ: ", id, monsterX, monsterY)
+	fmt.Println("login message succ: ", id, monsterX, monsterY, time.Now().Unix())
 	myWebSocket.SendMsg(sess, myWebSocket.MID_login, loginmsg)
 	return nil, true
 }
@@ -161,7 +168,9 @@ func loginSucc(sess *myWebSocket.WebSession, moster *PurpleMonster) (error, bool
 	此时当前作为小场景可以全部广播，如果到了地图上，则需要分块视野范围内才能同步
 */
 func SyncPos(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
-	fmt.Println("proc SyncPos message ... ")
+	fmt.Println("proc SyncPos message ... ", time.Now().Unix())
+	defer common.ExceptionStack()
+
 	//检查星星生成
 	SyncStarPos(sess)
 	//广播我的位置给其他人
@@ -175,7 +184,7 @@ func SyncPos(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	离线响应
 */
 func Logout(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
-	fmt.Println("proc logout message ... ")
+	fmt.Println("proc logout message ... ", time.Now().Unix())
 	
 	gmonsters := GetGlobalPurpleMonsters()
 	gmonsters.Offline(data[0])
@@ -195,7 +204,7 @@ func Logout(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	运动实体移动相应
 */
 func Move(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
-	fmt.Println("proc move message ... ")
+	fmt.Println("proc move message ... ", time.Now().Unix())
 	//广播自己移动位置给别人
 	return saveAndupdatePos(sess, myWebSocket.MID_move, data)
 }
@@ -224,7 +233,9 @@ func Move(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 		6：星星y坐标
 */
 func Bump(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
-	fmt.Println("proc Bump message ... ")
+	fmt.Println("proc Bump message ... ", time.Now().Unix())
+	defer common.ExceptionStack()
+
 	//1.判断是否撞击成功（两点间距离）
 	var (
 		PurpleMonsterPosX float64
@@ -268,7 +279,7 @@ func Bump(sess *myWebSocket.WebSession, data []uint32) (error, bool) {
 	}else{
 		fmt.Println("can not get moster info, id: ", data[4])
 	}
-	
+
 	originPos := &Pos{
 		Nodex: int(data[5]),
 		Nodey: int(data[7]),
@@ -293,7 +304,7 @@ func syncMonsterInfo(sess *myWebSocket.WebSession, id, score uint32){
 }
 
 func bumpsucc(sess *myWebSocket.WebSession, newpos *Pos, monsterId uint32)(error, bool){
-	fmt.Println("bump succ: ", sess.RemoteAddr, newpos.Nodex, newpos.Nodey)
+	fmt.Println("bump succ: ", sess.RemoteAddr, newpos.Nodex, newpos.Nodey, time.Now().Unix())
 	var (
 		succmsg = []uint32{}
 

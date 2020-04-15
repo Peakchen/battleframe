@@ -60,8 +60,8 @@ func (this *MemCache) loopcheck(){
 		select {
 		case <-deadlineTick.C:
 			// 到期时间清理数据
-			fmt.Println("clean mem cache data ... ")
 			nowt := time.Now().Unix()
+			fmt.Println("clean mem cache data t: ", nowt)
 			this.data.Range(func (k, v interface{}) bool{
 				origin := v.(*DetailData)
 				if nowt - origin.t >= 5*60 {
